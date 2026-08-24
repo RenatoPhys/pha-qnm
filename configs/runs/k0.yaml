@@ -1,0 +1,15 @@
+schema_version: 1
+model_config: configs/pha_map.yaml
+background_config: configs/runs/background_map.yaml
+coordinate: exp_minus_A
+domains:
+  boundary_layer_targets: [0.3, 1.0, 3.0]
+  resolutions: [40, 60, 80, 100]
+channels: [tensor, vector, scalar]
+requested_modes: 10
+acceptance:
+  frequency_relative_change: 1.0e-6
+  pencil_residual: 1.0e-9
+  boundary_residual: 1.0e-9
+  constraint_residual: 1.0e-7
+

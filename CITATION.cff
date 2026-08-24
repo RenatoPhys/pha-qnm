@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, cite the archived release and the PHA calibration paper."
+title: "PHA QNM: quasinormal spectroscopy for a Bayesian EMD model"
+type: software
+version: 0.1.0
+date-released: 2026-08-23
+license: BSD-3-Clause
+authors:
+  - name: "[AUTHOR TO BE SUPPLIED]"
+repository-code: "[REPOSITORY URL TO BE SUPPLIED]"
+

@@ -1,0 +1,11 @@
+function(pha_qnm_set_warnings target)
+  if(MSVC)
+    target_compile_options(${target} PRIVATE /W4 /permissive- /EHsc /Zc:__cplusplus)
+  else()
+    target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Wconversion -Wshadow)
+    if(PHA_QNM_NATIVE_ARCH)
+      target_compile_options(${target} PRIVATE -march=native)
+    endif()
+  endif()
+endfunction()
+

@@ -1,0 +1,34 @@
+schema_version: 1
+model: polynomial_hyperbolic
+selection:
+  rule: maximum_log_likelihood
+  group: posterior_samples
+  sample_id: sample74
+  log_likelihood: 31.075137487467885
+source:
+  doi: 10.5281/zenodo.13830379
+  file: Bayesian_polyhyper_muses.hdf5
+  md5: 7fd567dccfaea48095ca5df53a8c17d6
+  record_version: v1
+parameters:
+  Lambda_MeV: 1123.8704743960677
+  kappa2: 11.37047249736345
+  gamma: 0.5904238801815029
+  b2: 0.32722698958661095
+  b4: -0.04801342482759139
+  b6: 0.0009385148172188441
+  c1: 0.008800483500598342
+  c2: 0.15579934656052294
+  c3: 0.05281851198008199
+  d1: 1.7177450982418923
+  d2: 1679.1777562624359
+critical_point_metadata:
+  status: success
+  T_c_MeV: 103.89777513571676
+  mu_B_c_MeV: 602.4749076542938
+  error_T_c_MeV: 0.0011068046403437393
+  error_mu_B_c_MeV: 0.0028783810814729804
+audit:
+  independent_read_only_cross_check: 2026-08-23
+  authoritative_regeneration_command: "pha-qnm model extract-map data/raw/Bayesian_polyhyper_muses.hdf5 configs/pha_map.generated.yaml"
+

@@ -1,0 +1,13 @@
+Bootstrap: docker
+From: ubuntu:24.04
+
+%post
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      build-essential cmake ninja-build git ca-certificates \
+      libcurl4-openssl-dev libssl-dev libhdf5-dev liblapack-dev
+    rm -rf /var/lib/apt/lists/*
+
+%runscript
+    exec /opt/pha-qnm/build/release-portable/pha-qnm "$@"
+

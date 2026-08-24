@@ -1,0 +1,89 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {"major": 3, "minor": 28, "patch": 0},
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "23",
+        "PHA_QNM_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "debug",
+      "inherits": "base",
+      "displayName": "Debug reference build",
+      "cacheVariables": {"CMAKE_BUILD_TYPE": "Debug"}
+    },
+    {
+      "name": "asan-ubsan",
+      "inherits": "base",
+      "displayName": "ASan/UBSan build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "PHA_QNM_ENABLE_SANITIZERS": "ON"
+      }
+    },
+    {
+      "name": "release-portable",
+      "inherits": "base",
+      "displayName": "Portable validated release",
+      "cacheVariables": {"CMAKE_BUILD_TYPE": "Release"}
+    },
+    {
+      "name": "release-native",
+      "inherits": "release-portable",
+      "displayName": "Machine-native release",
+      "cacheVariables": {"PHA_QNM_NATIVE_ARCH": "ON"}
+    },
+    {
+      "name": "release-data",
+      "inherits": "release-portable",
+      "displayName": "Production data I/O",
+      "cacheVariables": {
+        "PHA_QNM_ENABLE_HDF5": "ON",
+        "PHA_QNM_ENABLE_NETWORK": "ON"
+      }
+    },
+    {
+      "name": "release-mkl",
+      "inherits": "release-portable",
+      "displayName": "Production dense solver",
+      "cacheVariables": {
+        "PHA_QNM_ENABLE_HDF5": "ON",
+        "PHA_QNM_ENABLE_NETWORK": "ON",
+        "PHA_QNM_ENABLE_LAPACK": "ON",
+        "BLA_VENDOR": "Intel10_64lp"
+      }
+    },
+    {
+      "name": "hpc-slepc",
+      "inherits": "release-portable",
+      "displayName": "HPC production configuration",
+      "cacheVariables": {
+        "PHA_QNM_ENABLE_HDF5": "ON",
+        "PHA_QNM_ENABLE_NETWORK": "ON",
+        "PHA_QNM_ENABLE_LAPACK": "ON",
+        "PHA_QNM_ENABLE_SLEPC": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {"name": "debug", "configurePreset": "debug"},
+    {"name": "asan-ubsan", "configurePreset": "asan-ubsan"},
+    {"name": "release-portable", "configurePreset": "release-portable"},
+    {"name": "release-native", "configurePreset": "release-native"},
+    {"name": "release-data", "configurePreset": "release-data"},
+    {"name": "release-mkl", "configurePreset": "release-mkl"},
+    {"name": "hpc-slepc", "configurePreset": "hpc-slepc"}
+  ],
+  "testPresets": [
+    {"name": "debug", "configurePreset": "debug", "output": {"outputOnFailure": true}},
+    {"name": "release-portable", "configurePreset": "release-portable", "output": {"outputOnFailure": true}},
+    {"name": "release-data", "configurePreset": "release-data", "output": {"outputOnFailure": true}},
+    {"name": "release-mkl", "configurePreset": "release-mkl", "output": {"outputOnFailure": true}}
+  ]
+}

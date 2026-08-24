@@ -1,0 +1,23 @@
+name: portable-cpu
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+        if: runner.os == 'Windows'
+      - uses: lukka/get-cmake@latest
+        with:
+          cmakeVersion: "~3.31.0"
+          ninjaVersion: latest
+      - run: cmake --preset release-portable
+      - run: cmake --build --preset release-portable --parallel 2
+      - run: ctest --preset release-portable --output-on-failure

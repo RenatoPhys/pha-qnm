@@ -1,0 +1,29 @@
+schema_version: 1
+model: polynomial_hyperbolic
+selection:
+  rule: maximum_log_likelihood
+  group: posterior_samples
+  sample_id: sample74
+  log_likelihood: 31.075137487467885
+source:
+  doi: 10.5281/zenodo.13830379
+  file: Bayesian_polyhyper_muses.hdf5
+  md5: 7fd567dccfaea48095ca5df53a8c17d6
+parameters:
+  Lambda_MeV: 1123.8704743960677
+  kappa2: 11.370472497363449
+  gamma: 0.59042388018150294
+  b2: 0.32722698958661095
+  b4: -0.04801342482759139
+  b6: 0.00093851481721884413
+  c1: 0.0088004835005983419
+  c2: 0.15579934656052294
+  c3: 0.052818511980081993
+  d1: 1.7177450982418923
+  d2: 1679.1777562624359
+critical_point_metadata:
+  status: success
+  T_c_MeV: 103.89777513571676
+  mu_B_c_MeV: 602.47490765429382
+  error_T_c_MeV: 0.0011068046403437393
+  error_mu_B_c_MeV: 0.0028783810814729804

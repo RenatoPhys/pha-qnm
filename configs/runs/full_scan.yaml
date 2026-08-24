@@ -1,0 +1,11 @@
+schema_version: 1
+model_config: configs/pha_map.yaml
+background_config: configs/runs/background_map.yaml
+channels: [tensor, vector, scalar, helicity2, helicity1, helicity0]
+momentum:
+  hydrodynamic: {minimum: 0.0, maximum: 0.2, step: 0.01}
+  intermediate: {minimum: 0.25, maximum: 1.0, step: 0.05}
+  selected_large: [1.25, 1.5, 2.0, 2.5, 3.0]
+checkpoint_every_tasks: 20
+status: blocked_until_generated_coupled_kernels_pass
+
