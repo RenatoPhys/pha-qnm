@@ -1,0 +1,13 @@
+{
+  "generator": "generate_linearized_emd.py",
+  "sha256": {
+    "derivations/generated/helicity0_equations.json": "fbc290dd137fce6421e4493924e885b2a46320d8417f108817e2a862592ff13b",
+    "derivations/generated/helicity1_equations.json": "4472bdacf6e9acae1f37ebddb99efcc9d844471a3168597c0d9e44fb7839a344",
+    "generate_linearized_emd.py": "5e11d44a465bb38f013057785cd79aaf60434da84848d75731a429e1df1d53bc",
+    "include/pha_qnm/perturbations/generated/emd_kernel_types.generated.hpp": "c56da1ebfa4223ffd077320f98939ba75624514c48b91e87ac4c418575eee1ac",
+    "include/pha_qnm/perturbations/generated/helicity0_kernels.generated.hpp": "b43ac79e7f58f6f3750eb832557e48113444a507a13cab1fc0f808a6f1d24a25",
+    "include/pha_qnm/perturbations/generated/helicity1_kernels.generated.hpp": "d39aec2cf226827f7dac8c7650a45719727e5497ab959bb824a54875153300d8",
+    "validate_linearized_emd.py": "1acfc4cf7b01108d6416096149a16093c86026d2c7ea0710df8e9fe25640c251"
+  },
+  "sympy": "1.10.1"
+}

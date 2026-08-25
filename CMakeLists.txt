@@ -65,6 +65,7 @@ if(PHA_QNM_BUILD_TESTS)
     tests/test_background.cpp
     tests/test_chebyshev.cpp
     tests/test_operators.cpp
+    tests/test_generated_kernels.cpp
     tests/test_hydro.cpp
   )
   if(PHA_QNM_ENABLE_LAPACK)

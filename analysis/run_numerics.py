@@ -27,13 +27,13 @@ RESULTS.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)
 
 plt.rcParams.update({
-    "font.family": "sans-serif",
-    "font.sans-serif": ["Arial", "DejaVu Sans"],
-    "mathtext.fontset": "dejavusans",
+    "font.family": "serif",
+    "font.serif": ["STIX Two Text", "STIXGeneral", "DejaVu Serif"],
+    "mathtext.fontset": "stix",
     "font.size": 8.5,
     "axes.labelsize": 9.0,
     "axes.titlesize": 9.0,
-    "axes.titleweight": "semibold",
+    "axes.titleweight": "normal",
     "axes.titlelocation": "left",
     "legend.fontsize": 7.5,
     "figure.dpi": 180,
@@ -44,10 +44,10 @@ plt.rcParams.update({
     "pdf.fonttype": 42,
     "ps.fonttype": 42,
     "axes.axisbelow": True,
-    "axes.grid": True,
-    "grid.color": "#DCE3E9",
-    "grid.alpha": 0.8,
-    "grid.linewidth": 0.5,
+    "axes.grid": False,
+    "grid.color": "#D7DCE0",
+    "grid.alpha": 0.45,
+    "grid.linewidth": 0.45,
     "axes.edgecolor": "#9AA7B2",
     "axes.linewidth": 0.7,
     "xtick.color": "#536273",
@@ -83,7 +83,7 @@ def style_axes(axes):
 
 def panel_title(ax, tag, title):
     ax.set_title(f"{tag}  {title}", loc="left", pad=5.5, color=INK,
-                 fontweight="semibold")
+                 fontweight="normal")
 
 
 @dataclass(frozen=True)
@@ -325,6 +325,22 @@ def assemble_pencil(bg, intervals: int, r_cut: float, sector: str, q_value: floa
             M0[i, i] -= emA[i]**2 * fv[i] * Phip[i]**2
             M1[i] = -2.0j * emA[i] * D1[i]
             M1[i, i] += -1.0j * emA[i] * (Ap[i] + ratio[i])
+    elif sector == "singlet":
+        hd = bg["horizon"]
+        phipp = np.empty_like(phip)
+        App = -phip**2 / 6.0
+        phipp[0] = 2.0 * hd["scalar2"]
+        phipp[1:] = ((Vp(phi[1:]) - 0.5 * emA[1:]**2 * fpv[1:] * Phip[1:]**2
+                      - (4.0 * h[1:] * Ap[1:] + hp[1:]) * phip[1:]) / h[1:])
+        ratio = phipp / phip - App / Ap
+        for i in range(n):
+            M0[i] = (h[i] * D2[i]
+                     + (4.0 * h[i] * Ap[i] + hp[i] + 2.0 * h[i] * ratio[i]) * D1[i])
+            M0[i, i] += (-hp[i] * ratio[i]
+                         + emA[i]**2 * Phip[i]**2 / phip[i]
+                           * (3.0 * Ap[i] * fpv[i] - fv[i] * phip[i]))
+            M1[i] = -2.0j * emA[i] * D1[i]
+            M1[i, i] += -1.0j * emA[i] * (3.0 * Ap[i] + 2.0 * ratio[i])
     else:
         raise ValueError(sector)
     M0[-1] = 0.0
@@ -612,11 +628,34 @@ def locate_critical_background():
                 **uv}
 
 
+def load_independent_cusp_background():
+    path = RESULTS / "reference_cusp_uv1e5_h10.json"
+    if not path.exists():
+        raise FileNotFoundError(
+            "Run analysis/locate_reference_cusp.py with the accepted UV and "
+            "finite-difference settings before the QNM analysis."
+        )
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("status") != "success":
+        raise RuntimeError("the stored independent cusp calculation did not pass")
+    bg = integrate_background(float(data["phi0"]), float(data["charge_fraction"]))
+    uv = extract_uv(bg)
+    return bg, {
+        "definition": "local cusp of the horizon-to-thermodynamics map",
+        "source_file": str(path.relative_to(ROOT)),
+        "phi0": float(data["phi0"]),
+        "charge_fraction": float(data["charge_fraction"]),
+        "reference_UV_T_MeV": float(data["T_c_MeV"]),
+        "reference_UV_mu_MeV": float(data["mu_B_c_MeV"]),
+        **uv,
+    }
+
+
 def run_qnms(bg):
     records = []
     accepted_by_sector = {}
     spectra_by_sector = {}
-    for sector in ("tensor", "vector"):
+    for sector in ("tensor", "vector", "singlet"):
         accepted, spectra = converged_modes(bg, sector)
         accepted_by_sector[sector] = accepted
         spectra_by_sector[sector] = spectra
@@ -660,9 +699,9 @@ def run_qnms(bg):
         writer.writeheader(); writer.writerows(dispersion)
 
     fig, axes = plt.subplots(1, 3, figsize=(7.35, 2.75))
-    markers = {"tensor": "o", "vector": "s"}
-    colors = {"tensor": BLUE, "vector": VERMILLION}
-    for sector in ("tensor", "vector"):
+    markers = {"tensor": "o", "vector": "s", "singlet": "^"}
+    colors = {"tensor": BLUE, "vector": VERMILLION, "singlet": GREEN}
+    for sector in ("tensor", "vector", "singlet"):
         items = accepted_by_sector[sector]
         z = 2.0 * np.array([x["omega"] for x in items])
         axes[0].scatter(z.real, z.imag, label=sector, marker=markers[sector],
@@ -719,7 +758,7 @@ def run_qnms(bg):
     return records, dispersion
 
 
-def qnm_temperature_scan(charge_fraction=0.18):
+def qnm_horizon_trajectory_survey(charge_fraction=0.18):
     phi_values = np.geomspace(0.55, 5.5, 11)
     rows = []
     for phi0 in phi_values:
@@ -735,7 +774,7 @@ def qnm_temperature_scan(charge_fraction=0.18):
                          "mu_over_T": uv["mu_over_T"], "Re_w": 2.0*z.real,
                          "Im_w": 2.0*z.imag,
                          "resolution_spread": accepted[0]["resolution_spread"]})
-    with (RESULTS / "qnm_temperature_scan.csv").open("w", newline="", encoding="utf-8") as out:
+    with (RESULTS / "qnm_horizon_trajectory.csv").open("w", newline="", encoding="utf-8") as out:
         writer = csv.DictWriter(out, fieldnames=list(rows[0]))
         writer.writeheader(); writer.writerows(rows)
     fig, axes = plt.subplots(1, 2, figsize=(6.45, 2.72))
@@ -759,20 +798,21 @@ def qnm_temperature_scan(charge_fraction=0.18):
                bbox_to_anchor=(0.5, 1.015), handlelength=2.4)
     style_axes(axes)
     fig.tight_layout(rect=(0, 0, 1, 0.90), w_pad=1.25)
-    save_figure(fig, "qnm_temperature_scan")
+    save_figure(fig, "qnm_horizon_trajectory")
     return rows
 
 
 def main():
     plot_potentials()
     rows, _backgrounds = scan_backgrounds()
-    representative, critical = locate_critical_background()
+    _metadata_nearest, metadata_inverse_diagnostic = locate_critical_background()
+    representative, critical = load_independent_cusp_background()
     plot_background_scan(rows, critical)
     thermodynamic_rows, thermodynamic_diagnostics = thermodynamic_validation(rows)
     representative_uv = extract_uv(representative)
     representative_background_plot(representative)
     modes, dispersion = run_qnms(representative)
-    temperature_modes = qnm_temperature_scan()
+    horizon_trajectory_modes = qnm_horizon_trajectory_survey()
     summary = {
         "parameters": asdict(P), "m2": M2, "Delta": DELTA, "nu": NU,
         "background_grid_points": len(rows),
@@ -781,13 +821,14 @@ def main():
                            "Phi1": representative["Phi1"],
                            "constraint": representative["constraint"],
                            "gauss_drift": representative["qdrift"], **representative_uv},
-        "nearest_cep_background": critical,
+        "independent_cusp_background": critical,
+        "hdf5_metadata_inverse_diagnostic": metadata_inverse_diagnostic,
         "pseudospectral_qnm_candidates": modes,
         "tensor_dispersion_points": len(dispersion),
-        "temperature_scan_points": len(temperature_modes),
+        "horizon_trajectory_points": len(horizon_trajectory_modes),
         "thermodynamic_validation_points": len(thermodynamic_rows),
         "thermodynamic_validation": thermodynamic_diagnostics,
-        "scope": "tensor finite-k and homogeneous vector only; no scalar/helicity-1/helicity-0 claims",
+        "scope": "complete homogeneous SO(3) sectors plus tensor finite-k; coupled finite-k helicity-1/helicity-0 spectra remain gated",
     }
     with (RESULTS / "summary.json").open("w", encoding="utf-8") as out:
         json.dump(summary, out, indent=2)

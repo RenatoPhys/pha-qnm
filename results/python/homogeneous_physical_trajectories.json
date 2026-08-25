@@ -1,0 +1,18 @@
+{
+  "trajectories": {
+    "mu0": {
+      "background_points": 18,
+      "qnm_points": 54,
+      "maximum_source_residual": 2.1871878579190296e-08,
+      "maximum_spectral_distance_hat": 0.006113515799602995,
+      "minimum_parent_overlap": 0.9987837574184117
+    },
+    "mu_over_T_2": {
+      "background_points": 18,
+      "qnm_points": 54,
+      "maximum_source_residual": 1.8563603691849036e-08,
+      "maximum_spectral_distance_hat": 0.01200046173516067,
+      "minimum_parent_overlap": 0.9985450690749509
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "status": "success",
+  "phi0": 3.528280966207555,
+  "charge_fraction": 0.34637356467181973,
+  "T_c_MeV": 103.75528111978664,
+  "mu_B_c_MeV": 593.3226560539789,
+  "critical_background": {
+    "phi0": 3.528280966207555,
+    "charge_fraction": 0.34637356467181973,
+    "Phi1": 34.66842091976482,
+    "T_MeV": 103.75528111978664,
+    "mu_MeV": 593.3226560539789,
+    "s_MeV3": 3497873.362264818,
+    "rho_MeV3": 97259.05386062415,
+    "r_uv": 1.5974055899855155,
+    "A_uv": 11.842250336675056,
+    "A_slope_uv": 7.048323575328175,
+    "h0": 0.020129284264506914,
+    "phiA": 10.696792507387112,
+    "Phi0": 0.4550622991921849,
+    "Phi2": -0.024786773208835135,
+    "relaxation_D": 0.3525867190236462,
+    "relaxation_E": 1.302371752981008,
+    "ricci_precision": 1.965538842796377e-12,
+    "phiA_precision": 1.0000000000180986e-05,
+    "constraint": 7.943736070899133e-11,
+    "gauss_relative_drift": 7.187961337251636e-10,
+    "nu_relative_error": -1.276198771105186e-07,
+    "converged": true,
+    "parameters": {
+      "Lambda_MeV": 1123.8704743960677,
+      "kappa2": 11.37047249736345,
+      "gamma": 0.5904238801815029,
+      "b2": 0.32722698958661095,
+      "b4": -0.04801342482759139,
+      "b6": 0.0009385148172188441,
+      "c1": 0.008800483500598342,
+      "c2": 0.15579934656052294,
+      "c3": 0.05281851198008199,
+      "d1": 1.7177450982418923,
+      "d2": 1679.1777562624359
+    }
+  },
+  "jacobian_log_thermodynamics": [
+    [
+      -0.26720481864852036,
+      -1.4147368572067731
+    ],
+    [
+      0.702052541581941,
+      3.7170722145505524
+    ]
+  ],
+  "jacobian_singular_values": [
+    4.047515584846301,
+    1.7807754533623767e-10
+  ],
+  "determinant": -7.207716640232077e-10,
+  "cusp_equation_residual": [
+    -3.6038583201160385e-09,
+    -4.704546308076374e-09
+  ],
+  "optimizer_success": true,
+  "optimizer_status": 3,
+  "optimizer_message": "`xtol` termination condition is satisfied.",
+  "optimizer_optimality": 2.7371593293663667e-08,
+  "active_bounds": [
+    0,
+    0
+  ],
+  "function_evaluations": 13,
+  "background_evaluations": 403,
+  "finite_difference_steps": {
+    "phi0": 0.01,
+    "charge_fraction": 0.001
+  },
+  "background_numerics": {
+    "relaxation_rate": 8.0,
+    "ricci_tolerance": 1e-05,
+    "phiA_tolerance": 1e-05,
+    "initial_step": 2e-09,
+    "maximum_radius": 80.0,
+    "rtol": 2e-10,
+    "atol": 2e-12,
+    "max_step": 0.05
+  }
+}

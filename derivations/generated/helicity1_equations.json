@@ -1,0 +1,71 @@
+{
+  "coordinate_order": [
+    "v",
+    "r",
+    "x",
+    "y",
+    "z"
+  ],
+  "equations": {
+    "E_vx": {
+      "coefficients": {
+        "Hvx": "-(4*Ar**2*h*exp(2*A) + Ar*hr*exp(2*A) + Arr*h*exp(2*A) + Phir**2*f/6 + V*exp(2*A)/3 + p**2/2)",
+        "Hvxr": "-(2*Ar*h*exp(A) + sigma/2)*exp(A)",
+        "Hvxrr": "-h*exp(2*A)/2",
+        "Hzx": "p*sigma/2",
+        "ax": "-Phir*f*sigma*exp(-A)/2",
+        "axr": "-Phir*f*h/2"
+      },
+      "expression": "-4*Ar**2*Hvx*h*exp(2*A) - Ar*Hvx*hr*exp(2*A) - 2*Ar*Hvxr*h*exp(2*A) - Arr*Hvx*h*exp(2*A) - Hvx*Phir**2*f/6 - Hvx*V*exp(2*A)/3 - Hvx*p**2/2 - Hvxr*sigma*exp(A)/2 - Hvxrr*h*exp(2*A)/2 + Hzx*p*sigma/2 - Phir*ax*f*sigma*exp(-A)/2 - Phir*axr*f*h/2"
+    },
+    "constraint_Er_x": {
+      "coefficients": {
+        "Hvx": "-(4*Ar**2*h*exp(A) + Ar*hr*exp(A) + Arr*h*exp(A) + Phir**2*f*exp(-A)/6 + V*exp(A)/3 + p**2*exp(-A)/2)",
+        "Hvxr": "-sigma/2",
+        "Hzx": "p*sigma*exp(-A)/2",
+        "Hzxr": "h*p/2",
+        "ax": "-Phir*f*sigma*exp(-2*A)/2"
+      },
+      "expression": "-4*Ar**2*Hvx*h*exp(A) - Ar*Hvx*hr*exp(A) - Arr*Hvx*h*exp(A) - Hvx*Phir**2*f*exp(-A)/6 - Hvx*V*exp(A)/3 - Hvx*p**2*exp(-A)/2 - Hvxr*sigma/2 + Hzx*p*sigma*exp(-A)/2 + Hzxr*h*p/2 - Phir*ax*f*sigma*exp(-2*A)/2"
+    },
+    "evolution_E_rx": {
+      "coefficients": {
+        "Hvxr": "2*Ar*exp(A)",
+        "Hvxrr": "exp(A)/2",
+        "Hzxr": "p/2",
+        "axr": "Phir*f*exp(-A)/2"
+      },
+      "expression": "2*Ar*Hvxr*exp(A) + Hvxrr*exp(A)/2 + Hzxr*p/2 + Phir*axr*f*exp(-A)/2"
+    },
+    "evolution_E_zx": {
+      "coefficients": {
+        "Hvx": "3*Ar*p*exp(A)/2",
+        "Hvxr": "p*exp(A)/2",
+        "Hzx": "-(4*Ar**2*h*exp(2*A) + Ar*hr*exp(2*A) + 3*Ar*sigma*exp(A)/2 + Arr*h*exp(2*A) + Phir**2*f/6 + V*exp(2*A)/3)",
+        "Hzxr": "-(2*Ar*h*exp(A) + hr*exp(A)/2 + sigma)*exp(A)",
+        "Hzxrr": "-h*exp(2*A)/2"
+      },
+      "expression": "-4*Ar**2*Hzx*h*exp(2*A) + 3*Ar*Hvx*p*exp(A)/2 - Ar*Hzx*hr*exp(2*A) - 3*Ar*Hzx*sigma*exp(A)/2 - 2*Ar*Hzxr*h*exp(2*A) - Arr*Hzx*h*exp(2*A) + Hvxr*p*exp(A)/2 - Hzx*Phir**2*f/6 - Hzx*V*exp(2*A)/3 - Hzxr*hr*exp(2*A)/2 - Hzxr*sigma*exp(A) - Hzxrr*h*exp(2*A)/2"
+    },
+    "evolution_M_x": {
+      "coefficients": {
+        "Hvx": "(2*Ar*Phir*f + Phir*fr + Phirr*f)*exp(-2*A)",
+        "Hvxr": "Phir*f*exp(-2*A)",
+        "ax": "(Ar*f*sigma + f*p**2*exp(-A) + fr*sigma)*exp(-3*A)",
+        "axr": "(2*Ar*f*h + f*hr + 2*f*sigma*exp(-A) + fr*h)*exp(-2*A)",
+        "axrr": "f*h*exp(-2*A)"
+      },
+      "expression": "(2*Ar*Hvx*Phir*f + Ar*ax*f*sigma*exp(-A) + 2*Ar*axr*f*h + Hvx*Phir*fr + Hvx*Phirr*f + Hvxr*Phir*f + ax*f*p**2*exp(-2*A) + ax*fr*sigma*exp(-A) + axr*f*hr + 2*axr*f*sigma*exp(-A) + axr*fr*h + axrr*f*h)*exp(-2*A)"
+    }
+  },
+  "fields": [
+    "Hvx",
+    "Hzx",
+    "ax"
+  ],
+  "fourier_replacements": {
+    "p": "i k",
+    "sigma": "-i omega"
+  },
+  "metric_normalization": "delta g_MN = exp(2 A) H_MN exp(sigma v + p z)"
+}

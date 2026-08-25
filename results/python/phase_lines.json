@@ -1,0 +1,912 @@
+[
+  {
+    "mu_MeV": 594.0,
+    "spinodal_low_T_MeV": 103.71838812070482,
+    "spinodal_high_T_MeV": 103.72088126722278,
+    "coexistence": {
+      "T_MeV": 103.71961285799587,
+      "phi0_hot": 3.4664883421324975,
+      "phi0_cold": 3.596194432583179,
+      "charge_hot": 0.35812146626776425,
+      "charge_cold": 0.3335808860931988,
+      "latent_entropy_MeV3": 576812.2019968997,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 598.0,
+    "spinodal_low_T_MeV": 103.42610798657307,
+    "spinodal_high_T_MeV": 103.47890123765033,
+    "coexistence": {
+      "T_MeV": 103.45086141701911,
+      "phi0_hot": 3.3579092448411187,
+      "phi0_cold": 3.710569693261843,
+      "charge_hot": 0.3790673026869654,
+      "charge_cold": 0.31224781614846336,
+      "latent_entropy_MeV3": 1571247.2938385122,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 602.0,
+    "spinodal_low_T_MeV": 103.11714307005245,
+    "spinodal_high_T_MeV": 103.25106219110438,
+    "coexistence": {
+      "T_MeV": 103.17811875322039,
+      "phi0_hot": 3.2992069025691517,
+      "phi0_cold": 3.7805552374427944,
+      "charge_hot": 0.39070802349777334,
+      "charge_cold": 0.29922932604757,
+      "latent_entropy_MeV3": 2140061.686826486,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 606.0,
+    "spinodal_low_T_MeV": 102.79528716372052,
+    "spinodal_high_T_MeV": 103.03284240061302,
+    "coexistence": {
+      "T_MeV": 102.90130605573592,
+      "phi0_hot": 3.253778307410703,
+      "phi0_cold": 3.836645231975952,
+      "charge_hot": 0.39986728014266865,
+      "charge_cold": 0.2888017935671742,
+      "latent_entropy_MeV3": 2587125.1150825773,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 610.0,
+    "spinodal_low_T_MeV": 102.46324576153044,
+    "spinodal_high_T_MeV": 102.82228541101131,
+    "coexistence": {
+      "T_MeV": 102.62057798476256,
+      "phi0_hot": 3.216059370462469,
+      "phi0_cold": 3.884973729239961,
+      "charge_hot": 0.4076228937371938,
+      "charge_cold": 0.2798167828699821,
+      "latent_entropy_MeV3": 2963940.820174833,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 614.0,
+    "spinodal_low_T_MeV": 102.12213258003936,
+    "spinodal_high_T_MeV": 102.61826925115712,
+    "coexistence": {
+      "T_MeV": 102.33614965511241,
+      "phi0_hot": 3.1833523969900983,
+      "phi0_cold": 3.9283151010500474,
+      "charge_hot": 0.41448141698179736,
+      "charge_cold": 0.27175655926828324,
+      "latent_entropy_MeV3": 3294862.0198609084,
+      "pressure_residual_MeV4": 1.430511474609375e-06
+    }
+  },
+  {
+    "mu_MeV": 618.0,
+    "spinodal_low_T_MeV": 101.77201952337735,
+    "spinodal_high_T_MeV": 102.42005829493311,
+    "coexistence": {
+      "T_MeV": 102.04749004053265,
+      "phi0_hot": 3.1540487648658933,
+      "phi0_cold": 3.9683277559400305,
+      "charge_hot": 0.42071912388214255,
+      "charge_cold": 0.2643081231954346,
+      "latent_entropy_MeV3": 3594640.258867493,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 622.0,
+    "spinodal_low_T_MeV": 101.4148878873482,
+    "spinodal_high_T_MeV": 102.22702754331526,
+    "coexistence": {
+      "T_MeV": 101.75524463090848,
+      "phi0_hot": 3.127377309302924,
+      "phi0_cold": 4.005643953320085,
+      "charge_hot": 0.42648883672551796,
+      "charge_cold": 0.2573621028640908,
+      "latent_entropy_MeV3": 3869817.8524104245,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 626.0,
+    "spinodal_low_T_MeV": 101.04934418219756,
+    "spinodal_high_T_MeV": 102.03846901067163,
+    "coexistence": {
+      "T_MeV": 101.45902740983442,
+      "phi0_hot": 3.102963696795757,
+      "phi0_cold": 4.040864850283532,
+      "charge_hot": 0.4318739530346958,
+      "charge_cold": 0.25080371548872143,
+      "latent_entropy_MeV3": 4124010.199397124,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 630.0,
+    "spinodal_low_T_MeV": 100.67732595560669,
+    "spinodal_high_T_MeV": 101.85384832243892,
+    "coexistence": {
+      "T_MeV": 101.1589270830394,
+      "phi0_hot": 3.080288689486487,
+      "phi0_cold": 4.0742935254439026,
+      "charge_hot": 0.43695809093211596,
+      "charge_cold": 0.24457682545041604,
+      "latent_entropy_MeV3": 4361553.883071393,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 634.0,
+    "spinodal_low_T_MeV": 100.29861053437513,
+    "spinodal_high_T_MeV": 101.67310905792048,
+    "coexistence": {
+      "T_MeV": 100.8551747699234,
+      "phi0_hot": 3.0589567220131184,
+      "phi0_cold": 4.106173168570091,
+      "charge_hot": 0.44180127484061343,
+      "charge_cold": 0.23863767925837387,
+      "latent_entropy_MeV3": 4585956.6116169,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 638.0,
+    "spinodal_low_T_MeV": 99.91296079691912,
+    "spinodal_high_T_MeV": 101.49611981599828,
+    "coexistence": {
+      "T_MeV": 100.54745658211026,
+      "phi0_hot": 3.0389410199827656,
+      "phi0_cold": 4.1368692646740595,
+      "charge_hot": 0.44642817332139345,
+      "charge_cold": 0.23292003270717104,
+      "latent_entropy_MeV3": 4797799.67811385,
+      "pressure_residual_MeV4": 1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 642.0,
+    "spinodal_low_T_MeV": 99.52178407685716,
+    "spinodal_high_T_MeV": 101.32247491087965,
+    "coexistence": {
+      "T_MeV": 100.23609698918823,
+      "phi0_hot": 3.0200679181350423,
+      "phi0_cold": 4.16650183617248,
+      "charge_hot": 0.4508737035479663,
+      "charge_cold": 0.2274051666089432,
+      "latent_entropy_MeV3": 4998489.123858713,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 646.0,
+    "spinodal_low_T_MeV": 99.1237155837567,
+    "spinodal_high_T_MeV": 101.1521832357999,
+    "coexistence": {
+      "T_MeV": 99.92086461119771,
+      "phi0_hot": 3.0020756178666743,
+      "phi0_cold": 4.195230540182028,
+      "charge_hot": 0.45516481200314723,
+      "charge_cold": 0.22206307501794867,
+      "latent_entropy_MeV3": 5190494.544323788,
+      "pressure_residual_MeV4": 1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 650.0,
+    "spinodal_low_T_MeV": 98.7201322614926,
+    "spinodal_high_T_MeV": 100.98509835597153,
+    "coexistence": {
+      "T_MeV": 99.60189457113975,
+      "phi0_hot": 2.984889024345463,
+      "phi0_cold": 4.223150768108312,
+      "charge_hot": 0.4593206221325279,
+      "charge_cold": 0.21687822245231209,
+      "latent_entropy_MeV3": 5374468.284827541,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 654.0,
+    "spinodal_low_T_MeV": 98.31101702033044,
+    "spinodal_high_T_MeV": 100.82097179534098,
+    "coexistence": {
+      "T_MeV": 99.27929339821138,
+      "phi0_hot": 2.9684830471077004,
+      "phi0_cold": 4.250346452557638,
+      "charge_hot": 0.463356279706661,
+      "charge_cold": 0.21183699134602274,
+      "latent_entropy_MeV3": 5550553.56385377,
+      "pressure_residual_MeV4": 1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 658.0,
+    "spinodal_low_T_MeV": 97.89565448638261,
+    "spinodal_high_T_MeV": 100.65942008537624,
+    "coexistence": {
+      "T_MeV": 98.95281243177011,
+      "phi0_hot": 2.9527808180227364,
+      "phi0_cold": 4.276842232967224,
+      "charge_hot": 0.46728343092679026,
+      "charge_cold": 0.20692996749880424,
+      "latent_entropy_MeV3": 5719337.347660308,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 662.0,
+    "spinodal_low_T_MeV": 97.47545232354706,
+    "spinodal_high_T_MeV": 100.50082082606004,
+    "coexistence": {
+      "T_MeV": 98.62274751166561,
+      "phi0_hot": 2.9376503276947923,
+      "phi0_cold": 4.302762192598103,
+      "charge_hot": 0.4711162238695369,
+      "charge_cold": 0.2021415216370486,
+      "latent_entropy_MeV3": 5882224.48959491,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 666.0,
+    "spinodal_low_T_MeV": 97.04933521390606,
+    "spinodal_high_T_MeV": 100.34408994858731,
+    "coexistence": {
+      "T_MeV": 98.28891255261902,
+      "phi0_hot": 2.9230805403686833,
+      "phi0_cold": 4.3281445460095025,
+      "charge_hot": 0.47486276971158853,
+      "charge_cold": 0.19746240042548177,
+      "latent_entropy_MeV3": 6039208.01143551,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 670.0,
+    "spinodal_low_T_MeV": 96.61804223897597,
+    "spinodal_high_T_MeV": 100.1900863490012,
+    "coexistence": {
+      "T_MeV": 97.95138026047424,
+      "phi0_hot": 2.9090312069221276,
+      "phi0_cold": 4.353031666753824,
+      "charge_hot": 0.4785321275899674,
+      "charge_cold": 0.19288591898296029,
+      "latent_entropy_MeV3": 6190622.470949307,
+      "pressure_residual_MeV4": 1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 674.0,
+    "spinodal_low_T_MeV": 96.18196025941778,
+    "spinodal_high_T_MeV": 100.03822409308448,
+    "coexistence": {
+      "T_MeV": 97.610260914639,
+      "phi0_hot": 2.8954369800662905,
+      "phi0_cold": 4.377494267978965,
+      "charge_hot": 0.48213149080600554,
+      "charge_cold": 0.18840322507145127,
+      "latent_entropy_MeV3": 6337158.012650929,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 678.0,
+    "spinodal_low_T_MeV": 95.73998912151664,
+    "spinodal_high_T_MeV": 99.88878465157534,
+    "coexistence": {
+      "T_MeV": 97.26536764990756,
+      "phi0_hot": 2.882284055751048,
+      "phi0_cold": 4.4015656671745145,
+      "charge_hot": 0.48566605516981803,
+      "charge_cold": 0.18400699779879995,
+      "latent_entropy_MeV3": 6478871.0936644925,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 682.0,
+    "spinodal_low_T_MeV": 95.293518734784,
+    "spinodal_high_T_MeV": 99.74151974826596,
+    "coexistence": {
+      "T_MeV": 96.91690115205904,
+      "phi0_hot": 2.8695182658665317,
+      "phi0_cold": 4.425277177085833,
+      "charge_hot": 0.48914290976360664,
+      "charge_cold": 0.17969429796216688,
+      "latent_entropy_MeV3": 6616306.065885249,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 686.0,
+    "spinodal_low_T_MeV": 94.84187213977631,
+    "spinodal_high_T_MeV": 99.59635415111681,
+    "coexistence": {
+      "T_MeV": 96.56475842926022,
+      "phi0_hot": 2.8571195931297946,
+      "phi0_cold": 4.448661187351157,
+      "charge_hot": 0.4925660033376632,
+      "charge_cold": 0.17545951537661375,
+      "latent_entropy_MeV3": 6749624.758727509,
+      "pressure_residual_MeV4": 1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 690.0,
+    "spinodal_low_T_MeV": 94.38515550446867,
+    "spinodal_high_T_MeV": 99.4534691088191,
+    "coexistence": {
+      "T_MeV": 96.20896642113232,
+      "phi0_hot": 2.84509016490978,
+      "phi0_cold": 4.471732178717964,
+      "charge_hot": 0.4959400673450813,
+      "charge_cold": 0.17130008920698808,
+      "latent_entropy_MeV3": 6878702.221798583,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 694.0,
+    "spinodal_low_T_MeV": 93.92407743932354,
+    "spinodal_high_T_MeV": 99.31193506214777,
+    "coexistence": {
+      "T_MeV": 95.84960886901649,
+      "phi0_hot": 2.8333634900275944,
+      "phi0_cold": 4.494531861350749,
+      "charge_hot": 0.4992687017476986,
+      "charge_cold": 0.16721166068631296,
+      "latent_entropy_MeV3": 7004305.264136175,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 698.0,
+    "spinodal_low_T_MeV": 93.45751704340559,
+    "spinodal_high_T_MeV": 99.17285814353593,
+    "coexistence": {
+      "T_MeV": 95.48656728794364,
+      "phi0_hot": 2.8219272128493613,
+      "phi0_cold": 4.517049427144547,
+      "charge_hot": 0.5025550613008303,
+      "charge_cold": 0.16319302365442984,
+      "latent_entropy_MeV3": 7126483.119235136,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 702.0,
+    "spinodal_low_T_MeV": 92.98656722655095,
+    "spinodal_high_T_MeV": 99.03483341781379,
+    "coexistence": {
+      "T_MeV": 95.11996592013368,
+      "phi0_hot": 2.810813150548232,
+      "phi0_cold": 4.539341761158767,
+      "charge_hot": 0.5058043743257171,
+      "charge_cold": 0.15923930966001343,
+      "latent_entropy_MeV3": 7244788.629970843,
+      "pressure_residual_MeV4": 3.5762786865234375e-07
+    }
+  },
+  {
+    "mu_MeV": 706.0,
+    "spinodal_low_T_MeV": 92.51099110747776,
+    "spinodal_high_T_MeV": 98.89905029193959,
+    "coexistence": {
+      "T_MeV": 94.74974121231142,
+      "phi0_hot": 2.799938203350123,
+      "phi0_cold": 4.561401530580945,
+      "charge_hot": 0.5090162500880666,
+      "charge_cold": 0.15534966766512331,
+      "latent_entropy_MeV3": 7360217.026617436,
+      "pressure_residual_MeV4": -2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 710.0,
+    "spinodal_low_T_MeV": 92.03039225514198,
+    "spinodal_high_T_MeV": 98.76475719362217,
+    "coexistence": {
+      "T_MeV": 94.37591793256098,
+      "phi0_hot": 2.7892993301888738,
+      "phi0_cold": 4.583254876513201,
+      "charge_hot": 0.512194597829372,
+      "charge_cold": 0.15152143389546385,
+      "latent_entropy_MeV3": 7472756.353732012,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 714.0,
+    "spinodal_low_T_MeV": 91.54559824626911,
+    "spinodal_high_T_MeV": 98.63213427193952,
+    "coexistence": {
+      "T_MeV": 93.99856167675593,
+      "phi0_hot": 2.7789508433298495,
+      "phi0_cold": 4.604930236987928,
+      "charge_hot": 0.5153453259289887,
+      "charge_cold": 0.14775229390817235,
+      "latent_entropy_MeV3": 7581604.099313148,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 718.0,
+    "spinodal_low_T_MeV": 91.05585110527831,
+    "spinodal_high_T_MeV": 98.50137662573016,
+    "coexistence": {
+      "T_MeV": 93.61754052651352,
+      "phi0_hot": 2.768759041506892,
+      "phi0_cold": 4.626425284554671,
+      "charge_hot": 0.5184621982190573,
+      "charge_cold": 0.14404065739974156,
+      "latent_entropy_MeV3": 7688546.697282565,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 722.0,
+    "spinodal_low_T_MeV": 90.5616862054237,
+    "spinodal_high_T_MeV": 98.37218818216769,
+    "coexistence": {
+      "T_MeV": 93.23301807719744,
+      "phi0_hot": 2.758816620712476,
+      "phi0_cold": 4.647773702919627,
+      "charge_hot": 0.5215555161228133,
+      "charge_cold": 0.14038511066624357,
+      "latent_entropy_MeV3": 7792235.064877141,
+      "pressure_residual_MeV4": -2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 726.0,
+    "spinodal_low_T_MeV": 90.06323105819574,
+    "spinodal_high_T_MeV": 98.24422242291827,
+    "coexistence": {
+      "T_MeV": 92.84488476031957,
+      "phi0_hot": 2.7490905150359706,
+      "phi0_cold": 4.668976564276792,
+      "charge_hot": 0.5246246950266735,
+      "charge_cold": 0.13678415293299914,
+      "latent_entropy_MeV3": 7893058.412978156,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 730.0,
+    "spinodal_low_T_MeV": 89.55988411541924,
+    "spinodal_high_T_MeV": 98.11826847009756,
+    "coexistence": {
+      "T_MeV": 92.45320205097634,
+      "phi0_hot": 2.7395081104232033,
+      "phi0_cold": 4.690050877385551,
+      "charge_hot": 0.5276666052288387,
+      "charge_cold": 0.13323686349659344,
+      "latent_entropy_MeV3": 7992038.699096382,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 734.0,
+    "spinodal_low_T_MeV": 89.05237842431156,
+    "spinodal_high_T_MeV": 97.99307972805835,
+    "coexistence": {
+      "T_MeV": 92.05798301200262,
+      "phi0_hot": 2.7301588113322555,
+      "phi0_cold": 4.711012010224368,
+      "charge_hot": 0.5306916376277022,
+      "charge_cold": 0.1297421140252997,
+      "latent_entropy_MeV3": 8087788.515526282,
+      "pressure_residual_MeV4": -2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 738.0,
+    "spinodal_low_T_MeV": 88.54036595803746,
+    "spinodal_high_T_MeV": 97.86957264522269,
+    "coexistence": {
+      "T_MeV": 91.65916673495485,
+      "phi0_hot": 2.7209485153734723,
+      "phi0_cold": 4.73186535768007,
+      "charge_hot": 0.5336929653756343,
+      "charge_cold": 0.12629880192210358,
+      "latent_entropy_MeV3": 8181666.165451594,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 742.0,
+    "spinodal_low_T_MeV": 88.02390719980994,
+    "spinodal_high_T_MeV": 97.74754783852241,
+    "coexistence": {
+      "T_MeV": 91.2568508993518,
+      "phi0_hot": 2.7119078990145438,
+      "phi0_cold": 4.752626420714751,
+      "charge_hot": 0.5366755567198309,
+      "charge_cold": 0.12290668724462765,
+      "latent_entropy_MeV3": 8273168.245622182,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 746.0,
+    "spinodal_low_T_MeV": 87.50327306422257,
+    "spinodal_high_T_MeV": 97.62651313120018,
+    "coexistence": {
+      "T_MeV": 90.85094627334986,
+      "phi0_hot": 2.7030594872181957,
+      "phi0_cold": 4.773304675779612,
+      "charge_hot": 0.5396441358463044,
+      "charge_cold": 0.11956438737452933,
+      "latent_entropy_MeV3": 8361871.385600555,
+      "pressure_residual_MeV4": -2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 750.0,
+    "spinodal_low_T_MeV": 86.97805894518201,
+    "spinodal_high_T_MeV": 97.50703860222855,
+    "coexistence": {
+      "T_MeV": 90.44153596605227,
+      "phi0_hot": 2.6943021467640076,
+      "phi0_cold": 4.7939057662241416,
+      "charge_hot": 0.5425902842642594,
+      "charge_cold": 0.11627213539421809,
+      "latent_entropy_MeV3": 8449328.465278098,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 754.0,
+    "spinodal_low_T_MeV": 86.4486327089088,
+    "spinodal_high_T_MeV": 97.38895889076382,
+    "coexistence": {
+      "T_MeV": 90.02856663245028,
+      "phi0_hot": 2.68574397260049,
+      "phi0_cold": 4.814445593826764,
+      "charge_hot": 0.5455263527955677,
+      "charge_cold": 0.1130287158946806,
+      "latent_entropy_MeV3": 8533777.926522994,
+      "pressure_residual_MeV4": -2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 758.0,
+    "spinodal_low_T_MeV": 85.91495540239495,
+    "spinodal_high_T_MeV": 97.27201322887383,
+    "coexistence": {
+      "T_MeV": 89.612057264476,
+      "phi0_hot": 2.6772790329753686,
+      "phi0_cold": 4.834929428650918,
+      "charge_hot": 0.5484436598371667,
+      "charge_cold": 0.10983398249356272,
+      "latent_entropy_MeV3": 8616865.915524825,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 762.0,
+    "spinodal_low_T_MeV": 85.3769229399295,
+    "spinodal_high_T_MeV": 97.15613644701791,
+    "coexistence": {
+      "T_MeV": 89.19205164151467,
+      "phi0_hot": 2.668966207094369,
+      "phi0_cold": 4.8553651924784775,
+      "charge_hot": 0.5513491559884955,
+      "charge_cold": 0.1066879082723543,
+      "latent_entropy_MeV3": 8697613.808873462,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 766.0,
+    "spinodal_low_T_MeV": 84.83464982512844,
+    "spinodal_high_T_MeV": 97.04191660167729,
+    "coexistence": {
+      "T_MeV": 88.76844336389838,
+      "phi0_hot": 2.6607865541935913,
+      "phi0_cold": 4.87576858157176,
+      "charge_hot": 0.5542430752050047,
+      "charge_cold": 0.10358915415718321,
+      "latent_entropy_MeV3": 8776265.833082829,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 770.0,
+    "spinodal_low_T_MeV": 84.28819811709135,
+    "spinodal_high_T_MeV": 96.92839380049178,
+    "coexistence": {
+      "T_MeV": 88.34138802907864,
+      "phi0_hot": 2.6527012624785518,
+      "phi0_cold": 4.896139478612074,
+      "charge_hot": 0.557122152784134,
+      "charge_cold": 0.10053886379313812,
+      "latent_entropy_MeV3": 8853444.872101052,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 774.0,
+    "spinodal_low_T_MeV": 83.7374707471408,
+    "spinodal_high_T_MeV": 96.81595856528357,
+    "coexistence": {
+      "T_MeV": 87.91078184281872,
+      "phi0_hot": 2.644777671722218,
+      "phi0_cold": 4.916491537187057,
+      "charge_hot": 0.55999559703834,
+      "charge_cold": 0.09753590433701002,
+      "latent_entropy_MeV3": 8927966.525746305,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 778.0,
+    "spinodal_low_T_MeV": 83.1825002329689,
+    "spinodal_high_T_MeV": 96.70522003392892,
+    "coexistence": {
+      "T_MeV": 87.47658125063373,
+      "phi0_hot": 2.6369045319982716,
+      "phi0_cold": 4.9368261440629295,
+      "charge_hot": 0.5628514057034344,
+      "charge_cold": 0.09458008127180031,
+      "latent_entropy_MeV3": 9001680.401324175,
+      "pressure_residual_MeV4": 1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 782.0,
+    "spinodal_low_T_MeV": 82.62350146008718,
+    "spinodal_high_T_MeV": 96.59490707177899,
+    "coexistence": {
+      "T_MeV": 87.03899204754124,
+      "phi0_hot": 2.62918118860486,
+      "phi0_cold": 4.9571324638840615,
+      "charge_hot": 0.5657030623634112,
+      "charge_cold": 0.09167321449332183,
+      "latent_entropy_MeV3": 9072858.416214705,
+      "pressure_residual_MeV4": -1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 786.0,
+    "spinodal_low_T_MeV": 82.06013087720731,
+    "spinodal_high_T_MeV": 96.48570301515028,
+    "coexistence": {
+      "T_MeV": 86.59767466471091,
+      "phi0_hot": 2.6215377617216,
+      "phi0_cold": 4.977450551501613,
+      "charge_hot": 0.56854253940488,
+      "charge_cold": 0.088811982052013,
+      "latent_entropy_MeV3": 9142652.575858895,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 790.0,
+    "spinodal_low_T_MeV": 81.4927479650636,
+    "spinodal_high_T_MeV": 96.3779166952247,
+    "coexistence": {
+      "T_MeV": 86.15303142210746,
+      "phi0_hot": 2.613996612637792,
+      "phi0_cold": 4.997769406365634,
+      "charge_hot": 0.5713749133786965,
+      "charge_cold": 0.0859994275555512,
+      "latent_entropy_MeV3": 9210666.49582961,
+      "pressure_residual_MeV4": -3.5762786865234375e-07
+    }
+  },
+  {
+    "mu_MeV": 794.0,
+    "spinodal_low_T_MeV": 80.92123551001178,
+    "spinodal_high_T_MeV": 96.27109859723646,
+    "coexistence": {
+      "T_MeV": 85.70478224199178,
+      "phi0_hot": 2.6065627473911217,
+      "phi0_cold": 5.018110263226022,
+      "charge_hot": 0.574200868409994,
+      "charge_cold": 0.08323340546593319,
+      "latent_entropy_MeV3": 9276763.178915553,
+      "pressure_residual_MeV4": -2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 798.0,
+    "spinodal_low_T_MeV": 80.34522094777108,
+    "spinodal_high_T_MeV": 96.16512848651813,
+    "coexistence": {
+      "T_MeV": 85.25292862474892,
+      "phi0_hot": 2.599197646339494,
+      "phi0_cold": 5.038480783860126,
+      "charge_hot": 0.5770165474006689,
+      "charge_cold": 0.08051399200342425,
+      "latent_entropy_MeV3": 9341592.02237654,
+      "pressure_residual_MeV4": -4.76837158203125e-07
+    }
+  },
+  {
+    "mu_MeV": 802.0,
+    "spinodal_low_T_MeV": 79.76572273293935,
+    "spinodal_high_T_MeV": 96.06007160106084,
+    "coexistence": {
+      "T_MeV": 84.79776674809375,
+      "phi0_hot": 2.5919532622591106,
+      "phi0_cold": 5.058875601866607,
+      "charge_hot": 0.5798308412713722,
+      "charge_cold": 0.07784324784615831,
+      "latent_entropy_MeV3": 9404203.051790446,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 806.0,
+    "spinodal_low_T_MeV": 79.18169730489959,
+    "spinodal_high_T_MeV": 95.95641349767013,
+    "coexistence": {
+      "T_MeV": 84.33880514803865,
+      "phi0_hot": 2.5847441369010284,
+      "phi0_cold": 5.079324200048351,
+      "charge_hot": 0.5826317955154191,
+      "charge_cold": 0.07521791547729004,
+      "latent_entropy_MeV3": 9466081.791518312,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 810.0,
+    "spinodal_low_T_MeV": 78.59351328356797,
+    "spinodal_high_T_MeV": 95.85351453664062,
+    "coexistence": {
+      "T_MeV": 83.87653150217403,
+      "phi0_hot": 2.577664312029824,
+      "phi0_cold": 5.099815139107101,
+      "charge_hot": 0.5854339521986379,
+      "charge_cold": 0.0726412073160463,
+      "latent_entropy_MeV3": 9525527.29687797,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 814.0,
+    "spinodal_low_T_MeV": 78.00168735859151,
+    "spinodal_high_T_MeV": 95.75108851620722,
+    "coexistence": {
+      "T_MeV": 83.41061647517701,
+      "phi0_hot": 2.570616927826526,
+      "phi0_cold": 5.120335158643144,
+      "charge_hot": 0.5882250829450728,
+      "charge_cold": 0.0701119319939984,
+      "latent_entropy_MeV3": 9584238.436907038,
+      "pressure_residual_MeV4": 1.1920928955078125e-07
+    }
+  },
+  {
+    "mu_MeV": 818.0,
+    "spinodal_low_T_MeV": 77.40512713830275,
+    "spinodal_high_T_MeV": 95.65005280560351,
+    "coexistence": {
+      "T_MeV": 82.94112537043648,
+      "phi0_hot": 2.5636769176491203,
+      "phi0_cold": 5.140901573147588,
+      "charge_hot": 0.5910154496930751,
+      "charge_cold": 0.06763031886081279,
+      "latent_entropy_MeV3": 9640820.468056075,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 822.0,
+    "spinodal_low_T_MeV": 76.80512582750137,
+    "spinodal_high_T_MeV": 95.55005842027445,
+    "coexistence": {
+      "T_MeV": 82.4682430429909,
+      "phi0_hot": 2.5567870230550582,
+      "phi0_cold": 5.161533820720285,
+      "charge_hot": 0.5937996738530296,
+      "charge_cold": 0.06519715613979665,
+      "latent_entropy_MeV3": 9696319.979155015,
+      "pressure_residual_MeV4": 0.0
+    }
+  },
+  {
+    "mu_MeV": 826.0,
+    "spinodal_low_T_MeV": 76.20084357790853,
+    "spinodal_high_T_MeV": 95.45041049974891,
+    "coexistence": {
+      "T_MeV": 81.99173345690323,
+      "phi0_hot": 2.5499738441303244,
+      "phi0_cold": 5.182250187674861,
+      "charge_hot": 0.5965801243668867,
+      "charge_cold": 0.06281115535887952,
+      "latent_entropy_MeV3": 9750214.322035806,
+      "pressure_residual_MeV4": -2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 830.0,
+    "spinodal_low_T_MeV": 75.59184505490697,
+    "spinodal_high_T_MeV": 95.35173113709774,
+    "coexistence": {
+      "T_MeV": 81.51170293775094,
+      "phi0_hot": 2.54323751943178,
+      "phi0_cold": 5.203056390711082,
+      "charge_hot": 0.5993592810126059,
+      "charge_cold": 0.0604729968352299,
+      "latent_entropy_MeV3": 9802462.374313077,
+      "pressure_residual_MeV4": -2.384185791015625e-07
+    }
+  },
+  {
+    "mu_MeV": 834.0,
+    "spinodal_low_T_MeV": 74.98012379157375,
+    "spinodal_high_T_MeV": 95.25426241273257,
+    "coexistence": {
+      "T_MeV": 81.02809581644877,
+      "phi0_hot": 2.5365401242407675,
+      "phi0_cold": 5.223929047095353,
+      "charge_hot": 0.6021312684767874,
+      "charge_cold": 0.05818309980382584,
+      "latent_entropy_MeV3": 9853759.283703929,
+      "pressure_residual_MeV4": -5.960464477539062e-07
+    }
+  },
+  {
+    "mu_MeV": 838.0,
+    "spinodal_low_T_MeV": 74.36333101110445,
+    "spinodal_high_T_MeV": 95.15753742328633,
+    "coexistence": {
+      "T_MeV": 80.54102300138882,
+      "phi0_hot": 2.529935489669221,
+      "phi0_cold": 5.244857397061528,
+      "charge_hot": 0.6049061190418352,
+      "charge_cold": 0.05594234741583747,
+      "latent_entropy_MeV3": 9903033.05967419,
+      "pressure_residual_MeV4": 7.152557373046875e-07
+    }
+  },
+  {
+    "mu_MeV": 842.0,
+    "spinodal_low_T_MeV": 73.74276663265833,
+    "spinodal_high_T_MeV": 95.06148810963147,
+    "coexistence": {
+      "T_MeV": 80.05023772401141,
+      "phi0_hot": 2.5233544684139537,
+      "phi0_cold": 5.265906459834705,
+      "charge_hot": 0.6076720466530822,
+      "charge_cold": 0.053748976362282604,
+      "latent_entropy_MeV3": 9951614.622223873,
+      "pressure_residual_MeV4": 9.5367431640625e-07
+    }
+  },
+  {
+    "mu_MeV": 846.0,
+    "spinodal_low_T_MeV": 73.11865167032525,
+    "spinodal_high_T_MeV": 94.96603640713252,
+    "coexistence": {
+      "T_MeV": 79.55614179248968,
+      "phi0_hot": 2.516869085297429,
+      "phi0_cold": 5.287074954257203,
+      "charge_hot": 0.6104425140639191,
+      "charge_cold": 0.05160483787199822,
+      "latent_entropy_MeV3": 9998103.030522319,
+      "pressure_residual_MeV4": 5.960464477539062e-07
+    }
+  },
+  {
+    "mu_MeV": 850.0,
+    "spinodal_low_T_MeV": 72.48921955785241,
+    "spinodal_high_T_MeV": 94.87183566195274,
+    "coexistence": {
+      "T_MeV": 79.05816285622153,
+      "phi0_hot": 2.5103944982114976,
+      "phi0_cold": 5.308342514371378,
+      "charge_hot": 0.6132049488607382,
+      "charge_cold": 0.04950813425246607,
+      "latent_entropy_MeV3": 10044050.877980636,
+      "pressure_residual_MeV4": 2.384185791015625e-07
+    }
+  }
+]

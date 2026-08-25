@@ -1,0 +1,149 @@
+{
+  "factoring": "F=exp(-p A)y with y'(r_cut)=0",
+  "normalizable_powers": {
+    "tensor": 4.0,
+    "vector": 2.0,
+    "singlet": 1.3729525552039172
+  },
+  "shooting": [
+    {
+      "sector": "tensor",
+      "mode": 0,
+      "Re_omega": 0.9365852064372638,
+      "Im_omega": -0.43344931655843155,
+      "source_residual": 9.47508224301455e-15,
+      "success": true,
+      "optimizer_success": true,
+      "distance_from_initial": 0.00012601965588547159,
+      "evaluations": 3
+    },
+    {
+      "sector": "tensor",
+      "mode": 1,
+      "Re_omega": 1.5756605455107127,
+      "Im_omega": -0.7242112422374728,
+      "source_residual": 3.459719862488411e-11,
+      "success": false,
+      "optimizer_success": true,
+      "distance_from_initial": 0.13075717265567885,
+      "evaluations": 10
+    },
+    {
+      "sector": "tensor",
+      "mode": 2,
+      "Re_omega": 2.054389630384882e-06,
+      "Im_omega": -1.2211919448311468,
+      "source_residual": 48527.87829342466,
+      "success": false,
+      "optimizer_success": true,
+      "distance_from_initial": 0.2500000000084408,
+      "evaluations": 13
+    },
+    {
+      "sector": "vector",
+      "mode": 0,
+      "Re_omega": 0.8442710399991116,
+      "Im_omega": -0.05158393566646418,
+      "source_residual": 3.9279184964957006e-14,
+      "success": true,
+      "optimizer_success": true,
+      "distance_from_initial": 2.2072323567883353e-07,
+      "evaluations": 2
+    },
+    {
+      "sector": "vector",
+      "mode": 1,
+      "Re_omega": 1.4487766219732154,
+      "Im_omega": -0.43172065892849076,
+      "source_residual": 9.633646207779098e-14,
+      "success": true,
+      "optimizer_success": true,
+      "distance_from_initial": 0.00016960665382788847,
+      "evaluations": 3
+    },
+    {
+      "sector": "vector",
+      "mode": 2,
+      "Re_omega": 0.2499999999999175,
+      "Im_omega": -0.7858303277579005,
+      "source_residual": 109.70777604396055,
+      "success": false,
+      "optimizer_success": true,
+      "distance_from_initial": 0.3535533905932737,
+      "evaluations": 32
+    },
+    {
+      "sector": "singlet",
+      "mode": 0,
+      "Re_omega": 0.7462047610067616,
+      "Im_omega": -0.12804252173623262,
+      "source_residual": 9.304897052683321e-12,
+      "success": true,
+      "optimizer_success": true,
+      "distance_from_initial": 0.0005273451082892549,
+      "evaluations": 3
+    }
+  ],
+  "maximum_shooting_source_residual": 48527.87829342466,
+  "maximum_factored_distance_to_shooting": 0.06997639253972154,
+  "minimum_overlap": 0.999671438468906,
+  "maximum_eigenvalue_condition": 480078619.4884917,
+  "all_shooting_roots_successful": false,
+  "accepted_shooting_roots": 4,
+  "maximum_accepted_shooting_parameter_shift": 0.000298224872969948,
+  "all_accepted_shooting_variants_successful": true,
+  "validated_modes": [
+    {
+      "sector": "tensor",
+      "mode": 0,
+      "Re_omega_num": 0.9365852064372638,
+      "Im_omega_num": -0.43344931655843155,
+      "Re_omega_hat": 1.8731704128745277,
+      "Im_omega_hat": -0.8668986331168631,
+      "Re_error_hat": 0.0002442215321154517,
+      "Im_error_hat": 0.000536866958978921,
+      "shooting_source_residual": 9.47508224301455e-15,
+      "minimum_overlap": 0.999999880175681,
+      "maximum_condition": 204825.80662952818
+    },
+    {
+      "sector": "vector",
+      "mode": 0,
+      "Re_omega_num": 0.8442710399991116,
+      "Im_omega_num": -0.05158393566646418,
+      "Re_omega_hat": 1.6885420799982231,
+      "Im_omega_hat": -0.10316787133292836,
+      "Re_error_hat": 3.56412931323824e-06,
+      "Im_error_hat": 5.17865703016096e-06,
+      "shooting_source_residual": 3.9279184964957006e-14,
+      "minimum_overlap": 0.9999974392262839,
+      "maximum_condition": 451.1909009039675
+    },
+    {
+      "sector": "vector",
+      "mode": 1,
+      "Re_omega_num": 1.4487766219732154,
+      "Im_omega_num": -0.43172065892849076,
+      "Re_omega_hat": 2.897553243946431,
+      "Im_omega_hat": -0.8634413178569815,
+      "Re_error_hat": 0.0033870544049592333,
+      "Im_error_hat": 0.0011683153207594499,
+      "shooting_source_residual": 9.633646207779098e-14,
+      "minimum_overlap": 0.9999965120661962,
+      "maximum_condition": 13638.916060711568
+    },
+    {
+      "sector": "singlet",
+      "mode": 0,
+      "Re_omega_num": 0.7462047610067616,
+      "Im_omega_num": -0.12804252173623262,
+      "Re_omega_hat": 1.4924095220135232,
+      "Im_omega_hat": -0.25608504347246525,
+      "Re_error_hat": 0.0011975209304275758,
+      "Im_error_hat": 0.0012321017272892698,
+      "shooting_source_residual": 9.304897052683321e-12,
+      "minimum_overlap": 0.9999994557099428,
+      "maximum_condition": 503.22250281603766
+    }
+  ]
+}

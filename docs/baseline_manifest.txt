@@ -1,0 +1,20 @@
+# Baseline manifest: pre-jhep-rebuild
+
+Commit: c3c71a7290936457dddc4ee1e253c60e19985b7b
+Annotated tag: pre-jhep-rebuild
+
+Git blob IDs:
+
+bad106a02f6e7feb6f5192b6a38d7a639c75ab9a  paper/main.pdf
+e0aed4e6c0c1717abd1178cbdff2c4e2948ca78f  paper/main.tex
+21e550f15ebb5d93419635e6d162a359644d51f8  results/python/background_scan.csv
+e8080dddcf3711e52b62b43cabef2b8371141390  results/python/qnm_modes.csv
+e1315aaf4c4a933b8972912ab72c1520b8536c70  results/python/qnm_temperature_scan.csv
+5aaee042ac6021e9bf07d7efc3dabbbebe579f7a  results/python/summary.json
+a05b62dbb4c99c67dc7c2f75fad4489f1584d26f  results/python/tensor_dispersion.csv
+033c12e13e143bbd633afadcb5a89ade05e4546d  results/python/thermodynamic_validation.csv
+
+The annotated tag is the authoritative archive of the original manuscript and
+numerical outputs. Restore or inspect a file with `git show
+pre-jhep-rebuild:<path>`; do not copy baseline data into the active results
+directory.

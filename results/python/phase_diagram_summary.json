@@ -1,0 +1,19 @@
+{
+  "surface_points": 17061,
+  "surface_grid": {
+    "n_phi": 141,
+    "n_charge": 121,
+    "phi_min": 2.2,
+    "phi_max": 6.5,
+    "charge_min": 0.02,
+    "charge_max": 0.62,
+    "mu_min_MeV": 594.0,
+    "mu_max_MeV": 850.0,
+    "mu_count": 65
+  },
+  "failed_surface_points": 4156,
+  "max_abs_constraint": 4.723188322077303e-09,
+  "max_abs_gauss_drift": 8.983229138337379e-08,
+  "constant_mu_lines": 65,
+  "coexistence_points": 65
+}

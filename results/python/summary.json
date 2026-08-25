@@ -17,123 +17,154 @@
   "nu": 1.3135237223980414,
   "background_grid_points": 90,
   "representative": {
-    "phi0": 3.6779006854710103,
-    "charge_fraction": 0.3203426861435397,
-    "Phi1": 42.61558187225568,
-    "constraint": 3.390013603166152e-11,
-    "gauss_drift": 2.220446049250313e-16,
-    "A_slope": 7.493547900962268,
-    "A_intercept": 0.6251810322462427,
-    "h0": 0.017808405022534196,
-    "phiA": 11.663406112772007,
-    "Phi0": 0.46332649285542815,
-    "Phi2": -0.01778646006806918,
-    "T_MeV": 103.27804844440482,
-    "mu_MeV": 601.3191302147603,
-    "mu_over_T": 5.822332424672547,
-    "s_over_T3": 2.6059644386033467,
-    "rho_over_T3": 0.0552796934570474,
-    "slope_identity_error": 9.818035273667647e-12,
-    "phiA_relative_spread": 1.3219731364492864e-06
+    "phi0": 3.528280966207555,
+    "charge_fraction": 0.34637356467181973,
+    "Phi1": 34.66842091976482,
+    "constraint": 1.8801528049749313e-11,
+    "gauss_drift": 3.3306690738754696e-16,
+    "A_slope": 7.048323575329636,
+    "A_intercept": 0.5832188573021512,
+    "h0": 0.02012928426437903,
+    "phiA": 10.696900712609757,
+    "Phi0": 0.45506229919009233,
+    "Phi2": -0.024786773208800607,
+    "T_MeV": 103.75448209013845,
+    "mu_MeV": 593.3180868149859,
+    "mu_over_T": 5.718481504245097,
+    "s_over_T3": 3.131651654359888,
+    "rho_over_T3": 0.08707618755169357,
+    "slope_identity_error": 1.7834622667578515e-12,
+    "phiA_relative_spread": 1.345198000873124e-06
   },
-  "nearest_cep_background": {
-    "phi0": 3.6779006854710103,
-    "charge_fraction": 0.3203426861435397,
+  "independent_cusp_background": {
+    "definition": "local cusp of the horizon-to-thermodynamics map",
+    "source_file": "results\\python\\reference_cusp_uv1e5_h10.json",
+    "phi0": 3.528280966207555,
+    "charge_fraction": 0.34637356467181973,
+    "reference_UV_T_MeV": 103.75528111978664,
+    "reference_UV_mu_MeV": 593.3226560539789,
+    "A_slope": 7.048323575329636,
+    "A_intercept": 0.5832188573021512,
+    "h0": 0.02012928426437903,
+    "phiA": 10.696900712609757,
+    "Phi0": 0.45506229919009233,
+    "Phi2": -0.024786773208800607,
+    "T_MeV": 103.75448209013845,
+    "mu_MeV": 593.3180868149859,
+    "mu_over_T": 5.718481504245097,
+    "s_over_T3": 3.131651654359888,
+    "rho_over_T3": 0.08707618755169357,
+    "slope_identity_error": 1.7834622667578515e-12,
+    "phiA_relative_spread": 1.345198000873124e-06
+  },
+  "hdf5_metadata_inverse_diagnostic": {
+    "phi0": 3.6779006518488147,
+    "charge_fraction": 0.32034268575311997,
     "target_T_MeV": 103.89777513571676,
     "target_mu_MeV": 602.4749076542938,
-    "delta_T_MeV": -0.6197266913119392,
-    "delta_mu_MeV": -1.1557774395334945,
-    "relative_delta_T": -0.005964773456432759,
-    "relative_delta_mu": -0.0019183826991790998,
-    "fit_residual_norm": 0.006283245301487771,
+    "delta_T_MeV": -0.6197257207113864,
+    "delta_mu_MeV": -1.155795046376511,
+    "relative_delta_T": -0.005964764114552712,
+    "relative_delta_mu": -0.0019184119233721653,
+    "fit_residual_norm": 0.006283245301639344,
     "inverse_map_singular_values": [
-      3.459721536198447,
-      0.0019350346045284362
+      3.459721378214954,
+      0.0019350516494244544
     ],
-    "inverse_map_condition_number": 1787.9378116039293,
-    "A_slope": 7.493547900962268,
-    "A_intercept": 0.6251810322462427,
-    "h0": 0.017808405022534196,
-    "phiA": 11.663406112772007,
-    "Phi0": 0.46332649285542815,
-    "Phi2": -0.01778646006806918,
-    "T_MeV": 103.27804844440482,
-    "mu_MeV": 601.3191302147603,
-    "mu_over_T": 5.822332424672547,
-    "s_over_T3": 2.6059644386033467,
-    "rho_over_T3": 0.0552796934570474,
-    "slope_identity_error": 9.818035273667647e-12,
-    "phiA_relative_spread": 1.3219731364492864e-06
+    "inverse_map_condition_number": 1787.9219809166254,
+    "A_slope": 7.493547821642413,
+    "A_intercept": 0.6251810202388561,
+    "h0": 0.01780840539954122,
+    "phiA": 11.663405806628885,
+    "Phi0": 0.463326474934747,
+    "Phi2": -0.017786461036903498,
+    "T_MeV": 103.27804941500537,
+    "mu_MeV": 601.3191126079173,
+    "mu_over_T": 5.8223321994746255,
+    "s_over_T3": 2.6059645213564258,
+    "rho_over_T3": 0.055279697638431206,
+    "slope_identity_error": 9.818257318272572e-12,
+    "phiA_relative_spread": 1.321973338768919e-06
   },
   "pseudospectral_qnm_candidates": [
     {
       "sector": "tensor",
       "mode": 0,
-      "Re_omega_num": 0.9145471666822018,
-      "Im_omega_num": -0.41016724442990804,
-      "Re_w": 1.8290943333644036,
-      "Im_w": -0.8203344888598161,
-      "residual": 3.6981731707832653e-16,
-      "resolution_spread": 8.639757168683903e-06
+      "Re_omega_num": 0.9367057664408328,
+      "Im_omega_num": -0.433412625425866,
+      "Re_w": 1.8734115328816656,
+      "Im_w": -0.866825250851732,
+      "residual": 1.47772713412273e-16,
+      "resolution_spread": 5.200527635684636e-06
     },
     {
       "sector": "tensor",
       "mode": 1,
-      "Re_omega_num": 1.4161669816454574,
-      "Im_omega_num": -0.7477264071223594,
-      "Re_w": 2.832333963290915,
-      "Im_w": -1.4954528142447188,
-      "residual": 3.801591974720789e-16,
-      "resolution_spread": 0.0003129980297395193
+      "Re_omega_num": 1.4635629682129452,
+      "Im_omega_num": -0.7915281893227206,
+      "Re_w": 2.9271259364258904,
+      "Im_w": -1.5830563786454412,
+      "residual": 1.4655533967329438e-16,
+      "resolution_spread": 0.00011583987647599206
     },
     {
       "sector": "tensor",
       "mode": 2,
-      "Re_omega_num": -5.96772691291631e-14,
-      "Im_omega_num": -1.575424134573792,
-      "Re_w": -1.193545382583262e-13,
-      "Im_w": -3.150848269147584,
-      "residual": 3.792248788600915e-16,
-      "resolution_spread": 0.0073516284831254275
+      "Re_omega_num": -1.8956381304548346e-13,
+      "Im_omega_num": -1.4711919448311466,
+      "Re_w": -3.7912762609096693e-13,
+      "Im_w": -2.942383889662293,
+      "residual": 1.7345076351287166e-16,
+      "resolution_spread": 0.003174218034623255
     },
     {
       "sector": "vector",
       "mode": 0,
-      "Re_omega_num": 0.8533846773467171,
-      "Im_omega_num": -0.04044124073550115,
-      "Re_w": 1.7067693546934342,
-      "Im_w": -0.0808824814710023,
-      "residual": 6.22281321295198e-17,
-      "resolution_spread": 6.666435857636189e-06
+      "Re_omega_num": 0.8442711948294281,
+      "Im_omega_num": -0.051583778356833705,
+      "Re_w": 1.6885423896588563,
+      "Im_w": -0.10316755671366741,
+      "residual": 1.0149372769651299e-16,
+      "resolution_spread": 3.998724972533049e-06
     },
     {
       "sector": "vector",
       "mode": 1,
-      "Re_omega_num": 1.4318919596020334,
-      "Im_omega_num": -0.3941571270474702,
-      "Re_w": 2.863783919204067,
-      "Im_w": -0.7883142540949404,
-      "residual": 5.195868448891944e-17,
-      "resolution_spread": 0.0026044823047090895
+      "Re_omega_num": 1.448620429816567,
+      "Im_omega_num": -0.4316545497216871,
+      "Re_w": 2.897240859633134,
+      "Im_w": -0.8633090994433742,
+      "residual": 1.1783104135177476e-16,
+      "resolution_spread": 0.0017191679164605615
     },
     {
       "sector": "vector",
       "mode": 2,
-      "Re_omega_num": -1.3136041780530612e-13,
-      "Im_omega_num": -1.0398069078983176,
-      "Re_w": -2.6272083561061224e-13,
-      "Im_w": -2.0796138157966353,
-      "residual": 7.460682199568535e-17,
-      "resolution_spread": 0.0025848629960738556
+      "Re_omega_num": -8.245358315303496e-14,
+      "Im_omega_num": -1.0358303277579004,
+      "Re_w": -1.6490716630606992e-13,
+      "Im_w": -2.071660655515801,
+      "residual": 1.0754257586929576e-16,
+      "resolution_spread": 0.0018501657658795967
+    },
+    {
+      "sector": "singlet",
+      "mode": 0,
+      "Re_omega_num": 0.745748548075841,
+      "Im_omega_num": -0.12777801724686152,
+      "Re_w": 1.491497096151682,
+      "Im_w": -0.25555603449372305,
+      "residual": 3.9367939919845095e-17,
+      "resolution_spread": 0.002977991916594472
     }
   ],
   "tensor_dispersion_points": 32,
-  "temperature_scan_points": 21,
+  "horizon_trajectory_points": 21,
   "thermodynamic_validation_points": 90,
   "thermodynamic_validation": {
     "temperature_range_MeV": [
-      74.6932557216259,
-      1003.7007035142728
+      74.6932557216255,
+      1003.700703514275
     ],
     "entropy_range": [
       0.41755398830138074,
@@ -141,9 +172,9 @@
     ],
     "chi2_B_range": [
       1.655400167667968e-06,
-      0.3186900637828004
+      0.3186900637828003
     ],
-    "max_relative_step_shift": 0.0020579719683026104,
+    "max_relative_step_shift": 0.002057971968303122,
     "max_constraint": 3.48998909703432e-09,
     "max_gauss_drift": 4.440892098500626e-16,
     "charge_steps": [
@@ -152,5 +183,5 @@
       0.02
     ]
   },
-  "scope": "tensor finite-k and homogeneous vector only; no scalar/helicity-1/helicity-0 claims"
+  "scope": "complete homogeneous SO(3) sectors plus tensor finite-k; coupled finite-k helicity-1/helicity-0 spectra remain gated"
 }

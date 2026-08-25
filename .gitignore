@@ -27,4 +27,8 @@ Thumbs.db
 !/paper/main.pdf
 /paper/tools/
 /paper/tmp/
+/paper/*.tar.gz
+/paper/*.zip
+/tmp/
+/external/
 /.analysis-deps/

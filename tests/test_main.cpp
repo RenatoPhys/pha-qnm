@@ -12,6 +12,7 @@ int main() {
       {"background", test_background},
       {"chebyshev", test_chebyshev},
       {"operators", test_operators},
+      {"generated_kernels", test_generated_kernels},
       {"hydro", test_hydro}
 #ifdef PHA_QNM_HAS_LAPACK
       , {"dense_gevp", test_dense_gevp}

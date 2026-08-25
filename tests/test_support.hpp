@@ -21,6 +21,7 @@ void test_horizon_series();
 void test_background();
 void test_chebyshev();
 void test_operators();
+void test_generated_kernels();
 void test_hydro();
 #ifdef PHA_QNM_HAS_LAPACK
 void test_dense_gevp();

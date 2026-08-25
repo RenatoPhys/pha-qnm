@@ -1,0 +1,220 @@
+{
+  "coordinate_order": [
+    "v",
+    "r",
+    "x",
+    "y",
+    "z"
+  ],
+  "equations": {
+    "constraint_Er_r": {
+      "coefficients": {
+        "Haa": "-Ar*sigma*exp(-A)",
+        "Haar": "-(2*Ar*h + hr/2 + sigma*exp(-A))",
+        "Haarr": "-h",
+        "Hvv": "4*Ar**2 + Arr",
+        "Hvvr": "3*Ar",
+        "Hvvrr": "1/2",
+        "Hvz": "Ar*p*exp(-A)",
+        "Hvzr": "p*exp(-A)/2",
+        "Hzz": "-Ar*sigma*exp(-A)/2",
+        "Hzzr": "-(Ar*h + hr/4 + sigma*exp(-A)/2)",
+        "Hzzrr": "-h/2",
+        "avr": "2*Phir*f*exp(-2*A)/3",
+        "varphi": "(2*Phir**2*fphi*exp(-2*A) - 2*Vphi - 3*phir*sigma*exp(-A))/6",
+        "varphir": "-h*phir"
+      },
+      "expression": "4*Ar**2*Hvv - Ar*Haa*sigma*exp(-A) - 2*Ar*Haar*h + 3*Ar*Hvvr + Ar*Hvz*p*exp(-A) - Ar*Hzz*sigma*exp(-A)/2 - Ar*Hzzr*h + Arr*Hvv - Haar*hr/2 - Haar*sigma*exp(-A) - Haarr*h + Hvvrr/2 + Hvzr*p*exp(-A)/2 - Hzzr*hr/4 - Hzzr*sigma*exp(-A)/2 - Hzzrr*h/2 + Phir**2*fphi*varphi*exp(-2*A)/3 + 2*Phir*avr*f*exp(-2*A)/3 - Vphi*varphi/3 - h*phir*varphir - phir*sigma*varphi*exp(-A)/2"
+    },
+    "constraint_Er_v": {
+      "coefficients": {
+        "Haa": "sigma*(hr/2 - sigma*exp(-A))",
+        "Haar": "-h*sigma",
+        "Hvv": "-4*Ar**2*h*exp(A) - 3*Ar*hr*exp(A) + 3*Ar*sigma/2 - Arr*h*exp(A) + Phir**2*f*exp(-A)/3 - V*exp(A)/3 - hrr*exp(A)/2 - p**2*exp(-A)/2",
+        "Hvz": "p*(-hr/2 + sigma*exp(-A))",
+        "Hvzr": "h*p/2",
+        "Hzz": "sigma*(hr - 2*sigma*exp(-A))/4",
+        "Hzzr": "-h*sigma/2",
+        "varphi": "-h*phir*sigma/2"
+      },
+      "expression": "-4*Ar**2*Hvv*h*exp(A) - 3*Ar*Hvv*hr*exp(A) + 3*Ar*Hvv*sigma/2 - Arr*Hvv*h*exp(A) + Haa*hr*sigma/2 - Haa*sigma**2*exp(-A) - Haar*h*sigma + Hvv*Phir**2*f*exp(-A)/3 - Hvv*V*exp(A)/3 - Hvv*hrr*exp(A)/2 - Hvv*p**2*exp(-A)/2 - Hvz*hr*p/2 + Hvz*p*sigma*exp(-A) + Hvzr*h*p/2 + Hzz*hr*sigma/4 - Hzz*sigma**2*exp(-A)/2 - Hzzr*h*sigma/2 - h*phir*sigma*varphi/2"
+    },
+    "constraint_Er_z": {
+      "coefficients": {
+        "Haa": "-p*sigma*exp(-A)",
+        "Haar": "-h*p",
+        "Hvv": "3*Ar*p/2",
+        "Hvvr": "p/2",
+        "Hvz": "-(4*Ar**2*h*exp(A) + Ar*hr*exp(A) + Arr*h*exp(A) + Phir**2*f*exp(-A)/6 + V*exp(A)/3)",
+        "Hvzr": "-sigma/2",
+        "av": "Phir*f*p*exp(-2*A)/2",
+        "az": "-Phir*f*sigma*exp(-2*A)/2",
+        "varphi": "-h*p*phir/2"
+      },
+      "expression": "-4*Ar**2*Hvz*h*exp(A) + 3*Ar*Hvv*p/2 - Ar*Hvz*hr*exp(A) - Arr*Hvz*h*exp(A) - Haa*p*sigma*exp(-A) - Haar*h*p + Hvvr*p/2 - Hvz*Phir**2*f*exp(-A)/6 - Hvz*V*exp(A)/3 - Hvzr*sigma/2 + Phir*av*f*p*exp(-2*A)/2 - Phir*az*f*sigma*exp(-2*A)/2 - h*p*phir*varphi/2"
+    },
+    "constraint_M_r": {
+      "coefficients": {
+        "Haa": "Phir*f*sigma*exp(-2*A)",
+        "Hvz": "-Phir*f*p*exp(-2*A)",
+        "Hzz": "Phir*f*sigma*exp(-2*A)/2",
+        "av": "f*p**2*exp(-3*A)",
+        "avr": "f*sigma*exp(-2*A)",
+        "az": "-f*p*sigma*exp(-3*A)",
+        "azr": "-f*h*p*exp(-2*A)",
+        "varphi": "Phir*fphi*sigma*exp(-2*A)"
+      },
+      "expression": "(Haa*Phir*f*sigma - Hvz*Phir*f*p + Hzz*Phir*f*sigma/2 + Phir*fphi*sigma*varphi + av*f*p**2*exp(-A) + avr*f*sigma - az*f*p*sigma*exp(-A) - azr*f*h*p)*exp(-2*A)"
+    },
+    "diagnostic_E_vv": {
+      "coefficients": {
+        "Haa": "sigma*(Ar*h*exp(A) + hr*exp(A)/2 - sigma)",
+        "Haar": "h*(Ar*h + hr/2)*exp(2*A)",
+        "Hvv": "-8*Ar**2*h*exp(2*A) - 3*Ar*hr*exp(2*A) + 3*Ar*sigma*exp(A)/2 - 2*Arr*h*exp(2*A) + Phir**2*f/3 - V*exp(2*A)/3 - hrr*exp(2*A)/2 - p**2/2",
+        "Hvvr": "-3*Ar*h*exp(2*A)",
+        "Hvvrr": "-h*exp(2*A)/2",
+        "Hvz": "p*(-Ar*h*exp(A) - hr*exp(A)/2 + sigma)",
+        "Hzz": "sigma*(2*Ar*h*exp(A) + hr*exp(A) - 2*sigma)/4",
+        "Hzzr": "h*(2*Ar*h + hr)*exp(2*A)/4",
+        "avr": "-2*Phir*f*h/3",
+        "varphi": "h*(-Phir**2*fphi + Vphi*exp(2*A))/3"
+      },
+      "expression": "-8*Ar**2*Hvv*h*exp(2*A) + Ar*Haa*h*sigma*exp(A) + Ar*Haar*h**2*exp(2*A) - 3*Ar*Hvv*hr*exp(2*A) + 3*Ar*Hvv*sigma*exp(A)/2 - 3*Ar*Hvvr*h*exp(2*A) - Ar*Hvz*h*p*exp(A) + Ar*Hzz*h*sigma*exp(A)/2 + Ar*Hzzr*h**2*exp(2*A)/2 - 2*Arr*Hvv*h*exp(2*A) + Haa*hr*sigma*exp(A)/2 - Haa*sigma**2 + Haar*h*hr*exp(2*A)/2 + Hvv*Phir**2*f/3 - Hvv*V*exp(2*A)/3 - Hvv*hrr*exp(2*A)/2 - Hvv*p**2/2 - Hvvrr*h*exp(2*A)/2 - Hvz*hr*p*exp(A)/2 + Hvz*p*sigma + Hzz*hr*sigma*exp(A)/4 - Hzz*sigma**2/2 + Hzzr*h*hr*exp(2*A)/4 - Phir**2*fphi*h*varphi/3 - 2*Phir*avr*f*h/3 + Vphi*h*varphi*exp(2*A)/3"
+    },
+    "diagnostic_E_vz": {
+      "coefficients": {
+        "Haa": "-p*sigma",
+        "Hvv": "3*Ar*p*exp(A)/2",
+        "Hvvr": "p*exp(A)/2",
+        "Hvz": "-(4*Ar**2*h*exp(2*A) + Ar*hr*exp(2*A) + Arr*h*exp(2*A) + Phir**2*f/6 + V*exp(2*A)/3)",
+        "Hvzr": "-(2*Ar*h*exp(A) + sigma/2)*exp(A)",
+        "Hvzrr": "-h*exp(2*A)/2",
+        "av": "Phir*f*p*exp(-A)/2",
+        "az": "-Phir*f*sigma*exp(-A)/2",
+        "azr": "-Phir*f*h/2"
+      },
+      "expression": "-4*Ar**2*Hvz*h*exp(2*A) + 3*Ar*Hvv*p*exp(A)/2 - Ar*Hvz*hr*exp(2*A) - 2*Ar*Hvzr*h*exp(2*A) - Arr*Hvz*h*exp(2*A) - Haa*p*sigma + Hvvr*p*exp(A)/2 - Hvz*Phir**2*f/6 - Hvz*V*exp(2*A)/3 - Hvzr*sigma*exp(A)/2 - Hvzrr*h*exp(2*A)/2 + Phir*av*f*p*exp(-A)/2 - Phir*az*f*sigma*exp(-A)/2 - Phir*azr*f*h/2"
+    },
+    "diagnostic_E_zz": {
+      "coefficients": {
+        "Haa": "-(Ar*sigma*exp(A) + p**2)",
+        "Haar": "-Ar*h*exp(2*A)",
+        "Hvv": "(4*Ar**2 + Arr)*exp(2*A)",
+        "Hvvr": "Ar*exp(2*A)",
+        "Hvz": "4*Ar*p*exp(A)",
+        "Hvzr": "p*exp(A)",
+        "Hzz": "-(4*Ar**2*h*exp(2*A) + Ar*hr*exp(2*A) + 2*Ar*sigma*exp(A) + Arr*h*exp(2*A) + Phir**2*f/6 + V*exp(2*A)/3)",
+        "Hzzr": "-(5*Ar*h*exp(A)/2 + hr*exp(A)/2 + sigma)*exp(A)",
+        "Hzzrr": "-h*exp(2*A)/2",
+        "avr": "-Phir*f/3",
+        "varphi": "-(Phir**2*fphi + 2*Vphi*exp(2*A))/6"
+      },
+      "expression": "4*Ar**2*Hvv*exp(2*A) - 4*Ar**2*Hzz*h*exp(2*A) - Ar*Haa*sigma*exp(A) - Ar*Haar*h*exp(2*A) + Ar*Hvvr*exp(2*A) + 4*Ar*Hvz*p*exp(A) - Ar*Hzz*hr*exp(2*A) - 2*Ar*Hzz*sigma*exp(A) - 5*Ar*Hzzr*h*exp(2*A)/2 + Arr*Hvv*exp(2*A) - Arr*Hzz*h*exp(2*A) - Haa*p**2 + Hvzr*p*exp(A) - Hzz*Phir**2*f/6 - Hzz*V*exp(2*A)/3 - Hzzr*hr*exp(2*A)/2 - Hzzr*sigma*exp(A) - Hzzrr*h*exp(2*A)/2 - Phir**2*fphi*varphi/6 - Phir*avr*f/3 - Vphi*varphi*exp(2*A)/3"
+    },
+    "evolution_E_aa": {
+      "coefficients": {
+        "Haa": "-(4*Ar**2*h*exp(2*A) + Ar*hr*exp(2*A) + 5*Ar*sigma*exp(A)/2 + Arr*h*exp(2*A) + Phir**2*f/6 + V*exp(2*A)/3 + p**2/2)",
+        "Haar": "-(3*Ar*h*exp(A) + hr*exp(A)/2 + sigma)*exp(A)",
+        "Haarr": "-h*exp(2*A)/2",
+        "Hvv": "(4*Ar**2 + Arr)*exp(2*A)",
+        "Hvvr": "Ar*exp(2*A)",
+        "Hvz": "Ar*p*exp(A)",
+        "Hzz": "-Ar*sigma*exp(A)/2",
+        "Hzzr": "-Ar*h*exp(2*A)/2",
+        "avr": "-Phir*f/3",
+        "varphi": "-(Phir**2*fphi + 2*Vphi*exp(2*A))/6"
+      },
+      "expression": "-4*Ar**2*Haa*h*exp(2*A) + 4*Ar**2*Hvv*exp(2*A) - Ar*Haa*hr*exp(2*A) - 5*Ar*Haa*sigma*exp(A)/2 - 3*Ar*Haar*h*exp(2*A) + Ar*Hvvr*exp(2*A) + Ar*Hvz*p*exp(A) - Ar*Hzz*sigma*exp(A)/2 - Ar*Hzzr*h*exp(2*A)/2 - Arr*Haa*h*exp(2*A) + Arr*Hvv*exp(2*A) - Haa*Phir**2*f/6 - Haa*V*exp(2*A)/3 - Haa*p**2/2 - Haar*hr*exp(2*A)/2 - Haar*sigma*exp(A) - Haarr*h*exp(2*A)/2 - Phir**2*fphi*varphi/6 - Phir*avr*f/3 - Vphi*varphi*exp(2*A)/3"
+    },
+    "evolution_E_rr": {
+      "coefficients": {
+        "Haar": "-Ar",
+        "Haarr": "-1",
+        "Hzzr": "-Ar/2",
+        "Hzzrr": "-1/2",
+        "varphir": "-phir"
+      },
+      "expression": "-Ar*Haar - Ar*Hzzr/2 - Haarr - Hzzrr/2 - phir*varphir"
+    },
+    "evolution_E_rv": {
+      "coefficients": {
+        "Haa": "-Ar*sigma",
+        "Haar": "-(Ar*h*exp(A) + hr*exp(A)/2 + sigma)",
+        "Hvv": "(4*Ar**2 + Arr)*exp(A)",
+        "Hvvr": "3*Ar*exp(A)",
+        "Hvvrr": "exp(A)/2",
+        "Hvz": "Ar*p",
+        "Hvzr": "p/2",
+        "Hzz": "-Ar*sigma/2",
+        "Hzzr": "-(2*Ar*h*exp(A) + hr*exp(A) + 2*sigma)/4",
+        "avr": "2*Phir*f*exp(-A)/3",
+        "varphi": "(2*Phir**2*fphi*exp(-A) - 2*Vphi*exp(A) - 3*phir*sigma)/6"
+      },
+      "expression": "4*Ar**2*Hvv*exp(A) - Ar*Haa*sigma - Ar*Haar*h*exp(A) + 3*Ar*Hvvr*exp(A) + Ar*Hvz*p - Ar*Hzz*sigma/2 - Ar*Hzzr*h*exp(A)/2 + Arr*Hvv*exp(A) - Haar*hr*exp(A)/2 - Haar*sigma + Hvvrr*exp(A)/2 + Hvzr*p/2 - Hzzr*hr*exp(A)/4 - Hzzr*sigma/2 + Phir**2*fphi*varphi*exp(-A)/3 + 2*Phir*avr*f*exp(-A)/3 - Vphi*varphi*exp(A)/3 - phir*sigma*varphi/2"
+    },
+    "evolution_E_rz": {
+      "coefficients": {
+        "Haar": "-p",
+        "Hvzr": "2*Ar*exp(A)",
+        "Hvzrr": "exp(A)/2",
+        "azr": "Phir*f*exp(-A)/2",
+        "varphi": "-p*phir/2"
+      },
+      "expression": "2*Ar*Hvzr*exp(A) - Haar*p + Hvzrr*exp(A)/2 + Phir*azr*f*exp(-A)/2 - p*phir*varphi/2"
+    },
+    "evolution_M_v": {
+      "coefficients": {
+        "Haar": "-Phir*f*exp(-2*A)",
+        "Hzzr": "-Phir*f*exp(-2*A)/2",
+        "avr": "-(2*Ar*f + fr)*exp(-2*A)",
+        "avrr": "-f*exp(-2*A)",
+        "azr": "-f*p*exp(-3*A)",
+        "varphi": "-(2*Ar*Phir*fphi + Phir*fphir + Phirr*fphi)*exp(-2*A)",
+        "varphir": "-Phir*fphi*exp(-2*A)"
+      },
+      "expression": "-(2*Ar*Phir*fphi*varphi + 2*Ar*avr*f + Haar*Phir*f + Hzzr*Phir*f/2 + Phir*fphi*varphir + Phir*fphir*varphi + Phirr*fphi*varphi + avr*fr + avrr*f + azr*f*p*exp(-A))*exp(-2*A)"
+    },
+    "evolution_M_z": {
+      "coefficients": {
+        "Hvz": "(2*Ar*Phir*f + Phir*fr + Phirr*f)*exp(-2*A)",
+        "Hvzr": "Phir*f*exp(-2*A)",
+        "av": "-p*(Ar*f + fr)*exp(-3*A)",
+        "avr": "-f*p*exp(-3*A)",
+        "az": "sigma*(Ar*f + fr)*exp(-3*A)",
+        "azr": "(2*Ar*f*h + f*hr + 2*f*sigma*exp(-A) + fr*h)*exp(-2*A)",
+        "azrr": "f*h*exp(-2*A)"
+      },
+      "expression": "(2*Ar*Hvz*Phir*f - Ar*av*f*p*exp(-A) + Ar*az*f*sigma*exp(-A) + 2*Ar*azr*f*h + Hvz*Phir*fr + Hvz*Phirr*f + Hvzr*Phir*f - av*fr*p*exp(-A) - avr*f*p*exp(-A) + az*fr*sigma*exp(-A) + azr*f*hr + 2*azr*f*sigma*exp(-A) + azr*fr*h + azrr*f*h)*exp(-2*A)"
+    },
+    "evolution_scalar": {
+      "coefficients": {
+        "Haa": "phir*sigma*exp(-A)",
+        "Haar": "h*phir",
+        "Hvv": "-(4*Ar*phir + phirr)",
+        "Hvvr": "-phir",
+        "Hvz": "-p*phir*exp(-A)",
+        "Hzz": "phir*sigma*exp(-A)/2",
+        "Hzzr": "h*phir/2",
+        "avr": "Phir*fphi*exp(-2*A)",
+        "varphi": "3*Ar*sigma*exp(-A) + Phir**2*fphiphi*exp(-2*A)/2 - Vphiphi + p**2*exp(-2*A)",
+        "varphir": "4*Ar*h + hr + 2*sigma*exp(-A)",
+        "varphirr": "h"
+      },
+      "expression": "-4*Ar*Hvv*phir + 4*Ar*h*varphir + 3*Ar*sigma*varphi*exp(-A) + Haa*phir*sigma*exp(-A) + Haar*h*phir - Hvv*phirr - Hvvr*phir - Hvz*p*phir*exp(-A) + Hzz*phir*sigma*exp(-A)/2 + Hzzr*h*phir/2 + Phir**2*fphiphi*varphi*exp(-2*A)/2 + Phir*avr*fphi*exp(-2*A) - Vphiphi*varphi + h*varphirr + hr*varphir + p**2*varphi*exp(-2*A) + 2*sigma*varphir*exp(-A)"
+    }
+  },
+  "fields": [
+    "Hvv",
+    "Hvz",
+    "Hzz",
+    "Haa",
+    "av",
+    "az",
+    "varphi"
+  ],
+  "fourier_replacements": {
+    "p": "i k",
+    "sigma": "-i omega"
+  },
+  "metric_normalization": "delta g_MN = exp(2 A) H_MN exp(sigma v + p z)"
+}

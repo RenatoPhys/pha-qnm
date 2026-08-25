@@ -1,0 +1,10 @@
+{
+  "reference_grid": {
+    "n_phi": 141,
+    "n_charge": 121
+  },
+  "comparison_rows": 128,
+  "max_abs_spinodal_low_delta_T_MeV": 0.017753988646660446,
+  "max_abs_spinodal_high_delta_T_MeV": 0.010533203622330234,
+  "max_abs_coexistence_delta_T_MeV": 0.008471301886018523
+}
