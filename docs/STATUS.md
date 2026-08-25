@@ -59,10 +59,9 @@ MSVC 19.44.35222, debug, release-portable, and release-data builds, 2026-08-23:
 - No coupled helicity-1/helicity-0 frequency, critical exponent, diffusion constant, pole collision, or spinodal growth rate is claimed. The manuscript follows the homogeneous Route B.
 - Posterior uncertainty is not propagated; every title/abstract/result claim is explicitly restricted to the MAP realization.
 - Author, affiliation, email, ORCID, funding, acknowledgment, and arXiv metadata must be supplied by the authors before submission.
-- The public GitHub repository still contains the pre-reconstruction commit;
-  this branch and its machine-readable outputs must be published there no
-  later than manuscript submission, then archived with a persistent DOI for
-  the JHEP proofreading stage.
+- The reconstructed branch and machine-readable outputs were published to the
+  public GitHub `main` branch beginning with commit `928b854`. A persistent DOI
+  for the release remains an author-controlled JHEP proofreading item.
 
 ## Next commands
 

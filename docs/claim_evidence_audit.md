@@ -35,5 +35,6 @@ gate is not closed.
 
 No scientific claim remains unsupported by the stored evidence. Literal
 submission is nevertheless prohibited until the author-controlled checklist in
-`paper/SUBMISSION_CHECKLIST.md` is closed. In particular, an unpushed local
-branch is not treated as public data availability.
+`paper/SUBMISSION_CHECKLIST.md` is closed. The claim-bearing source and outputs
+are public on `origin/main` beginning with commit `928b854`; authorship, arXiv,
+and persistent-release metadata remain outside this numerical audit.

@@ -27,9 +27,9 @@ Checked against the official JHEP author instructions and tool downloads on
   The manuscript compiles
   without undefined citations/references, duplicate labels, overfull boxes, or
   TeX errors.
-- The reproducibility appendix identifies the intended code repository and the
-  upstream posterior-data citation without claiming that the still-local
-  reconstruction has already been released.
+- The reconstructed source and machine-readable outputs were published to the
+  public repository beginning with commit `928b854`; the reproducibility
+  appendix links that repository and cites the upstream posterior-data record.
 
 ## Author-controlled items still required
 
@@ -44,8 +44,6 @@ Checked against the official JHEP author instructions and tool downloads on
   submission declarations.
 - Select two to four of the manuscript's controlled keywords in the JHEP form
   and choose the matching data/code-availability statement.
-- Publish the reconstructed branch and machine-readable outputs at the named
-  repository no later than submission.
 - Archive the code release in a persistent repository and provide its DOI when
   requested at proofreading.
 

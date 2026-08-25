@@ -121,5 +121,5 @@ is used in the manuscript.
 
 The scientific and numerical Route-B gates are closed. Submission still needs
 author-supplied names, affiliations, emails, ORCIDs, acknowledgments/funding,
-and arXiv metadata, followed by publication of this reconstructed branch and
-its machine-readable outputs at the repository named in the manuscript.
+and arXiv metadata. The reconstructed source and machine-readable outputs are
+public on the repository's `main` branch beginning with commit `928b854`.
