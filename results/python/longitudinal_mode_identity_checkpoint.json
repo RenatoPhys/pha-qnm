@@ -1,0 +1,218 @@
+{
+  "cold_stable:diffusion:0.010000": {
+    "omega_hat_imag": -2.3826939937446938e-06,
+    "omega_hat_real": -0.0,
+    "primitive_constraint_maximum": 4.638244725836541e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 1.075183387836593e-09,
+    "source_singular_value": 1.5651568339998255e-10
+  },
+  "cold_stable:sound_plus:0.010000": {
+    "omega_hat_imag": -4.345565792480383e-05,
+    "omega_hat_real": 0.004143167716913604,
+    "primitive_constraint_maximum": 1.1715605286304575e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 6.574084035534014e-11,
+    "source_singular_value": 5.054047869873521e-11
+  },
+  "hot_stable:diffusion:0.010000": {
+    "omega_hat_imag": -6.006873647732549e-06,
+    "omega_hat_real": -0.0,
+    "primitive_constraint_maximum": 1.234828754951904e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 9.839521485928106e-13,
+    "source_singular_value": 1.0579968019796632e-12
+  },
+  "hot_stable:sound_plus:0.010000": {
+    "omega_hat_imag": -4.001643684753152e-05,
+    "omega_hat_real": 0.003616374835866635,
+    "primitive_constraint_maximum": 3.258637976068764e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 6.233990153244817e-14,
+    "source_singular_value": 8.250421078880681e-14
+  },
+  "midpoint:diffusion:0.002500": {
+    "omega_hat_imag": 2.434487582871745e-07,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 8.407086216976982e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 2.019102688035504e-12,
+    "source_singular_value": 1.221245903680119e-12
+  },
+  "midpoint:diffusion:0.005000": {
+    "omega_hat_imag": 9.736437769578097e-07,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 8.407282401182351e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 8.767966174358173e-12,
+    "source_singular_value": 5.303945139877536e-12
+  },
+  "midpoint:diffusion:0.007500": {
+    "omega_hat_imag": 2.1901320218656135e-06,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 8.406552066811965e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 7.584038276313738e-12,
+    "source_singular_value": 4.588682754550531e-12
+  },
+  "midpoint:diffusion:0.015000": {
+    "omega_hat_imag": 8.748294797867524e-06,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 8.407028248104353e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 6.076402570923679e-12,
+    "source_singular_value": 3.682008810383649e-12
+  },
+  "midpoint:sound_plus:0.010000": {
+    "omega_hat_imag": -4.51722403875958e-05,
+    "omega_hat_real": 0.0038545923573402073,
+    "primitive_constraint_maximum": 1.6091414811221244e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 3.7582820504345e-13,
+    "source_singular_value": 6.63934539698116e-13
+  },
+  "near_cold_fold:diffusion:0.002500": {
+    "omega_hat_imag": 6.62177838903088e-08,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 6.23449925570207e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 1.2798979045187903e-10,
+    "source_singular_value": 3.602903532088965e-11
+  },
+  "near_cold_fold:diffusion:0.005000": {
+    "omega_hat_imag": 2.6475693674912033e-07,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 6.234443774596121e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 3.1296183554631294e-11,
+    "source_singular_value": 8.813279887692879e-12
+  },
+  "near_cold_fold:diffusion:0.007500": {
+    "omega_hat_imag": 5.952710465064595e-07,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 6.234408940742381e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 9.57514236734562e-11,
+    "source_singular_value": 2.6980361034035518e-11
+  },
+  "near_cold_fold:diffusion:0.015000": {
+    "omega_hat_imag": 2.3719711278123083e-06,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 6.234459565560103e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 2.1790193305422444e-10,
+    "source_singular_value": 6.160719935341461e-11
+  },
+  "near_cold_fold:sound_plus:0.010000": {
+    "omega_hat_imag": -4.442084593553538e-05,
+    "omega_hat_real": 0.004047899441217496,
+    "primitive_constraint_maximum": 1.373102626684298e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 2.0455885411978083e-12,
+    "source_singular_value": 2.5060253771818005e-12
+  },
+  "near_cold_inside:diffusion:0.010000": {
+    "omega_hat_imag": 3.947138711094425e-07,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 5.887603107401736e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 7.901809874600876e-11,
+    "source_singular_value": 1.9031703252988707e-11
+  },
+  "near_cold_inside:sound_plus:0.010000": {
+    "omega_hat_imag": -4.4226588123055966e-05,
+    "omega_hat_real": 0.00407224958897697,
+    "primitive_constraint_maximum": 1.3279933567888764e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 1.781455357287149e-12,
+    "source_singular_value": 2.002392519696517e-12
+  },
+  "near_cold_stable:diffusion:0.010000": {
+    "omega_hat_imag": -3.711418367131214e-07,
+    "omega_hat_real": -0.0,
+    "primitive_constraint_maximum": 5.513583818165706e-07,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 3.3863522981363955e-10,
+    "source_singular_value": 6.840991269542359e-11
+  },
+  "near_cold_stable:sound_plus:0.010000": {
+    "omega_hat_imag": -4.400558140372971e-05,
+    "omega_hat_real": 0.004096311078201225,
+    "primitive_constraint_maximum": 1.2799043853854349e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 4.489978989304211e-12,
+    "source_singular_value": 4.561164268001118e-12
+  },
+  "near_hot_fold:diffusion:0.002500": {
+    "omega_hat_imag": 1.142960003672298e-07,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 1.0389959821556495e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 1.2015977490018026e-12,
+    "source_singular_value": 1.103815080311566e-12
+  },
+  "near_hot_fold:diffusion:0.005000": {
+    "omega_hat_imag": 4.5705790298518376e-07,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 1.0389759312042852e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 1.1683903268284676e-12,
+    "source_singular_value": 1.0734189263056322e-12
+  },
+  "near_hot_fold:diffusion:0.007500": {
+    "omega_hat_imag": 1.0279074894435237e-06,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 1.0389231097119759e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 1.3924903943449671e-12,
+    "source_singular_value": 1.2794057151840646e-12
+  },
+  "near_hot_fold:diffusion:0.015000": {
+    "omega_hat_imag": 4.101421904634639e-06,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 1.0388717616506603e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 1.0737826105018301e-12,
+    "source_singular_value": 9.874056989195754e-13
+  },
+  "near_hot_fold:sound_plus:0.010000": {
+    "omega_hat_imag": -4.378535598527269e-05,
+    "omega_hat_real": 0.0036625417273516226,
+    "primitive_constraint_maximum": 1.1812306565378677e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 3.5881601504737903e-13,
+    "source_singular_value": 5.689327928688956e-13
+  },
+  "near_hot_inside:diffusion:0.010000": {
+    "omega_hat_imag": 7.227166070290524e-07,
+    "omega_hat_real": 0.0,
+    "primitive_constraint_maximum": 1.0723183765365272e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 5.48702036671505e-13,
+    "source_singular_value": 5.262604807750835e-13
+  },
+  "near_hot_inside:sound_plus:0.010000": {
+    "omega_hat_imag": -4.321956186368597e-05,
+    "omega_hat_real": 0.003641998989798166,
+    "primitive_constraint_maximum": 2.0190320938810577e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 9.985263959293481e-14,
+    "source_singular_value": 1.5054095339938986e-13
+  },
+  "near_hot_stable:diffusion:0.010000": {
+    "omega_hat_imag": -7.97777208380456e-07,
+    "omega_hat_real": -0.0,
+    "primitive_constraint_maximum": 1.1120174905082435e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 7.621755661817279e-13,
+    "source_singular_value": 7.617092806861391e-13
+  },
+  "near_hot_stable:sound_plus:0.010000": {
+    "omega_hat_imag": -4.2465737277393644e-05,
+    "omega_hat_real": 0.003625162495310624,
+    "primitive_constraint_maximum": 2.561410981424763e-06,
+    "provenance": "dedicated collocation continuation",
+    "source_determinant_abs": 7.024679156512403e-14,
+    "source_singular_value": 1.0026220176155685e-13
+  }
+}

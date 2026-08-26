@@ -1,0 +1,119 @@
+{
+  "background_count": 9,
+  "diffusion_coefficient_negative_between_folds": true,
+  "evidence": [
+    "Both sound eigenvalues remain a stable complex-conjugate pair because c_s^2 stays positive across the scanned folds.",
+    "The charge/heat eigenvalue alone changes sign with D_B and matches the purely imaginary QNM branch continuously.",
+    "Dedicated small-q QNM roots favor q^2+q^4 over q+q^2 and approach the independently computed signed D_B coefficient.",
+    "The first q=0 longitudinal nonhydrodynamic pole remains gapped and well separated from the hydrodynamic roots."
+  ],
+  "fits": {
+    "midpoint": {
+      "log_log_leading_power": 1.9942968551783278,
+      "q2_plus_q4": {
+        "aic": -357.83359546169305,
+        "bic": -357.67471237833337,
+        "coefficients": [
+          0.03895224488602755,
+          -0.31960140978168206
+        ],
+        "rss": 1.8209509704346396e-19
+      },
+      "q_plus_q2": {
+        "aic": -255.30997833245232,
+        "bic": -255.15109524909263,
+        "coefficients": [
+          2.08335247553899e-05,
+          0.037759640952518124
+        ],
+        "rss": 6.69851293685924e-14
+      },
+      "q_plus_q2_plus_q3": {
+        "aic": -292.15564744189726,
+        "bic": -291.91732281685773,
+        "coefficients": [
+          -4.689369811753058e-06,
+          0.039652692281619106,
+          -0.028103682831990613
+        ],
+        "rss": 5.213998872921541e-16
+      }
+    },
+    "near_cold_fold": {
+      "log_log_leading_power": 1.9840134466803427,
+      "q2_plus_q4": {
+        "aic": -371.2852281045827,
+        "bic": -371.126345021223,
+        "coefficients": [
+          0.010595564072603538,
+          -0.24010331235094562
+        ],
+        "rss": 3.3888474844116323e-20
+      },
+      "q_plus_q2": {
+        "aic": -259.87811495215533,
+        "bic": -259.71923186879565,
+        "coefficients": [
+          1.564884803869159e-05,
+          0.009699667082515007
+        ],
+        "rss": 3.784328553960896e-14
+      },
+      "q_plus_q2_plus_q3": {
+        "aic": -296.6462418404949,
+        "bic": -296.40791721545537,
+        "coefficients": [
+          -3.534241373321505e-06,
+          0.01112249053273698,
+          -0.021122818148806583
+        ],
+        "rss": 2.9743418853653524e-16
+      }
+    },
+    "near_hot_fold": {
+      "log_log_leading_power": 1.989790155856359,
+      "q2_plus_q4": {
+        "aic": -361.6397126849651,
+        "bic": -361.4808296016054,
+        "coefficients": [
+          0.018287810452981796,
+          -0.266809156215343
+        ],
+        "rss": 1.1315566181174754e-19
+      },
+      "q_plus_q2": {
+        "aic": -258.19751668842673,
+        "bic": -258.03863360506705,
+        "coefficients": [
+          1.7391817883712945e-05,
+          0.017292211577263968
+        ],
+        "rss": 4.6689922567236015e-14
+      },
+      "q_plus_q2_plus_q3": {
+        "aic": -295.0349346760427,
+        "bic": -294.7966100510032,
+        "coefficients": [
+          -3.916567614520684e-06,
+          0.018872669756970436,
+          -0.023463016944600856
+        ],
+        "rss": 3.6380076943173643e-16
+      }
+    }
+  },
+  "instability_carrier": "diffusion",
+  "limitations": [
+    "The first nonhydrodynamic mode is checked at q=0 at the midpoint; it is not close enough to require a determinant-map collision analysis in the displayed small-q window."
+  ],
+  "mu_B_MeV": 650.0,
+  "q2_model_preferred_by_bic_at_three_interior_backgrounds": true,
+  "qnm_root_count": 49,
+  "required_manuscript_changes": [
+    "Retain diffusion terminology but add the explicit mode-identity audit and contrast with neutral sound-driven spinodals.",
+    "State that c_s^2 remains positive while the charged susceptibility combination driving D_B changes sign.",
+    "Use the signed charged-hydrodynamic diffusion prediction in the spinodal figure."
+  ],
+  "small_q_leading_power": 1.989790155856359,
+  "sound_speed_squared_positive_across_scan": true
+}
