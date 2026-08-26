@@ -1,0 +1,23 @@
+{
+  "background_count": 65,
+  "benchmark_maximum_shooting_source_residual": 7.415997516392292e-09,
+  "benchmark_maximum_spectral_distance_hat": 0.007304373302042937,
+  "chemical_potentials_MeV": [
+    0.0,
+    300.0,
+    500.0,
+    600.0,
+    700.0
+  ],
+  "curve_point_count": 195,
+  "description": "Independent numerical reproduction using the 2018 EMD parametrization",
+  "interpolation": "piecewise linear, used only to guide the eye",
+  "maximum_curve_pencil_residual": 1.1244038034518506e-15,
+  "nine_landmark_values_reproduced": true,
+  "rejected_background_attempts": 0,
+  "sectors": [
+    "tensor",
+    "vector",
+    "singlet"
+  ]
+}
