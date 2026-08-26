@@ -1,0 +1,41 @@
+{
+  "available_successful_hdf5_draws": 1589,
+  "credible_intervals": {
+    "D_vs_distance_exponent": {
+      "median": 0.6480923117961078,
+      "q2p5": 0.45671586601215663,
+      "q97p5": 0.675857228760028
+    },
+    "T_c_MeV": {
+      "median": 103.879414840685,
+      "q2p5": 101.48225296740364,
+      "q97p5": 105.75224380773307
+    },
+    "mu_c_MeV": {
+      "median": 591.5873246408565,
+      "q2p5": 572.4282703015364,
+      "q97p5": 622.4759807558652
+    },
+    "spinodal_midpoint_D_B_hat": {
+      "median": -0.034573290218516815,
+      "q2p5": -0.038357627310355906,
+      "q97p5": -0.03235427130399044
+    },
+    "spinodal_temperature_width_MeV": {
+      "median": 1.8756942155909146,
+      "q2p5": 1.8432331569770926,
+      "q97p5": 1.9028778983633974
+    },
+    "z_eta0": {
+      "median": 4.075356947112891,
+      "q2p5": 4.06249428577693,
+      "q97p5": 4.084825181954216
+    }
+  },
+  "failed_samples": [],
+  "represented_posterior_weight": 1.0,
+  "selected_medoids": 25,
+  "selection": "deterministic weighted medoids of the successful HDF5 posterior in 95%-variance PCA parameter/CEP space, with sample74 forced in",
+  "spinodal_diffusion_unstable_fraction": 1.0,
+  "successful_medoids": 25
+}

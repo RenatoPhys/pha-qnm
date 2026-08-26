@@ -38,5 +38,9 @@ The primitive UV fields have source/vev powers `u^0/u^4` for metric
 perturbations, `u^0/u^2` for Maxwell perturbations, and `u^nu/u^Delta` for the
 dilaton. Radial-gauge residuals reduce the three helicity-one primitives to two
 physical degrees of freedom and the seven helicity-zero primitives to three.
-Numerical coupled spectra remain gated on the boundary-factored solver and
-constraint-residual implementation.
+The numerical implementation constructs physical gauge invariants from these
+primitives, quotients the residual-gauge horizon data, and evaluates the unused
+primitive equations as constraints. Source-matrix shooting and the independent
+multidomain Chebyshev integrator are implemented in `analysis/coupled_qnm.py`;
+their automated continuum and constraint gates are recorded in
+`results/python/coupled_qnm_validation_summary.json`.
