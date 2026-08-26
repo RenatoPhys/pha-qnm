@@ -1,125 +1,68 @@
 # JHEP reconstruction status
 
-The submission manuscript follows Route B: a complete homogeneous-response
-paper for the maximum-likelihood PHA realization. Route A remains a separate
-future project because the primitive helicity-zero finite-momentum pencil did
-not pass constraint and continuum-convergence tests. No failed coupled result
-is used in the manuscript.
+The manuscript now follows Route A: **critical relaxation and spinodal
+instabilities in Bayesian-calibrated holographic QCD**. The former homogeneous
+Route-B draft is retained only through its validated nonhydrodynamic and 2018
+cross-model benchmarks; it no longer defines the paper's scope.
 
-## Completed in the first reconstruction pass
+## Scientific completion
 
-- Froze commit `c3c71a7` as annotated tag `pre-jhep-rebuild` and recorded the
-  baseline blobs in `docs/baseline_manifest.txt`.
-- Created branch `codex/jhep-rebuild`.
-- Reframed the title and abstract as a maximum-likelihood, lattice-calibrated
-  study rather than a Bayesian posterior prediction.
-- Removed the main section that purported to discuss critical/spinodal dynamics
-  without the coupled helicity-zero calculation.
-- Recast the fixed-horizon scan as a horizon-data trajectory survey and stated
-  explicitly that it is not temperature dependence at fixed thermodynamic
-  control variables.
-- Moved dataset checks and software metadata to the reproducibility appendix.
-- Reduced parameter/table precision in the paper while preserving exact values
-  in YAML/JSON.
-- Expanded the literature basis for dynamic universality, critical QNMs,
-  spinodals, charged-fluid pole collisions, and pseudospectral sensitivity.
-- Changed plot typography to a serif/STIX system with restrained grid use.
-- Rebuilt the C++ release-portable target, passed its test suite and CLI
-  validation, regenerated the Python outputs without changing the compared
-  scientific values, and visually inspected all 15 pages of the final PDF.
+- The exact public MAP realization is checksum tracked. An independent
+  fold/null-direction solution locates the cusp at
+  `(T_c, mu_B^c)=(103.7553, 593.3227) MeV`; coexistence and both spinodals are
+  continued from 594 to 850 MeV with grid-coarsening errors stored explicitly.
+- The complete EMD equations were linearized in ingoing EF coordinates.
+  Generated helicity-one and helicity-zero artifacts pass ten symbolic tests
+  covering Bianchi/Maxwell identities, residual gauge modes, parity, neutral
+  and zero-momentum limits, source/vev powers, and degree counting.
+- Physical gauge-invariant horizon bases are evolved by DOP853 source-matrix
+  shooting. A distinct multidomain Chebyshev first-order integrator provides
+  the independent radial method. Unused primitive equations provide
+  constraint diagnostics.
+- Six neutral/charged shear, sound, and diffusion benchmarks pass separate
+  resolution, UV-domain, horizon-start, source, gauge, constraint, and method
+  comparisons. Their small-momentum coefficients agree with independently
+  evaluated charged hydrodynamics.
+- Along the MAP critical approach, `D_B` vanishes while `chi_B` diverges. Five
+  nested windows give `z=4.08+/-0.05`; the direct critical QNM dispersion gives
+  `z=3.99(2)`.
+- Three full longitudinal scans inside the `mu_B=650 MeV` spinodal branch give
+  closed unstable bands. At the midpoint,
+  `q*=0.2826`, `Gamma*=1.414e-3`, and `q_edge=0.4175`.
+- Twenty-five deterministic weighted posterior medoids represent all 1589
+  successful HDF5 draws and 100% of their posterior weight. All 25 local
+  cusps/spinodal pairs reconstruct successfully; the 95% posterior interval is
+  `4.0625 < z < 4.0848`, before the common fit-window systematic, and every
+  medoid has negative midpoint spinodal diffusion.
 
-## Completed thermodynamic gate (P1)
+## Reproducible artifacts
 
-- Reconstructed the public 2023 reference-compatible critical-point route and
-  followed neighboring constant-`phi0` crossings through 800 trajectories.
-- Independently solved the fold/null-direction cusp equations, obtaining
-  `(T_c, mu_B^c) = (103.7553, 593.3227) MeV` at
-  `(phi0, charge_fraction) = (3.528281, 0.346374)`.
-- Built a `141 x 121` horizon-data surface and continued 65 fixed-chemical-
-  potential lines through their stable, metastable, and unstable branches.
-- Located both spinodals and the equal-pressure coexistence point on every
-  line from `mu_B = 594` to `850 MeV`.
-- Coarsened-grid comparisons bound spinodal-temperature changes by `0.018 MeV`
-  and coexistence-temperature changes by `0.0085 MeV`.
-- Preserved the provenance discrepancy: the HDF5 metadata chemical potential
-  is `9.152 MeV` above the independently located cusp. No parameters were
-  rounded or retuned to hide it.
+The claim-bearing products are:
 
-## Completed equation gate (P2)
+- `results/python/coupled_qnm_validation.csv` and summary JSON;
+- `finite_k_hydrodynamic_dispersion.csv`;
+- `cep_critical_scaling.csv` and `cep_q4_dispersion.csv`;
+- `spinodal_dispersion.csv` and `finite_k_physics_summary.json`;
+- `posterior_selection.csv`, `posterior_uq_samples.json`, and summary JSON;
+- `paper/figures/phase_diagram.pdf`,
+  `hydrodynamic_critical_dispersion.pdf`, `cep_spinodal_dynamics.pdf`, and
+  `posterior_uq.pdf`.
 
-- Independently linearized the complete EMD equations in ingoing EF
-  coordinates with exact first-order dual expressions.
-- Generated the helicity-one and helicity-zero radial coefficient maps and
-  C++23 kernels with SHA-256 provenance.
-- Retained three evolution equations plus two diagnostics in helicity one and
-  seven frequency-linear characteristic equations plus seven diagnostics in
-  helicity zero.
-- Verified Bianchi and Maxwell identities, residual gauge modes, transverse
-  parity, neutral and `k -> 0` limits, UV source/vev powers, and the physical
-  degree-of-freedom count.
-- Proved that the homogeneous singlet pencil is the published gauge-invariant
-  master equation after `psi=S/(phi'/A')`, and obtained its first
-  four-grid-stable candidate at the independent cusp.
+The finite-momentum driver is checkpointed after every root. The posterior
+driver includes an adaptive cusp fallback, so no failed medoid is silently
+discarded or manually retuned.
 
-## Completed homogeneous solver gate (P3) and physical trajectories
+## Manuscript and submission status
 
-- Assembled the UV-factored quintuplet, triplet, and singlet operators
-  analytically and varied radial resolution and UV domain independently.
-- Computed left/right condition estimates and eigenfunction overlaps.
-- Implemented complex shooting with independent horizon integration and UV
-  source extraction; varied both the horizon start and UV extraction radius.
-- Accepted four cusp modes and rejected three old discrete-pencil roots that
-  fail the independent test.
-- Continued the leading pole in all three sectors through 18 backgrounds on
-  each of the physical paths `mu_B=0` and `mu_B/T=2`.
-- Achieved source residuals below `2.2e-8`, minimum parent overlap `0.9985`,
-  and pointwise shooting/spectral agreement within `0.012` in `omega_hat`.
-- Rewrote the manuscript around the validated homogeneous result and removed
-  the old fixed-horizon QNM survey and finite-momentum claims.
-- Audited the 2024--2026 literature and updated published journal metadata.
-- Recomputed the earlier 2018 EMD model with its published potential, coupling,
-  and scale. All nine quoted relaxation times are reproduced within
-  `0.0111 fm/c`; the maximum source residual is `7.42e-9` and the maximum
-  spectral/shooting distance is `0.00731` in `omega_hat`.
-- Added a direct comparison at `(T,mu_B)=(400,0)` and `(145,0) MeV` and at the
-  two model-specific critical endpoints.
-- Compiled the JHEP PDF with Tectonic; no undefined references, undefined
-  citations, duplicate labels, or overfull boxes remain. All pages were
-  rendered with Poppler and visually inspected on 2026-08-25.
-- Compared `jheppub.sty` and `JHEP.bst` byte-for-byte with the official JHEP
-  downloads on 2026-08-25; both match, including bibliography style 2.18.
-- Replaced free-form keywords by four entries from the current controlled JHEP
-  keyword list and added the journal-required disclosure of AI-assisted work.
-- Added a minimal source-archive builder that includes `main.bbl`, the BibTeX
-  inputs, the exact official styles, and only the eight referenced PDF figures;
-  it refuses to package a manuscript with incomplete author/arXiv metadata.
-- Re-emitted the two remaining Matplotlib Type-3 figures with embedded
-  TrueType fonts. All manuscript and figure PDFs now pass the font audit, and a
-  13-file draft source archive compiles in isolation.
-- Added `docs/claim_evidence_audit.md`, mapping every claim class to its
-  machine-readable evidence and recording the explicit exclusion boundary for
-  failed or unimplemented coupled physics.
+`paper/main.pdf` is a 25-page JHEP-style working manuscript with a first-page
+abstract, controlled keywords, four central Route-A figures, and seven
+appendix figures preserving the background, thermodynamic, convergence,
+homogeneous-trajectory, CEP-reproduction, and legacy-model evidence. It also
+contains an explicit numerical error appendix, reproducibility commands, and
+AI-assisted-technology disclosure. It has no undefined references/citations,
+duplicate labels, overfull boxes, or invented author information.
 
-## Remaining acceptance gates
-
-- [x] Separate radial-resolution and radial-domain convergence studies.
-- [x] Source factoring for every homogeneous master field.
-- [x] Left/right eigenvectors and eigenvalue condition estimates.
-- [x] Eigenfunction-overlap trajectory tracking.
-- [x] Independent complex-shooting confirmation.
-- [x] Homogeneous singlet derivation and symbolic validation.
-- [x] Coupled helicity-one and helicity-zero equations with symbolic constraint tests
-  (reproducibility artifact; numerical spectra excluded from Route B).
-- [x] Physical thermodynamic trajectories and branch labels.
-- [x] Explicit MAP-only framing in title, abstract, results, and conclusions.
-- [x] Quantitative solver benchmark and cross-model comparison with the 2018
-  homogeneous EMD analysis.
-- [x] Official JHEP styles, controlled keywords, AI disclosure, and source
-  archive contents verified against the current author instructions.
-- [ ] Author, affiliation, email, ORCID, funding, and arXiv metadata supplied by
-  the authors.
-
-The scientific and numerical Route-B gates are closed. Submission still needs
-author-supplied names, affiliations, emails, ORCIDs, acknowledgments/funding,
-and arXiv metadata. The reconstructed source and machine-readable outputs are
-public on the repository's `main` branch beginning with commit `928b854`.
+Scientific and numerical Route-A gates are closed. Literal submission remains
+blocked only on author-controlled names, affiliations, email, ORCID, funding,
+arXiv, authorship approval, and persistent-release metadata. The guarded
+archive builder deliberately refuses to package until those fields exist.

@@ -12,6 +12,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
+from figures.style import (COLORS, DOUBLE_COLUMN_WIDTH, add_panel_label,
+                           save_figure, use_publication_style)
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results" / "python"
@@ -19,16 +21,8 @@ FIGURES = ROOT / "paper" / "figures"
 FILE_T = 103.89777513571676
 FILE_MU = 602.4749076542938
 
-plt.rcParams.update({
-    "font.family": "serif",
-    "font.serif": ["STIX Two Text", "STIXGeneral", "DejaVu Serif"],
-    "mathtext.fontset": "stix",
-    "pdf.fonttype": 42,
-    "ps.fonttype": 42,
-})
-
-
 def main() -> None:
+    use_publication_style()
     rows = []
     for line_count in (100, 200, 400, 800):
         data = json.loads((RESULTS / f"reference_cep_neighbors_N{line_count}.json").read_text())
@@ -55,26 +49,27 @@ def main() -> None:
 
     crossing = rows[:-1]
     n = np.array([row["resolution"] for row in crossing], dtype=float)
-    fig, axes = plt.subplots(1, 2, figsize=(6.5, 2.7))
-    axes[0].plot(n, [row["T_c_MeV"] for row in crossing], "o-", color="#0072B2",
+    fig, axes = plt.subplots(1, 2, figsize=(DOUBLE_COLUMN_WIDTH, 2.75))
+    axes[0].plot(n, [row["T_c_MeV"] - cusp["T_c_MeV"] for row in crossing], "o-", color=COLORS["blue"],
                  label=r"constant-$\phi_0$ crossings")
-    axes[1].plot(n, [row["mu_B_c_MeV"] for row in crossing], "o-", color="#0072B2")
-    axes[0].axhline(cusp["T_c_MeV"], color="#009E73", ls="--", label="local cusp")
-    axes[1].axhline(cusp["mu_B_c_MeV"], color="#009E73", ls="--")
-    axes[0].axhline(FILE_T, color="#6B7280", ls=":", label="HDF5 metadata")
-    axes[1].axhline(FILE_MU, color="#6B7280", ls=":")
-    for ax in axes:
+    axes[1].plot(n, [row["mu_B_c_MeV"] - cusp["mu_B_c_MeV"] for row in crossing], "s-", color=COLORS["blue"])
+    axes[0].axhline(0, color=COLORS["green"], ls="--", label="local cusp")
+    axes[1].axhline(0, color=COLORS["green"], ls="--")
+    axes[0].axhline(FILE_T - cusp["T_c_MeV"], color=COLORS["gray"], ls=":", label="HDF5 offset")
+    axes[1].axhline(FILE_MU - cusp["mu_B_c_MeV"], color=COLORS["gray"], ls=":")
+    for tag, ax in zip(("(a)", "(b)"), axes):
         ax.set_xscale("log", base=2)
         ax.set_xticks(n, [str(int(value)) for value in n])
         ax.set_xlabel(r"Number of constant-$\phi_0$ lines")
-        ax.spines[["top", "right"]].set_visible(False)
-    axes[0].set_ylabel(r"$T_c$ [MeV]")
-    axes[1].set_ylabel(r"$\mu_{B,c}$ [MeV]")
+        ax.grid(axis="y", color=COLORS["light_gray"], alpha=0.35, lw=0.45)
+        add_panel_label(ax, tag)
+    axes[0].set_ylabel(r"$T_c(N)-T_c^{\rm local}$ [MeV]")
+    axes[1].set_ylabel(r"$\mu_{B,c}(N)-\mu_{B,c}^{\rm local}$ [MeV]")
     axes[0].legend(frameon=False, fontsize=7)
     fig.tight_layout()
-    FIGURES.mkdir(parents=True, exist_ok=True)
-    fig.savefig(FIGURES / "cep_reproduction.pdf")
-    fig.savefig(FIGURES / "cep_reproduction.png", dpi=300)
+    save_figure(fig, FIGURES / "cep_reproduction",
+                title="Critical-point reconstruction convergence",
+                subject="Crossing-method differences relative to the local cusp")
     plt.close(fig)
 
 

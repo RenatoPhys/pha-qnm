@@ -17,21 +17,14 @@ import numpy as np
 from scipy.interpolate import CubicSpline, RegularGridInterpolator
 from scipy.optimize import brentq
 
+from figures.style import (COLORS, DOUBLE_COLUMN_WIDTH, add_panel_label,
+                           save_figure, use_publication_style)
 from pha_qnm.thermodynamics import PHAModel, solve_background
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results" / "python"
 FIGURES = ROOT / "paper" / "figures"
-
-plt.rcParams.update({
-    "font.family": "serif",
-    "font.serif": ["STIX Two Text", "STIXGeneral", "DejaVu Serif"],
-    "mathtext.fontset": "stix",
-    "pdf.fonttype": 42,
-    "ps.fonttype": 42,
-})
-
 
 @dataclass
 class ConstantMuLine:
@@ -242,29 +235,72 @@ def save_surface(phi: np.ndarray, charge: np.ndarray, arrays: dict[str, np.ndarr
 
 
 def plot_phase_diagram(phase_rows: list[dict]) -> None:
+    use_publication_style()
     usable = [row for row in phase_rows if row is not None]
     spinodal_mu = np.array([row["mu_MeV"] for row in usable])
     spinodal_low = np.array([row["spinodal_low_T_MeV"] for row in usable])
     spinodal_high = np.array([row["spinodal_high_T_MeV"] for row in usable])
     coexistence = [row for row in usable if row["coexistence"] is not None]
-    fig, ax = plt.subplots(figsize=(5.2, 3.5))
-    ax.plot(spinodal_mu, spinodal_low, color="#D55E00", ls="--", label="spinodals")
-    ax.plot(spinodal_mu, spinodal_high, color="#D55E00", ls="--")
+    fig, ax = plt.subplots(figsize=(DOUBLE_COLUMN_WIDTH, 3.45))
+    ax.fill_between(spinodal_mu, spinodal_low, spinodal_high,
+                    color=COLORS["vermillion"], alpha=0.09,
+                    label="spinodal envelope")
+    ax.plot(spinodal_mu, spinodal_low, color=COLORS["vermillion"], ls="--")
+    ax.plot(spinodal_mu, spinodal_high, color=COLORS["vermillion"], ls="--")
     if coexistence:
         ax.plot([row["mu_MeV"] for row in coexistence],
                 [row["coexistence"]["T_MeV"] for row in coexistence],
-                color="#0072B2", lw=2.0, label="coexistence")
-    ax.scatter([593.323], [103.755], marker="*", s=90, color="#009E73",
-               edgecolor="white", linewidth=0.6, zorder=5, label="independent cusp")
-    ax.scatter([602.475], [103.898], marker="x", s=42, color="#6B7280",
+                color=COLORS["blue"], lw=2.0, label="coexistence")
+    ax.scatter([593.322656], [103.755281], marker="*", s=95, color=COLORS["green"],
+               edgecolor="white", linewidth=0.6, zorder=5, label="local CEP")
+    ax.scatter([602.474908], [103.897775], marker="x", s=42, color=COLORS["gray"],
                zorder=5, label="HDF5 metadata")
+    ax.annotate("hot stable approach", xy=(593.322656, 103.82),
+                xytext=(615, 105.3), color=COLORS["green"],
+                arrowprops={"arrowstyle": "->", "color": COLORS["green"], "lw": 1.0})
+    ax.axvline(650.0, color=COLORS["gray"], ls=(0, (3, 2)), lw=1.0)
+    ax.text(653, 96.3, r"$\mu_B=650$ MeV scan", color=COLORS["gray"], va="bottom")
+    summary = json.loads((RESULTS / "finite_k_physics_summary.json").read_text(encoding="utf-8"))
+    for marker, key, label in zip(("o", "s", "^"), ("f0.10", "f0.50", "f0.90"),
+                                  ("near hot fold", "midpoint", "near cold fold")):
+        temperature = summary["spinodal"][key]["T_MeV"]
+        ax.scatter(650.0, temperature, marker=marker, s=30, facecolor="white",
+                   edgecolor=COLORS["vermillion"], linewidth=1.0, zorder=6)
+        ax.annotate(label, (650.0, temperature), xytext=(6, 0),
+                    textcoords="offset points", va="center", fontsize=7.1,
+                    color=COLORS["vermillion"])
+    if coexistence:
+        mid = coexistence[len(coexistence) // 2]
+        ax.annotate("coexistence", (mid["mu_MeV"], mid["coexistence"]["T_MeV"]),
+                    xytext=(-40, -12), textcoords="offset points", color=COLORS["blue"],
+                    arrowprops={"arrowstyle": "-", "color": COLORS["blue"], "lw": 0.7})
+    ax.text(765, np.interp(765, spinodal_mu, spinodal_high) + 0.25, "hot fold",
+            color=COLORS["vermillion"], fontsize=7.2)
+    ax.text(765, np.interp(765, spinodal_mu, spinodal_low) - 0.25, "cold fold",
+            color=COLORS["vermillion"], fontsize=7.2, va="top")
+    ax.text(730, 103.5, "single stable branch", color=COLORS["gray"], fontsize=7.0)
+    ax.text(720, 87.5, "metastable outer branches +\nunstable middle branch",
+            color=COLORS["vermillion"], fontsize=7.0, ha="center")
     ax.set(xlabel=r"$\mu_B$ [MeV]", ylabel=r"$T$ [MeV]")
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.legend(frameon=False, fontsize=8)
+    ax.set_xlim(585, 858)
+    ax.grid(axis="y", color=COLORS["light_gray"], alpha=0.35, lw=0.45)
+    ax.legend(frameon=False, loc="lower left", ncol=2)
+    add_panel_label(ax, "(a)")
+    inset = ax.inset_axes([0.06, 0.57, 0.33, 0.34])
+    inset.scatter(593.322656, 103.755281, marker="*", s=55, color=COLORS["green"])
+    inset.scatter(593.3845, 103.7611, marker="o", s=20, facecolor="white",
+                  edgecolor=COLORS["blue"])
+    inset.scatter(602.474908, 103.897775, marker="x", s=28, color=COLORS["gray"])
+    inset.plot([593.322656, 602.474908], [103.755281, 103.897775],
+               color=COLORS["light_gray"], lw=0.8, zorder=0)
+    inset.set(xlim=(592.6, 603.2), ylim=(103.72, 103.93),
+              xlabel=r"$\mu_B$ [MeV]", ylabel=r"$T$ [MeV]")
+    inset.tick_params(labelsize=6.7)
+    inset.text(0.03, 0.96, "CEP reconstruction", transform=inset.transAxes,
+               ha="left", va="top", fontsize=7.0)
     fig.tight_layout()
-    FIGURES.mkdir(parents=True, exist_ok=True)
-    fig.savefig(FIGURES / "phase_diagram.pdf")
-    fig.savefig(FIGURES / "phase_diagram.png", dpi=300)
+    save_figure(fig, FIGURES / "phase_diagram", title="MAP phase diagram",
+                subject="Coexistence, spinodals, critical path, and dynamic backgrounds")
     plt.close(fig)
 
 
@@ -281,7 +317,12 @@ def main() -> None:
     parser.add_argument("--mu-count", type=int, default=52)
     parser.add_argument("--reuse-surface", action="store_true")
     parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--plot-only", action="store_true",
+                        help="render the stored phase lines without recomputing the surface")
     args = parser.parse_args()
+    if args.plot_only:
+        plot_phase_diagram(json.loads((RESULTS / "phase_lines.json").read_text(encoding="utf-8")))
+        return
     phi = np.linspace(args.phi_min, args.phi_max, args.n_phi)
     charge = np.linspace(args.charge_min, args.charge_max, args.n_charge)
     surface_path = RESULTS / "phase_surface.npz"

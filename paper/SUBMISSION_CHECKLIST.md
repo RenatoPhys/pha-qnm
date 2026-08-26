@@ -5,47 +5,38 @@ Checked against the official JHEP author instructions and tool downloads on
 
 ## Closed locally
 
-- `paper/jheppub.sty` is byte-identical to the official JHEP download
-  (SHA-256 `478C47BF3D831B723766104B4C506DE19F04BF5EDE537CC25AEDA9F3F5ADE2A0`).
-- `paper/JHEP.bst` is byte-identical to the official version 2.18
-  (SHA-256 `7D94537265BA1185F58D85B052D92BAC855A0740DDDDBCDBE338621CC4649F4A`).
-- The abstract fits on page 1 and contains neither citations nor displayed
+- `jheppub.sty` and `JHEP.bst` are byte-identical to the official downloads;
+  bibliography style 2.18 is used.
+- The Route-A abstract fits on page 1 and contains no citations or displayed
   formulae.
-- The four manuscript keywords are exact entries from the controlled JHEP
-  keyword list.
-- The acknowledgments disclose the uses of OpenAI Codex in preparing the
-  manuscript, as required by the current AI-assisted-technology policy.
-- The source build generates `main.bbl`; the submission packager requires it.
-- The master file is `main.tex` at the archive root, with figures under
-  `figures/`.
-- Only compilation inputs enter the source archive: `main.tex`, `main.bbl`,
-  `references.bib`, `jheppub.sty`, `JHEP.bst`, and the eight referenced PDF
-  figures.
-- The 13-file archive layout was assembled and compiled successfully in an
-  isolated directory with no repository files available implicitly.
-- All figure and manuscript PDF fonts are embedded, and no Type 3 fonts remain.
-  The manuscript compiles
-  without undefined citations/references, duplicate labels, overfull boxes, or
-  TeX errors.
-- The reconstructed source and machine-readable outputs were published to the
-  public repository beginning with commit `928b854`; the reproducibility
-  appendix links that repository and cites the upstream posterior-data record.
+- The four keywords are controlled JHEP entries.
+- The acknowledgments contain the required AI-assisted-technology disclosure.
+- The complete coupled finite-momentum, critical, spinodal, and posterior
+  claims map to versioned CSV/JSON evidence and independent checks.
+- The source build generates `main.bbl`; the guarded packager requires it.
+- The master file is `main.tex`, with 11 referenced PDF figures under
+  `figures/`: the four central Route-A figures and the seven appendix figures
+  `pha_model_kernels.pdf`, `representative_background.pdf`,
+  `background_thermodynamics.pdf`, `cep_reproduction.pdf`,
+  `thermodynamic_validation.pdf`, `qnm_convergence.pdf`, and
+  `homogeneous_qnm_trajectories.pdf`.
+- The manuscript compiles without undefined citations/references, duplicate
+  labels, overfull boxes, or TeX errors.
+- All manuscript/figure fonts are embedded and no Type 3 fonts are present.
+- All 25 pages have been rendered and visually inspected for clipping,
+  overlap, figure legibility, and bibliography layout.
 
 ## Author-controlled items still required
 
-- Insert every author's first and family names, affiliation, and email in
-  `main.tex`; designate the corresponding author.
-- Replace the author marker in `CITATION.cff` and supply ORCID identifiers.
-- Add funding identifiers and any additional acknowledgments, or explicitly
-  confirm that there are none.
-- Obtain the arXiv identifier, add `\arxivnumber{...}`, and ensure that the
-  submitted JHEP version is identical to the arXiv version.
+- Insert every author's name, affiliation, email, and corresponding-author
+  designation in `main.tex`; update `CITATION.cff` and add ORCIDs.
+- Add funding identifiers and additional acknowledgments, or confirm none.
+- Obtain and insert the arXiv identifier; keep the JHEP and arXiv versions in
+  sync.
 - Approve authorship, originality, institutional authorization, and exclusive
   submission declarations.
-- Select two to four of the manuscript's controlled keywords in the JHEP form
-  and choose the matching data/code-availability statement.
-- Archive the code release in a persistent repository and provide its DOI when
-  requested at proofreading.
+- Select the submission-form keywords and data/code-availability statement.
+- Archive the release persistently and provide its DOI when required.
 
 ## Final packaging command
 
@@ -54,9 +45,7 @@ powershell -ExecutionPolicy Bypass -File paper/build_submission_archive.ps1
 ```
 
 The command deliberately fails while author, affiliation, email, arXiv, or
-`CITATION.cff` authorship metadata are missing. On success it emits only the
-necessary compilation files as `paper/pha-qnm-jhep-source.tar.gz` and prints
-the archive SHA-256 digest.
+`CITATION.cff` authorship metadata are missing.
 
 Official sources:
 

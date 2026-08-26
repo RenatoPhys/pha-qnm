@@ -1,0 +1,136 @@
+{
+  "acceptance": {
+    "maximum_continuum_distance": 3.635789372654316e-11,
+    "maximum_gauge_defect": 4.0459012425426544e-16,
+    "maximum_hydrodynamic_relative_difference": 0.001650235623244737,
+    "maximum_method_distance": 3.6207920549162094e-12,
+    "maximum_primitive_constraint": 2.407792092145726e-05,
+    "maximum_source_determinant": 1.5934945410572118e-12
+  },
+  "cases": {
+    "charged_diffusion": {
+      "constraint_maximum": 2.4370318033571108e-06,
+      "continuum_maximum_distance": 8.61580404007504e-12,
+      "omega_hat": [
+        3.258352003183366e-16,
+        -0.0018429088029042345
+      ],
+      "shooting_collocation_distance": 6.407863317488926e-13
+    },
+    "charged_shear": {
+      "constraint_maximum": 8.641763443945225e-10,
+      "continuum_maximum_distance": 1.0558999421345083e-12,
+      "omega_hat": [
+        1.027721057538674e-29,
+        -0.0011456093920916856
+      ],
+      "shooting_collocation_distance": 3.603367604299024e-14
+    },
+    "charged_sound": {
+      "constraint_maximum": 6.943274922004136e-06,
+      "continuum_maximum_distance": 3.635789372654316e-11,
+      "omega_hat": [
+        0.022444449059815217,
+        -0.0009804937287489447
+      ],
+      "shooting_collocation_distance": 3.0282256595496477e-12
+    },
+    "neutral_diffusion": {
+      "constraint_maximum": 2.557119020343466e-11,
+      "continuum_maximum_distance": 2.0170817273401642e-11,
+      "omega_hat": [
+        -3.564973753447021e-19,
+        -0.002501013823940394
+      ],
+      "shooting_collocation_distance": 1.332526103348208e-12
+    },
+    "neutral_shear": {
+      "constraint_maximum": 2.0909248712961796e-09,
+      "continuum_maximum_distance": 6.646475904370508e-13,
+      "omega_hat": [
+        -3.3298322243457935e-30,
+        -0.0012504554785938422
+      ],
+      "shooting_collocation_distance": 9.354496344204932e-16
+    },
+    "neutral_sound": {
+      "constraint_maximum": 8.999720078363825e-06,
+      "continuum_maximum_distance": 1.2291642986398881e-11,
+      "omega_hat": [
+        0.02666926447029744,
+        -0.000939654940703304
+      ],
+      "shooting_collocation_distance": 3.6207920549162094e-12
+    }
+  },
+  "frequency_convention": {
+    "omega_hat": "omega/(2 pi T) = 2 omega_numeric",
+    "omega_numeric": "omega/(4 pi T)",
+    "qhat": "k/(2 pi T)"
+  },
+  "hydrodynamic_comparison": [
+    {
+      "case": "neutral_shear",
+      "hydrodynamic_value": 0.5,
+      "mode": "shear",
+      "observable": "D_eta_hat",
+      "qhat": 0.05,
+      "qnm_value": 0.5001821914375368,
+      "relative_difference": 0.0003643828750736766
+    },
+    {
+      "case": "neutral_sound",
+      "hydrodynamic_value": 0.5329664641671373,
+      "mode": "sound",
+      "observable": "c_s",
+      "qhat": 0.05,
+      "qnm_value": 0.5333852894059488,
+      "relative_difference": 0.0007858378846892772
+    },
+    {
+      "case": "neutral_diffusion",
+      "hydrodynamic_value": 0.9987573446270764,
+      "mode": "diffusion",
+      "observable": "D_B_hat",
+      "qhat": 0.05,
+      "qnm_value": 1.0004055295761574,
+      "relative_difference": 0.001650235623244737
+    },
+    {
+      "case": "charged_shear",
+      "hydrodynamic_value": 0.4581198474638779,
+      "mode": "shear",
+      "observable": "D_eta_hat",
+      "qhat": 0.05,
+      "qnm_value": 0.4582437568366742,
+      "relative_difference": 0.0002704737056956292
+    },
+    {
+      "case": "charged_sound",
+      "hydrodynamic_value": 0.4485892525991499,
+      "mode": "sound",
+      "observable": "c_s",
+      "qhat": 0.05,
+      "qnm_value": 0.4488889811963043,
+      "relative_difference": 0.0006681582213969522
+    },
+    {
+      "case": "charged_diffusion",
+      "hydrodynamic_value": 0.7369393870455162,
+      "mode": "diffusion",
+      "observable": "D_B_hat",
+      "qhat": 0.05,
+      "qnm_value": 0.7371635211616937,
+      "relative_difference": 0.00030414186039924015
+    }
+  ],
+  "passed": true,
+  "thresholds": {
+    "continuum_distance_omega_hat": 2e-05,
+    "gauge_defect": 2e-09,
+    "hydrodynamic_relative_difference_at_qhat_0p05": 0.03,
+    "method_distance_omega_hat": 2e-05,
+    "primitive_constraint": 3e-05,
+    "source_determinant": 2e-08
+  }
+}
