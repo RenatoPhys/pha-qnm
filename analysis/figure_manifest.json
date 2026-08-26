@@ -132,6 +132,45 @@
       "semantic_layers": ["resolution study", "UV-domain study", "accepted envelope", "shooting root floor"],
       "interpolation": "none",
       "caption_contract": ["Different numerical studies are not connected as one sequence"]
+    },
+    {
+      "figure": "pha_model_kernels",
+      "script": "analysis/plot_appendix_diagnostics.py",
+      "inputs": ["configs/pha_map.yaml", "results/python/phase_diagram_summary.json"],
+      "outputs": ["paper/figures/pha_model_kernels.pdf", "paper/figures/pha_model_kernels.png"],
+      "caption_label": "fig:kernels",
+      "size_inches": [7.2, 2.85],
+      "axis_labels": ["phi", "-V/12", "f(phi)"],
+      "panel_labels": ["(a)", "(b)", "inset"],
+      "semantic_layers": ["exact potential", "exact Maxwell coupling", "production horizon range", "UV boundary layer"],
+      "interpolation": "analytic kernels sampled densely for rendering",
+      "caption_contract": ["The field range used by production backgrounds is marked", "The narrow UV layer is resolved"]
+    },
+    {
+      "figure": "representative_background",
+      "script": "analysis/plot_appendix_diagnostics.py",
+      "inputs": ["results/python/reference_cusp_uv1e5_h10.json", "configs/pha_map.yaml"],
+      "outputs": ["paper/figures/representative_background.pdf", "paper/figures/representative_background.png"],
+      "caption_label": "fig:background",
+      "size_inches": [7.2, 2.75],
+      "axis_labels": ["radial coordinate", "normalized metric", "scalar/coupling layer", "relative flux error"],
+      "panel_labels": ["(a)", "(b)", "(c)", "inset"],
+      "semantic_layers": ["normalized metric", "scalar profile", "Maxwell UV layer", "relative flux conservation", "stored Gauss drift"],
+      "interpolation": "continuous background solution evaluated on a plotting grid",
+      "caption_contract": ["Flux is shown as relative error", "The UV boundary layer is visible"]
+    },
+    {
+      "figure": "thermodynamic_validation",
+      "script": "analysis/plot_appendix_diagnostics.py",
+      "inputs": ["results/python/thermodynamic_validation.csv"],
+      "outputs": ["paper/figures/thermodynamic_validation.pdf", "paper/figures/thermodynamic_validation.png"],
+      "caption_label": "fig:thermodynamic-validation",
+      "size_inches": [7.2, 2.75],
+      "axis_labels": ["T", "s/T^3", "chi_2^B", "relative displacement percent"],
+      "panel_labels": ["(a)", "(b)", "(c)"],
+      "semantic_layers": ["neutral entropy", "three derivative steps", "finest-step reference", "relative step displacement"],
+      "interpolation": "straight segments connect independently calculated temperature points",
+      "caption_contract": ["Step size is encoded by color, marker, and line style", "The error panel uses percent units"]
     }
   ]
 }

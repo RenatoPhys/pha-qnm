@@ -27,6 +27,7 @@ MAIN_COMMANDS = (
 )
 AUDIT_COMMAND = (("audit_longitudinal_mode_identity.py", "--hydro-only"),)
 APPENDIX_COMMANDS = (
+    ("plot_appendix_diagnostics.py",),
     ("plot_homogeneous_trajectories.py",),
     ("plot_legacy_2018_curves.py",),
     ("plot_cep_reproduction.py",),
