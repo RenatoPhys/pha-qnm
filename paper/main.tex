@@ -26,25 +26,27 @@ in Bayesian holographic QCD}
 % replaced by fictitious metadata in this working manuscript.
 
 \abstract{%
-We determine the low-lying real-time spectrum of a Bayesian-calibrated
+We compute the low-lying real-time spectrum of a Bayesian-calibrated
 Einstein--Maxwell--dilaton model across its finite-density phase structure.
-Solving the coupled helicity-one and helicity-zero fluctuations, we identify
-the shear, sound, and baryon/heat-diffusion poles and reproduce independently
-computed charged-hydrodynamic coefficients at small momentum.  At the
-maximum-likelihood critical endpoint, diffusion vanishes as the susceptibility
-diverges.  Fits along a constant-chemical-potential approach give the dynamic
-exponent $z=4.08\pm0.05$, where the uncertainty is dominated by the scaling
-window; a direct critical QNM fit gives
-$-\operatorname{Im}\w\propto\q^{3.99}$.  Inside the spinodal branch at
-$\mub=650$ MeV, the longitudinal pole develops a closed unstable band.  At
-its midpoint we find $\q_*=0.283$, maximum growth
-$\Gamma_*/(2\pi T)=1.41\times10^{-3}$, and band edge $\q_{\rm edge}=0.417$;
-the band shrinks toward either fold.  A weighted 25-medoid compression of all
-successful posterior draws represents the full posterior weight and yields
-$z=4.075^{+0.010}_{-0.013}$ at 95\% credibility before the common fit-window
-systematic.  All medoids retain negative diffusion inside the spinodal region.
-These results provide a validated real-time characterization of critical
-slowing and spinodal growth in a lattice-constrained holographic plasma.}
+Coupled helicity-one and helicity-zero quasinormal modes reproduce
+charged-hydrodynamic predictions obtained independently from the equation of
+state and horizon transport.  Shooting and multidomain Chebyshev integration
+agree, with source and constraint residuals monitored for every accepted root.
+At the maximum-likelihood critical endpoint,
+the baryon/heat-diffusion coefficient vanishes as the susceptibility diverges.
+The thermodynamic approach gives $z=4.08\pm0.05$, dominated by scaling-window
+variation, while the critical QNM directly exhibits quartic small-momentum
+damping.  Along the spinodal branch at $\mub=650$ MeV, a dedicated mode-identity
+audit shows that the sound pair remains stable and the charged diffusive branch
+alone crosses into the upper half frequency plane.  Full QNMs close this
+unstable band; at its midpoint $\q_*=0.283$, the maximum dimensionless growth
+is $1.41\times10^{-3}$, and $\q_{\rm edge}=0.417$.  Posterior propagation gives
+$4.062<z<4.085$ at 95\% credibility before the common fit-window systematic,
+and every representative posterior model retains the diffusive spinodal
+instability.  These results provide a numerically cross-validated
+characterization of critical slowing and spinodal growth in a
+lattice-constrained holographic plasma; they describe the calibrated model,
+not a direct determination of QCD dynamics.}
 
 \keywords{Gauge-Gravity Correspondence, Non-Equilibrium Field Theory,
 Finite Temperature or Finite Density, Quark-Gluon Plasma}
@@ -126,6 +128,15 @@ released critical-point calculation succeeded.  For every medoid we
 independently reconstruct the cusp, approach it along a physical path, and
 locate both spinodals at $\mub^c+50$ MeV.  We keep numerical, scaling-window,
 and posterior uncertainties separate.
+
+The main advances are threefold.  First, we obtain the coupled finite-$\q$
+spectrum in the calibrated PHA realization and validate every hydrodynamic
+branch against an independently constructed charged-fluid matrix.  Second,
+we extract the model's critical exponent both from thermodynamic scaling and
+directly from the critical QNM.  Third, we demonstrate full-QNM closure of the
+spinodal band, identify its carrier as the baryon/heat-diffusion branch rather
+than the stable sound pair, and show that the existence of this instability
+survives posterior propagation.
 
 Section~\ref{sec:model} defines the calibrated model and phase structure.
 Sections~\ref{sec:perturbations} and \ref{sec:numerics} give the coupled
@@ -218,11 +229,16 @@ dynamical background.
 
 \begin{figure}[t]
  \centering
- \includegraphics[width=0.83\textwidth]{figures/phase_diagram.pdf}
- \caption{MAP phase structure.  Orange dashed curves are the two spinodals,
- the blue curve is equal-pressure coexistence, and the green star is the
- independently located cusp.  The gray cross marks the distinct critical
- coordinates stored in the HDF5 metadata.}
+ \includegraphics[width=\textwidth]{figures/phase_diagram.pdf}
+ \caption{MAP phase structure and dynamical paths.  The blue curve is
+ equal-pressure coexistence and the dashed vermillion curves are the hot and
+ cold folds; their light envelope denotes the region in which stable,
+ metastable, and mechanically unstable branches coexist, not a uniformly
+ unstable area.  The green star is the local CEP, while the gray cross is the
+ distinct HDF5 metadata value; the inset also shows the converged crossing
+ construction.  The green arrow gives the hot stable critical approach.  The
+ vertical $\mub=650$ MeV cut and its three open symbols identify the
+ backgrounds used for spinodal QNMs.}
  \label{fig:phase-diagram}
 \end{figure}
 
@@ -431,13 +447,15 @@ largest source determinant is $5.6\times10^{-12}$.
 \begin{figure}[t]
  \centering
  \includegraphics[width=\textwidth]{figures/hydrodynamic_critical_dispersion.pdf}
- \caption{Stable and critical hydrodynamics.  (a) Positive sound dispersion
- on the neutral and charged backgrounds.  (b) Damping of shear (circles),
- sound (squares), and diffusion (triangles); symbols are full QNMs and the
- small-$\q$ behavior is fixed by the
- independently constructed hydrodynamic matrix.  (c) Along
- $\mub=\mub^c$, $D_B$ vanishes while $(\chi_B/T^2)^{-1}$ approaches zero.
- Lines connect computed points and are not additional fits.}
+ \caption{Independent hydrodynamics versus full QNMs.  Open symbols are QNM
+ roots and lines in panels (a,b) are predictions from the charged-fluid
+ matrix, evaluated before any dispersion fit.  Color labels the neutral or
+ charged state; squares show sound in (a), while circles, squares, and
+ triangles distinguish shear, sound, and diffusion in (b).  Panel (c) shows
+ the relative QNM--hydrodynamic difference for the same roots.  Panel (d)
+ plots $D_B$ directly against $\chi_B/T^2$ along the hot stable
+ $\mub=\mub^c$ approach; only the green segment is the displayed critical
+ fit used to infer $z$.}
  \label{fig:hydro-critical}
 \end{figure}
 
@@ -485,12 +503,16 @@ $1.7\times10^{-11}$.
 
 \begin{figure}[t]
  \centering
- \includegraphics[width=0.90\textwidth]{figures/cep_spinodal_dynamics.pdf}
- \caption{Critical and spinodal longitudinal dynamics.  (a) Diffusion at the
- MAP cusp follows $-\operatorname{Im}\w_D\sim\q^4$ at small momentum.
- (b) Full-QNM growth rates at three fractional positions between the
- $\mub=650$ MeV folds.  Dashed curves are the $q^2$ hydrodynamic prediction;
- full QNMs form a closed band and become damped at finite momentum.}
+ \includegraphics[width=\textwidth]{figures/cep_spinodal_dynamics.pdf}
+ \caption{Critical and spinodal diffusive dynamics.  In (a), open circles are
+ full QNMs at the MAP cusp, the solid green line is the fit over the shaded
+ four-point window, and the gray dashed line is a $\q^4$ reference normalized
+ at the lowest momentum.  The inset gives adjacent-point effective
+ exponents.  In (b), markers are full QNMs near the hot fold, at the midpoint,
+ and near the cold fold; solid curves are spline interpolations used only as
+ guides, and dashed curves are independent signed charged-hydrodynamic
+ predictions.  The shaded upper half-plane is unstable; the star and dotted
+ line mark the MAP midpoint maximum and band edge.}
  \label{fig:cep-spinodal}
 \end{figure}
 
@@ -509,6 +531,21 @@ $\phi_0=3.18138$ and 3.88392.  We solve the longitudinal spectrum at fractional
 positions 0.1, 0.5, and 0.9 between them.  In all cases the signed hydrodynamic
 diffusion coefficient is negative, so
 $\operatorname{Im}\w_D=-D_B\q^2>0$ at small momentum.
+
+We audited this identification before constructing the unstable-band figure.
+Nine backgrounds span stable points on both sides, near-fold points, and the
+three interior locations; at each one the full charged-fluid matrix was
+diagonalized with normalized projections in
+$(\delta\epsilon,\delta\rhob,\delta u_z)$.  The sound pair remains stable and
+$c_s^2>0$ throughout, whereas only the charge/heat eigenvalue changes sign.
+Dedicated QNM continuation down to $\q=0.0025$ gives a median leading power
+1.990, and a $\q^2+\q^4$ model is strongly preferred over a
+$\q+\q^2$ model at all three interior backgrounds.  The leading
+nonhydrodynamic longitudinal pole remains gapped.  Thus this charged EMD
+spinodal differs from the familiar sound-driven neutral case
+\cite{Janik:2015waa}: its carrier is the baryon/heat-diffusion branch, not
+merely an arbitrary purely imaginary root.  Appendix~\ref{app:mode-audit}
+records the complete audit.
 
 \begin{table}[t]
  \centering
@@ -583,13 +620,15 @@ critical path and a fixed-$\mub^c+50$ MeV line through both folds.
 \begin{figure}[t]
  \centering
  \includegraphics[width=\textwidth]{figures/posterior_uq.pdf}
- \caption{Controlled posterior propagation.  Marker area is proportional to
- represented posterior weight.  (a) Independently reconstructed critical
- endpoints, colored by log likelihood; the star is the MAP realization.
- (b) Medoid exponents with their fit-window half-ranges; the green band is the
- weighted 95\% posterior interval before the common systematic.  (c) Spinodal
- temperature width and signed midpoint diffusion at $\mub^c+50$ MeV.  Every
- medoid remains below $D_B=0$.}
+ \caption{Controlled posterior propagation.  In every panel marker area is
+ represented posterior weight and color is log likelihood; the star denotes
+ the MAP realization and open diamonds denote weighted medians.  Panel (a)
+ shows independently reconstructed CEPs.  Panel (b) orders medoids by $z$;
+ vertical bars are per-medoid fit-window half-ranges, the green band is the
+ weighted 95\% posterior interval, and gray dashed lines show the separate
+ common $\pm0.05$ window systematic.  Panel (c) compares spinodal temperature
+ width with signed midpoint diffusion at $\mub^c+50$ MeV.  All 25 medoids lie
+ in the shaded $D_B<0$ region.}
  \label{fig:posterior}
 \end{figure}
 
@@ -634,7 +673,10 @@ half frequency plane and forms a closed unstable band.  At the midpoint its
 fastest-growing scale is $\q_*=0.283$, its maximum dimensionless growth is
 $1.41\times10^{-3}$, and its edge is $\q=0.417$.  Hydrodynamics controls only
 the initial $q^2$ segment and cannot predict closure.  The band shrinks toward
-both spinodal boundaries.
+both spinodal boundaries.  An explicit nine-background audit finds positive
+$c_s^2$, a stable sound pair, $q^{1.990}$ diffusive growth, and a separated
+nonhydrodynamic pole, establishing that this charged instability is carried
+by baryon/heat diffusion rather than sound.
 
 A weighted 25-medoid posterior analysis represents all successful released
 draws and reconstructs every local cusp and spinodal pair independently.  It
@@ -702,6 +744,43 @@ and $4.142$.  Their half-range sets the quoted $\pm0.05$ systematic.  The
 direct QNM fits over four through seven low-momentum points give exponents
 3.987, 3.982, 3.976, and 3.968.  Posterior and fit-window uncertainties are
 reported separately because they arise from different sources.
+
+\section{Longitudinal mode-identity audit}
+\label{app:mode-audit}
+
+The charged hydrodynamic evolution matrix was evaluated on nine ordered
+backgrounds across the $\mub=650$ MeV folds.  Its three right eigenvectors
+were normalized in the relative variables
+$(\delta\epsilon/(\epsilon+P),\delta\rhob/\rhob,\delta u_z)$ before their
+composition was compared.  QNM roots were continued in background and in
+momentum; the diffusive branch uses eight values from $\q=0.0025$ to 0.05 at
+each of the three interior locations, while the sound pair is checked across
+the complete background sequence.  Production roots are reused when
+available and every new root is stored with its source and constraint
+residuals.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{figures/longitudinal_mode_identity_audit.pdf}
+ \caption{Audit of the unstable longitudinal branch.  Panel (a) follows the
+ independently computed $c_s^2$ and signed $D_B$ across both folds; the sound
+ coefficient stays positive while diffusion changes sign.  Panel (b) shows
+ small-$\q$ diffusive QNMs at three interior backgrounds; open markers are
+ roots and dashed curves are the displayed $\q^2+\q^4$ model comparisons.
+ Panel (c) gives normalized hydrodynamic eigenvector projections at the
+ midpoint.  Panel (d) places sound, diffusion, and the first $q=0$
+ nonhydrodynamic longitudinal pole in the complex plane, demonstrating the
+ latter's separation.  The complete machine-readable audit records fits,
+ residuals, susceptibility diagnostics, and provenance.}
+ \label{fig:mode-audit}
+\end{figure}
+
+The QNM leading powers are 1.990, 1.994, and 1.984 near the hot fold, at the
+midpoint, and near the cold fold.  The $\q^2+\q^4$ model has a lower BIC than
+models containing a leading linear term in all three cases.  This power
+counting, the signed coefficient, background continuity, and stable sound
+pair jointly determine the terminology used in the main text.
+\FloatBarrier
 
 \section{Background, CEP, and thermodynamic reproduction}
 \label{app:thermodynamics}
@@ -819,20 +898,26 @@ cusp they are $1.88\times10^{-11}$ and $3.33\times10^{-16}$, respectively.
  \label{fig:background}
 \end{figure}
 
-For provenance, figure~\ref{fig:thermo} also retains the direct image of the
-old 90-background horizon-data survey.  Its charged curves are not equilibrium
-trajectories: folds in the map make them multivalued in thermodynamic
-coordinates.  All Route-A physics instead uses the continued branches of
-figure~\ref{fig:phase-diagram}.
+Figure~\ref{fig:background-grid-map} displays the complete production grid in
+horizon coordinates and its thermodynamic image.  It replaces the earlier
+90-background exploratory survey: the latter remains a repository artifact
+but is not reader-facing evidence.  The fold locus makes explicit why
+isolated inversion in $(T,\mub)$ is ill-conditioned and why all dynamical
+backgrounds are selected by continuation in horizon data.
 
 \begin{figure}[t]
  \centering
- \includegraphics[width=\textwidth]{figures/background_thermodynamics.pdf}
- \caption{Exploratory horizon-data survey retained as a solver diagnostic.
- The nonmonotonic charged slices explain why isolated inversion in
- $(T,\mu_B)$ is ill-conditioned; they are not used as physical temperature
- scans.}
- \label{fig:thermo}
+ \includegraphics[width=\textwidth]{figures/background_grid_map.pdf}
+ \caption{Production background grid and thermodynamic map.  Panel (a) shows
+ successful horizon-data points as a light rasterized cloud, failed points as
+ gray crosses, selected fixed-$\mub$ contours in gray, the $\det J=0$ fold
+ locus in vermillion, the CEP, and the three spinodal QNM backgrounds.  Panel
+ (b) maps representative constant-$\phi_0$ and constant-charge families into
+ $(\mub,T)$, together with folds, coexistence, and the same dynamical points.
+ Only the dense point clouds are rasterized; curves and text remain vector.
+ The overlapping families visualize the multivalued inverse map that
+ motivates branch continuation.}
+ \label{fig:background-grid-map}
 \end{figure}
 
 \subsection{Independent critical-point reproduction}
@@ -871,8 +956,12 @@ explicit.
  \centering
  \includegraphics[width=0.82\textwidth]{figures/cep_reproduction.pdf}
  \caption{Convergence of the reference-compatible constant-$\phi_0$
- crossing algorithm.  The independent local cusp agrees with the converged
- crossing estimate, while the HDF5 metadata remain offset.}
+ crossing algorithm, shown as differences from the independent local cusp.
+ Circles are crossing calculations at increasing line count, green dashed
+ lines are zero difference, and gray dotted lines are the fixed offsets of
+ the HDF5 metadata.  Both reconstructed coordinates approach the local cusp,
+ while the metadata remain distinct; the plot shows no fitted convergence
+ order.}
  \label{fig:cep-reproduction}
 \end{figure}
 \FloatBarrier
@@ -1007,9 +1096,14 @@ continuum evidence for the four accepted modes.
 \begin{figure}[t]
  \centering
  \includegraphics[width=\textwidth]{figures/qnm_convergence.pdf}
- \caption{Continuum checks for the four accepted homogeneous poles.
- Distances are measured from the complex-shooting root; radial resolution and
- UV-domain variations are separated.}
+ \caption{Continuum checks for the four accepted homogeneous poles.  Markers
+ give distances from the complex-shooting root; panel (a) varies radial
+ resolution at fixed UV domain and panel (b) varies the UV cutoff at fixed
+ $N=160$, so distinct studies are not connected into a single sequence.  The
+ light green region is the accepted numerical envelope and the gray dashed
+ line marks the shooting root floor used for visual scale.  Circles denote
+ resolution variation and squares denote UV-domain variation; color identifies
+ the four accepted modes.}
  \label{fig:convergence}
 \end{figure}
 
@@ -1031,10 +1125,15 @@ study through $N=160$ reproduces this damping within $2\times10^{-7}$.
 \begin{figure}[t]
  \centering
  \includegraphics[width=\textwidth]{figures/homogeneous_qnm_trajectories.pdf}
- \caption{Validated leading homogeneous poles on two controlled
- thermodynamic trajectories.  Arrows point toward higher temperature; solid
- and dashed curves denote $\mub=0$ and $\mub/T=2$.  The triplet becomes long
- lived toward the low-temperature endpoint while remaining gapped.}
+ \caption{Validated leading homogeneous poles on the physical trajectories
+ $\mub=0$ (solid) and $\mub/T=2$ (dashed).  Color identifies the quintuplet,
+ triplet, or singlet, and symbols are calculated continuation points.  Panels
+ (a,b) show the real part and damping versus temperature; panel (c) shows the
+ complex-plane paths, with arrows only there indicating increasing
+ temperature.  Panel (d) converts damping to a linear relaxation time.  The
+ triplet becomes long lived toward the low-temperature endpoint, but panel
+ (a) simultaneously shows that its real part remains finite: it is gapped and
+ is not the conserved critical pole.}
  \label{fig:physical-trajectories}
 \end{figure}
 \FloatBarrier
@@ -1078,6 +1177,22 @@ $\mathfrak w$.
  \end{tabular}
 \end{table}
 
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{figures/legacy_2018_qnm_curves.pdf}
+ \caption{Independent numerical reproduction using the 2018 EMD
+ parametrization.  Rows show the quintuplet, triplet, and singlet; columns
+ show $\operatorname{Re}\w$ and $-\operatorname{Im}\w$ versus temperature at
+ five fixed chemical potentials.  Open markers are source-factored
+ collocation calculations and thin segments are piecewise-linear guides to
+ the eye, not fitted or digitized published curves.  Sixty-five backgrounds
+ give 195 displayed QNM points.  Independent shooting at the nine landmarks
+ of table~\ref{tab:old-emd-comparison} supplies the quantitative cross-check.
+ The reproduction validates the shared solver for a known parametrization; it
+ does not imply universality between that model and PHA.}
+ \label{fig:legacy-curves}
+\end{figure}
+
 At $T=400$ MeV the two models differ by at most 0.004 fm/$c$.  At 145 MeV the
 PHA singlet relaxes about ten percent faster.  At their respective endpoints
 both models have $\tau_3>\tau_1>\tau_5$, while the PHA triplet time is about
@@ -1113,8 +1228,10 @@ python analysis/plot_qnm_validation.py
 python analysis/plot_homogeneous_trajectories.py
 python analysis/validate_coupled_qnms.py
 python analysis/run_finite_k_physics.py --stage all
+python analysis/audit_longitudinal_mode_identity.py
 python analysis/run_posterior_uq.py --samples 25 --workers 4
-python analysis/plot_posterior_uq.py
+python analysis/plot_legacy_2018_curves.py
+python analysis/render_all_figures.py --gallery --check
 \end{verbatim}
 The posterior driver contains its adaptive cusp fallback and therefore does
 not require manual sample removal or retuning.  The run uses the
@@ -1126,8 +1243,11 @@ $\log\mathcal L=31.0751$.  The primary Route-A outputs are
 \path{cep_q4_dispersion.csv},
 \path{spinodal_dispersion.csv}, and
 \path{posterior_uq_samples.json}, with JSON summaries storing fits and
-acceptance thresholds.  The finite-momentum scan is checkpointed after every
-root.
+acceptance thresholds.  The mode-identity audit is stored in
+\path{longitudinal_mode_identity_audit.csv/json}, and the 2018-model curves in
+\path{legacy_2018_qnm_curves.csv/json}.  The figure manifest records every
+input, semantic layer, fit window, interpolation role, and output.  The
+finite-momentum scans are checkpointed after every root.
 
 The retained validation products include
 \path{thermodynamic_validation.csv} and the validated-mode,
