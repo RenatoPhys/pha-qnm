@@ -4,8 +4,11 @@
 instabilities in Bayesian holographic QCD**. It presents the complete coupled
 helicity-one/helicity-zero calculation, stable charged-hydrodynamic matches,
 critical scaling, closed spinodal unstable bands, and a weighted 25-medoid
-posterior analysis. Four referenced vector figures carry the scientific
-narrative; detailed diagnostics remain machine readable.
+posterior analysis. Four vector figures carry the central Route-A narrative;
+seven additional appendix figures preserve the model kernels, background and
+thermodynamic reproduction, CEP cross-check, homogeneous convergence and
+trajectories, and the quantitative 2018-model comparison. Detailed data remain
+machine readable.
 
 Build on Windows with:
 

@@ -54,11 +54,13 @@ discarded or manually retuned.
 
 ## Manuscript and submission status
 
-`paper/main.pdf` is a 16-page JHEP-style working manuscript with a first-page
-abstract, controlled keywords, four vector figures, an explicit numerical
-error appendix, reproducibility commands, and AI-assisted-technology
-disclosure. It has no undefined references/citations, duplicate labels,
-overfull boxes, or invented author information.
+`paper/main.pdf` is a 25-page JHEP-style working manuscript with a first-page
+abstract, controlled keywords, four central Route-A figures, and seven
+appendix figures preserving the background, thermodynamic, convergence,
+homogeneous-trajectory, CEP-reproduction, and legacy-model evidence. It also
+contains an explicit numerical error appendix, reproducibility commands, and
+AI-assisted-technology disclosure. It has no undefined references/citations,
+duplicate labels, overfull boxes, or invented author information.
 
 Scientific and numerical Route-A gates are closed. Literal submission remains
 blocked only on author-controlled names, affiliations, email, ORCID, funding,

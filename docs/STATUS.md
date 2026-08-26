@@ -31,8 +31,8 @@ Last updated: 2026-08-25.
 - Homogeneous three-sector cusp modes, physical trajectories, and the
   independently reproduced 2018 EMD relaxation-time benchmark retained as
   nonhydrodynamic and cross-model validation.
-- A 16-page Route-A JHEP manuscript with four vector figures and
-  machine-readable claim evidence.
+- A 25-page Route-A JHEP manuscript with four central physics figures, seven
+  restored validation/benchmark figures, and machine-readable claim evidence.
 
 ## Current numerical acceptance summary
 

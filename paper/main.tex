@@ -76,7 +76,7 @@ susceptibilities determine critical slowing down.  The QCD critical endpoint
 is expected to exhibit Model-H dynamics \cite{Hohenberg:1977ym,Son:2004iv},
 whereas classical large-$N_c$ holography suppresses some nonlinear mode
 couplings and can realize a different effective exponent
-\cite{DeWolfe:2011ts}.  The exponent and the pole responsible for it must
+\cite{DeWolfe:2011ts,Roth:2024hpn}.  The exponent and the pole responsible for it must
 therefore be extracted from the real-time spectrum rather than inferred from
 the static equation of state.
 
@@ -99,6 +99,9 @@ work propagates the PHA posterior to equilibrium and horizon transport
 momentum pole structure, the critical diffusion law, or the full spinodal
 band.  Charged-fluid studies further show that mode mixing and pole collisions
 can sharply limit hydrodynamics \cite{Abbasi:2020ykq,Jansen:2020hfd}.
+Recent improved-holographic-QCD, V-QCD, and Einstein--dilaton calculations
+further illustrate the range of finite-density instabilities and channel
+spectra \cite{Alho:2020gwl,CruzRojas:2024lwo,Villarreal:2025qtm}.
 
 This work closes that gap.  We first reconstruct the horizon-data surface,
 continue fixed-$\mub$ branches through both folds, and independently locate
@@ -129,8 +132,9 @@ Sections~\ref{sec:perturbations} and \ref{sec:numerics} give the coupled
 systems and validation.  Stable hydrodynamics, critical dynamics, spinodal
 growth, and posterior propagation are presented in
 sections~\ref{sec:stable}--\ref{sec:posterior}.  Appendices collect symbolic
-identities, the error budget, homogeneous gapped modes, and reproducibility
-details.
+identities, the error budget, background and thermodynamic reproduction,
+homogeneous trajectories and the 2018-model benchmark, and complete
+reproducibility details.
 
 \section{PHA EMD model and phase structure}
 \label{sec:model}
@@ -278,7 +282,8 @@ satisfy
  \label{eq:source-matrix}
 \end{equation}
 or, equivalently, a vanishing smallest singular value.  This is the standard
-coupled-field source-matrix construction \cite{Kaminski:2009dh}.
+coupled-field source-matrix construction
+\cite{Kovtun:2005ev,Kaminski:2009dh}.
 
 Metric, Maxwell, and scalar source/vev powers are respectively $u^0/u^4$,
 $u^0/u^2$, and $u^\nu/u^\Delta$ for $u=e^{-A}$.  We extract each source by a
@@ -698,23 +703,389 @@ direct QNM fits over four through seven low-momentum points give exponents
 3.987, 3.982, 3.976, and 3.968.  Posterior and fit-window uncertainties are
 reported separately because they arise from different sources.
 
+\section{Background, CEP, and thermodynamic reproduction}
+\label{app:thermodynamics}
+
+\subsection{Exact kernels and background equations}
+
+All model derivatives are evaluated analytically.  In particular,
+\begin{align}
+ V_\phi={}&-12\gamma\sinh(\gamma\phi)+2b_2\phi+4b_4\phi^3+6b_6\phi^5,\nonumber\\
+ V_{\phi\phi}={}&-12\gamma^2\cosh(\gamma\phi)+2b_2+12b_4\phi^2+30b_6\phi^4,\\
+ f_{\phi\phi}=\frac{1}{1+d_1}\bigg\{
+ &\operatorname{sech}g\left[\tanh^2g-\operatorname{sech}^2g\right](g')^2
+ -\operatorname{sech}g\tanh g\,g''\nonumber\\
+ &+d_1d_2^2\operatorname{sech}(d_2\phi)
+ \left[\tanh^2(d_2\phi)-\operatorname{sech}^2(d_2\phi)\right]\bigg\}.
+ \label{eq:fpp}
+\end{align}
+Figure~\ref{fig:kernels} shows the exact MAP kernels.  The narrow structure in
+$f(\phi)$ near the boundary, controlled by the large value of $d_2$, is
+resolved rather than smoothed or removed.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{figures/pha_model_kernels.pdf}
+ \caption{Exact MAP dilaton potential and Maxwell coupling.  The right panel
+ resolves the ultraviolet boundary layer at $\phi\sim d_2^{-1}$.}
+ \label{fig:kernels}
+\end{figure}
+
+\begin{table}[t]
+ \centering
+ \caption{Maximum-likelihood PHA realization.  Exact binary64 values and
+ provenance hashes are retained in the machine-readable configuration.}
+ \label{tab:parameters}
+ \begin{tabular}{@{}lr@{}}
+ \toprule
+ quantity & value\\
+ \midrule
+ $\Lambda$ [MeV] & 1123.87\\
+ $\kappa_5^2$ & 11.3705\\
+ $\gamma$ & 0.590424\\
+ $b_2$ & 0.327227\\
+ $b_4$ & -0.0480134\\
+ $b_6$ & 0.000938515\\
+ $c_1$ & 0.00880048\\
+ $c_2$ & 0.155799\\
+ $c_3$ & 0.0528185\\
+ $d_1$ & 1.71775\\
+ $d_2$ & 1679.18\\
+ $m^2$ & -3.52875\\
+ $\Delta$ & 2.68648\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+For the background ansatz in eq.~\eqref{eq:background}, the equations used by
+the independent reference integrator are
+\begin{align}
+ \phi''+\left(4A'+\frac{h'}h\right)\phi'
+ -\frac1h\left(V_\phi-\frac12e^{-2A}f_\phi\Phi'^2\right)&=0,\nonumber\\
+ \Phi''+\left(2A'+\frac{f_\phi}{f}\phi'\right)\Phi'&=0,\nonumber\\
+ A''+\frac16\phi'^2&=0,\qquad
+ h''+4A'h'-e^{-2A}f\Phi'^2=0.
+ \label{eq:background-eoms}
+\end{align}
+They obey the constraint and conserved charge
+\begin{align}
+ \mathcal C&=h(24A'^2-\phi'^2)+6A'h'+2V+e^{-2A}f\Phi'^2=0,\nonumber\\
+ \mathcal Q&=e^{2A}f\Phi'=\text{constant}.
+ \label{eq:diagnostics}
+\end{align}
+The reduced production path evolves $\mathcal Q$ directly and reconstructs
+\begin{equation}
+ \Phi'(r)=\frac{\mathcal Q e^{-2A(r)}}{f[\phi(r)]}.
+ \label{eq:reduced-charge}
+\end{equation}
+
+\subsection{Regular horizon series and background diagnostics}
+\label{app:horizon}
+
+Writing
+\begin{align}
+ A&=A_1r+A_2r^2+\cdots,&h&=r+h_2r^2+\cdots,\nonumber\\
+ \phi&=\phi_0+\phi_1r+\phi_2r^2+\cdots,&
+ \Phi&=\Phi_1r+\Phi_2r^2+\cdots,
+\end{align}
+the compiled recurrence reproduces
+\begin{align}
+ A_1&=-\frac{2V_0+f_0\Phi_1^2}{6},&
+ \phi_1&=V_{\phi,0}-\frac12f_{\phi,0}\Phi_1^2,\nonumber\\
+ A_2&=-\frac{\phi_1^2}{12},&
+ h_2&=\frac12(f_0\Phi_1^2-4A_1),\nonumber\\
+ \Phi_2&=-\frac{\Phi_1}{2}\left(2A_1+
+ \frac{f_{\phi,0}}{f_0}\phi_1\right).
+ \label{eq:horizon-series}
+\end{align}
+Higher coefficients through fourth order are generated by truncated-series
+arithmetic applied to the regular equations, rather than hand-entered
+formulae.
+
+The conserved-charge background system is integrated from
+$\epsilon_H=10^{-7}$ to $r_{\rm max}=12$ with DOP853, relative tolerance
+$3\times10^{-12}$, absolute tolerance $3\times10^{-14}$, and maximum step
+0.025.  UV coefficients are extracted on a fixed 2400-point grid.  Across the
+90-point validation scan, the normalized Einstein constraint is at most
+$3.50\times10^{-9}$ and Gauss drift is below $4.45\times10^{-16}$; at the MAP
+cusp they are $1.88\times10^{-11}$ and $3.33\times10^{-16}$, respectively.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{figures/representative_background.pdf}
+ \caption{MAP critical background used by the homogeneous and coupled
+ benchmarks.  The middle panel resolves both the scalar decay and the narrow
+ Maxwell-coupling layer; the right panel verifies constant electric flux.}
+ \label{fig:background}
+\end{figure}
+
+For provenance, figure~\ref{fig:thermo} also retains the direct image of the
+old 90-background horizon-data survey.  Its charged curves are not equilibrium
+trajectories: folds in the map make them multivalued in thermodynamic
+coordinates.  All Route-A physics instead uses the continued branches of
+figure~\ref{fig:phase-diagram}.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{figures/background_thermodynamics.pdf}
+ \caption{Exploratory horizon-data survey retained as a solver diagnostic.
+ The nonmonotonic charged slices explain why isolated inversion in
+ $(T,\mu_B)$ is ill-conditioned; they are not used as physical temperature
+ scans.}
+ \label{fig:thermo}
+\end{figure}
+
+\subsection{Independent critical-point reproduction}
+
+The public reference-compatible construction follows crossings of neighboring
+constant-$\phi_0$ curves.  Increasing the number of trajectories from 100 to
+800 moves the estimate from $(103.666,594.761)$ MeV to
+$(103.761,593.384)$ MeV.  The independent local method uses
+\begin{equation}
+ J=\frac{\partial(\log T,\log\mu_B)}
+ {\partial(\phi_0,\Phi_1/\Phi_1^{\rm max})}
+ \label{eq:thermo-jacobian}
+\end{equation}
+and imposes both $\det J=0$ and a vanishing directional derivative along the
+null vector of $J$.  Table~\ref{tab:cep} makes the provenance discrepancy
+explicit.
+
+\begin{table}[t]
+ \centering
+ \caption{Critical coordinates from posterior metadata and two independent
+ local reconstructions.  The two numerical routes agree with one another;
+ the distinct metadata value is not used to choose the dynamical background.}
+ \label{tab:cep}
+ \begin{tabular}{@{}lrr@{}}
+ \toprule
+ method & $T_c$ [MeV] & $\mu_B^c$ [MeV]\\
+ \midrule
+ HDF5 metadata & 103.8978 & 602.4749\\
+ constant-$\phi_0$ crossings ($N=800$) & 103.7611 & 593.3845\\
+ local cusp equations & 103.7553 & 593.3227\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=0.82\textwidth]{figures/cep_reproduction.pdf}
+ \caption{Convergence of the reference-compatible constant-$\phi_0$
+ crossing algorithm.  The independent local cusp agrees with the converged
+ crossing estimate, while the HDF5 metadata remain offset.}
+ \label{fig:cep-reproduction}
+\end{figure}
+\FloatBarrier
+
+\subsection{Neutral equation of state and baryon susceptibility}
+
+As a background test independent of every QNM solver, we reproduce the neutral
+entropy and the second-order baryon susceptibility
+\begin{equation}
+ \chi_2^B(T)=\left.\frac{\partial(\rho_B/T^3)}
+ {\partial(\mu_B/T)}\right|_{\mu_B=0}.
+ \label{eq:chi2}
+\end{equation}
+For each of 30 neutral backgrounds, the centered derivative is
+\begin{equation}
+ \chi_2^B(\delta)=
+ \frac{(\rho_B/T^3)_{+\delta}-(\rho_B/T^3)_{-\delta}}
+ { (\mu_B/T)_{+\delta}-(\mu_B/T)_{-\delta}},
+ \qquad \delta=0.005,0.010,0.020.
+ \label{eq:chi2fd}
+\end{equation}
+Charge conjugation makes $T$ and $s$ even and $\mu_B$ and $\rho_B$ odd in
+$\delta$, so fixing $\phi_0$ differs from fixing $T$ only at
+$\order(\delta^2)$.  The 90 evaluations span
+$74.69\leq T/{\rm MeV}\leq1003.70$; the largest susceptibility displacement
+relative to the finest step is $2.06\times10^{-3}$ and occurs at the coarsest
+step.  No smoothing or fitted interpolation enters the displayed points.
+
+\begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\textwidth]{figures/thermodynamic_validation.pdf}
+ \caption{Reproduction and step-size stability of neutral thermodynamics.
+ Left: $s/T^3$.  Center: $\chi_2^B$ from eq.~\eqref{eq:chi2fd}.  Right:
+ relative displacement from the finest step.  This equilibrium validation is
+ independent of the finite-density critical and spinodal claims.}
+ \label{fig:thermodynamic-validation}
+\end{figure}
+\FloatBarrier
+
 \section{Homogeneous gapped spectrum and legacy benchmark}
 \label{app:homogeneous}
 
-At the MAP cusp, source-factored homogeneous collocation and independent
-shooting validate
-\begin{align}
- \w_{\rm tensor}&=1.8732-0.8669\ii,&
- \w_{\rm vector,0}&=1.68854-0.10317\ii,\nonumber\\
- \w_{\rm vector,1}&=2.8976-0.8634\ii,&
- \w_{\rm scalar}&=1.4924-0.2561\ii.
-\end{align}
-The leading modes were also followed on $\mub=0$ and $\mub/T=2$ trajectories
-with minimum parent eigenfunction overlap 0.9985.  Replacing the PHA kernels
-by the potential and Maxwell coupling of ref.~\cite{Rougemont:2018taa}
-reproduces its nine published relaxation times within $0.0111$ fm/$c$.  These
-homogeneous results validate the common background/spectral infrastructure but
-are not used to infer diffusion or spinodal growth.
+\subsection{Homogeneous master equations}
+
+At $k=0$, $SO(3)$ organizes the perturbations into quintuplet, triplet, and
+singlet sectors.  The decoupled tensor equation (and finite-$k$ helicity-two
+benchmark) is
+\begin{equation}
+ Z_2''+\left(4A'+\frac{h'}h-\frac{2\ii\omega e^{-A}}h\right)Z_2'
+ +\left(-\frac{e^{-2A}k^2}{h}-\frac{3\ii\omega e^{-A}A'}h\right)Z_2=0.
+ \label{eq:tensor}
+\end{equation}
+The homogeneous vector master field obeys
+\begin{multline}
+ a''+\left(2A'+\frac{h'}h+\frac{f_\phi}{f}\phi'
+ -\frac{2\ii\omega e^{-A}}h\right)a'\\
+ +\left[-\frac{e^{-2A}f\Phi'^2}{h}
+ -\frac{\ii\omega e^{-A}}h\left(A'+\frac{f_\phi}{f}\phi'\right)\right]a=0.
+ \label{eq:vector}
+\end{multline}
+Their normalizable powers are $Z_2\sim u^4$ and $a\sim u^2$ for
+$u=e^{-A}$.  For the singlet, define
+\begin{equation}
+ {\cal S}=\varphi-\frac{\phi'}{2A'}
+ \frac{H_{xx}+H_{yy}+H_{zz}}{3},\qquad
+ Y=\frac{\phi'}{A'},\qquad \psi=\frac{{\cal S}}Y.
+ \label{eq:singlet-invariant}
+\end{equation}
+The source-free homogeneous master equation is
+\begin{multline}
+ \psi''+\left(4A'+\frac{h'}h+2\frac{Y'}Y
+ -\frac{2\ii\omega e^{-A}}h\right)\psi'\\
+ +\left[-\frac{h'}h\frac{Y'}Y
+ +\frac{e^{-2A}\Phi'^2}{h\phi'}(3A'f_\phi-f\phi')
+ -\frac{\ii\omega e^{-A}}h\left(3A'+2\frac{Y'}Y\right)\right]\psi=0.
+ \label{eq:singlet}
+\end{multline}
+The first-order symbolic variation of the complete EMD system reproduces
+eqs.~\eqref{eq:vector} and \eqref{eq:singlet}.  After UV source factoring,
+the collocation problem is the frequency-linear pencil
+\begin{equation}
+ [M_0(k)+\omega M_1(k)]\bm v=0,
+ \label{eq:pencil}
+\end{equation}
+with the numerical conversion
+\begin{equation}
+ \w=2\omega_{\rm num},\qquad
+ k_{\rm num}=\frac{\q}{2\sqrt{h_0^{\rm far}}}.
+ \label{eq:rescaling}
+\end{equation}
+
+\subsection{Continuum validation at the MAP cusp}
+
+The homogeneous quintuplet, triplet, and singlet operators factor the UV
+sources analytically.  Resolution and domain errors are varied separately:
+$N=64,\ldots,160$ at $r_{\rm cut}=10$, and $r_{\rm cut}=8,\ldots,12$ at
+$N=160$.  Right-eigenfunction overlaps track each branch, while left and
+right null vectors give
+\begin{equation}
+ \kappa_\omega=\frac{\sqrt{1+|\omega|^2}\,\|u\|\,\|v\|}
+ {|u^\dagger M_1v|}.
+ \label{eq:homogeneous-conditioning}
+\end{equation}
+The largest condition estimate among accepted modes is $2.1\times10^5$.
+An independent complex shooting solver varies both the horizon start and UV
+extraction radius; no inverse of the generalized pencil is formed
+\cite{Jansen:2017oag}.
+
+\begin{table}[t]
+ \centering
+ \caption{Independently validated homogeneous poles at the MAP cusp.
+ Parentheses give the conservative spectral/shooting envelope on the last
+ displayed digits.}
+ \label{tab:poles}
+ \begin{tabular}{@{}cclcc@{}}
+ \toprule
+ sector & $n$ & $\mathfrak w_n$ & source residual & $\kappa_\omega$\\
+ \midrule
+ quintuplet & 0 & $1.8732(3)-0.8669(6)i$ & $9.5\times10^{-15}$ & $2.1\times10^5$\\
+ triplet & 0 & $1.688542(4)-0.103168(6)i$ & $3.9\times10^{-14}$ & $4.6\times10^2$\\
+ triplet & 1 & $2.8976(34)-0.8634(12)i$ & $9.6\times10^{-14}$ & $1.4\times10^4$\\
+ singlet & 0 & $1.4924(12)-0.2561(13)i$ & $9.3\times10^{-12}$ & $5.1\times10^2$\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+The leading triplet is oscillatory and gapped; its small damping is not a
+baryon-diffusion pole.  Three former discrete-pencil roots fail the independent
+source test and are excluded.  Figure~\ref{fig:convergence} retains the full
+continuum evidence for the four accepted modes.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{figures/qnm_convergence.pdf}
+ \caption{Continuum checks for the four accepted homogeneous poles.
+ Distances are measured from the complex-shooting root; radial resolution and
+ UV-domain variations are separated.}
+ \label{fig:convergence}
+\end{figure}
+
+\subsection{Controlled thermodynamic trajectories}
+
+The leading pole in each sector is continued through 18 backgrounds on each
+of the physical curves $\mub=0$ and $\mub/T=2$, spanning approximately
+$87\leq T\leq346$ MeV.  Every point is a shooting root; the associated
+factored-collocation eigenfunction is assigned using frequency and overlap
+with its parent.  The minimum parent overlap is 0.9985 and the largest
+pointwise shooting/spectral difference is 0.012 in $\mathfrak w$.
+
+The quintuplet and singlet damping rates are nonmonotonic but remain of order
+unity or a few tenths.  The leading triplet changes more strongly: toward the
+low-temperature endpoint, $-\operatorname{Im}\mathfrak w$ falls to
+$3.7\times10^{-3}$ while the real part remains nonzero.  A dedicated endpoint
+study through $N=160$ reproduces this damping within $2\times10^{-7}$.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{figures/homogeneous_qnm_trajectories.pdf}
+ \caption{Validated leading homogeneous poles on two controlled
+ thermodynamic trajectories.  Arrows point toward higher temperature; solid
+ and dashed curves denote $\mub=0$ and $\mub/T=2$.  The triplet becomes long
+ lived toward the low-temperature endpoint while remaining gapped.}
+ \label{fig:physical-trajectories}
+\end{figure}
+\FloatBarrier
+
+\subsection{Comparison with the 2018 EMD realization}
+\label{sec:old-emd-comparison}
+
+To separate solver performance from model dependence, we replace the PHA
+potential, Maxwell coupling, and scale by the functions and parameters of
+ref.~\cite{Rougemont:2018taa} without changing either numerical algorithm.
+A local reconstruction gives its endpoint at $(89.122,723.551)$ MeV,
+consistent with the rounded $(89,724)$ MeV quoted there.  At this endpoint and
+at two common neutral states, all nine published relaxation times are
+reproduced within $0.0111$ fm/$c$; the maximum shooting source residual is
+$7.5\times10^{-9}$ and the largest spectral/shooting distance is 0.0074 in
+$\mathfrak w$.
+
+\begin{table}[!htbp]
+ \centering
+ \caption{Linear relaxation times in the 2018 EMD realization and the PHA
+ MAP model.  ``Published'' denotes the approximate values quoted in
+ ref.~\cite{Rougemont:2018taa}; endpoint rows use each model's own CEP.}
+ \label{tab:old-emd-comparison}
+ \begin{tabular}{@{}llrrrrr@{}}
+ \toprule
+ state & model & $T$ & $\mu_B$ & $\tau_5$ & $\tau_3$ & $\tau_1$\\
+ & & \multicolumn{2}{c}{[MeV]} & \multicolumn{3}{c}{$[\mathrm{fm}/c]$}\\
+ \midrule
+ high $T$ & 2018 published  & 400 & 0 & 0.060 & 0.080 & 0.110\\
+          & 2018 reproduced & 400 & 0 & 0.059 & 0.080 & 0.108\\
+          & PHA MAP         & 400 & 0 & 0.059 & 0.081 & 0.112\\
+ \addlinespace
+ neutral crossover & 2018 published  & 145 & 0 & 0.260 & 1.000 & 0.700\\
+          & 2018 reproduced & 145 & 0 & 0.261 & 1.008 & 0.703\\
+          & PHA MAP         & 145 & 0 & 0.261 & 1.025 & 0.634\\
+ \addlinespace
+ model CEP & 2018 published  & 89.0 & 724.0 & 0.330 & 2.150 & 1.260\\
+          & 2018 reproduced & 89.1 & 723.6 & 0.329 & 2.139 & 1.252\\
+          & PHA MAP         & 103.8 & 593.3 & 0.349 & 2.934 & 1.182\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+At $T=400$ MeV the two models differ by at most 0.004 fm/$c$.  At 145 MeV the
+PHA singlet relaxes about ten percent faster.  At their respective endpoints
+both models have $\tau_3>\tau_1>\tau_5$, while the PHA triplet time is about
+37 percent larger.  This is a cross-model response comparison, not a
+universality or critical-exponent statement.  These homogeneous results
+validate the common background/spectral infrastructure but are not used to
+infer diffusion or spinodal growth.
+\FloatBarrier
 
 \section{Reproducibility and data products}
 \label{app:repro}
@@ -722,19 +1093,33 @@ are not used to infer diffusion or spinodal growth.
 The complete Route-A analysis is regenerated from the repository root by
 \begin{verbatim}
 python -m pip install -r analysis/requirements.txt
+python analysis/reproduce_reference_cep.py --lines 800 --neighbors-only \
+  --output results/python/reference_cep_neighbors_N800.json
+python analysis/locate_reference_cusp.py --phi-step 0.01 \
+  --charge-step 0.001 --uv-tolerance 1e-5 \
+  --output results/python/reference_cusp_uv1e5_h10.json
 python analysis/build_phase_diagram.py --n-phi 141 --n-charge 121 \
   --phi-min 2.2 --phi-max 6.5 --charge-min 0.02 --charge-max 0.62 \
   --mu-min 594 --mu-max 850 --mu-count 65
 python analysis/validate_phase_diagram.py
+python analysis/plot_cep_reproduction.py
+python analysis/run_numerics.py
 python derivations/generate_linearized_emd.py
 python derivations/validate_linearized_emd.py
+python analysis/validate_decoupled_qnms.py
+python analysis/build_homogeneous_trajectories.py
+python analysis/compare_2018_emd.py
+python analysis/plot_qnm_validation.py
+python analysis/plot_homogeneous_trajectories.py
 python analysis/validate_coupled_qnms.py
 python analysis/run_finite_k_physics.py --stage all
 python analysis/run_posterior_uq.py --samples 25 --workers 4
 python analysis/plot_posterior_uq.py
 \end{verbatim}
 The posterior driver contains its adaptive cusp fallback and therefore does
-not require manual sample removal or retuning.  The primary outputs are
+not require manual sample removal or retuning.  The run uses the
+checksum-recorded source HDF5 and selects sample 74 with
+$\log\mathcal L=31.0751$.  The primary Route-A outputs are
 \path{coupled_qnm_validation.csv},
 \path{finite_k_hydrodynamic_dispersion.csv},
 \path{cep_critical_scaling.csv},
@@ -743,6 +1128,15 @@ not require manual sample removal or retuning.  The primary outputs are
 \path{posterior_uq_samples.json}, with JSON summaries storing fits and
 acceptance thresholds.  The finite-momentum scan is checkpointed after every
 root.
+
+The retained validation products include
+\path{thermodynamic_validation.csv} and the validated-mode,
+homogeneous-trajectory, and 2018-benchmark CSV files.  Their JSON sidecars
+store the horizon and
+UV settings, branch labels, source residuals, condition estimates, tracking
+parents, eigenfunction overlaps, and independent-method envelopes.  Thus the
+appendices are regenerated data products, not historical prose detached from
+the current pipeline.
 
 The source HDF5 checksum and exact sample attributes are recorded in the data
 manifest.  Source code and machine-readable outputs are available at

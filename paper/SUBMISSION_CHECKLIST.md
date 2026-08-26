@@ -14,13 +14,16 @@ Checked against the official JHEP author instructions and tool downloads on
 - The complete coupled finite-momentum, critical, spinodal, and posterior
   claims map to versioned CSV/JSON evidence and independent checks.
 - The source build generates `main.bbl`; the guarded packager requires it.
-- The master file is `main.tex`, with exactly four referenced PDF figures under
-  `figures/`: `phase_diagram.pdf`, `hydrodynamic_critical_dispersion.pdf`,
-  `cep_spinodal_dynamics.pdf`, and `posterior_uq.pdf`.
+- The master file is `main.tex`, with 11 referenced PDF figures under
+  `figures/`: the four central Route-A figures and the seven appendix figures
+  `pha_model_kernels.pdf`, `representative_background.pdf`,
+  `background_thermodynamics.pdf`, `cep_reproduction.pdf`,
+  `thermodynamic_validation.pdf`, `qnm_convergence.pdf`, and
+  `homogeneous_qnm_trajectories.pdf`.
 - The manuscript compiles without undefined citations/references, duplicate
   labels, overfull boxes, or TeX errors.
 - All manuscript/figure fonts are embedded and no Type 3 fonts are present.
-- All 16 pages have been rendered and visually inspected for clipping,
+- All 25 pages have been rendered and visually inspected for clipping,
   overlap, figure legibility, and bibliography layout.
 
 ## Author-controlled items still required
