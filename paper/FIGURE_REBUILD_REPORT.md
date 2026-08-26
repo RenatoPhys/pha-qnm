@@ -43,6 +43,9 @@ mechanism and contrast to neutral sound-driven spinodals stated explicitly.
 | `legacy_2018_qnm_curves` | new 3x2 reproduction at five chemical potentials | new 2018-model curve CSV; unchanged benchmark |
 | `cep_reproduction` | differences relative to local cusp | stored crossing/cusp results |
 | `qnm_convergence` | separated studies, accepted envelope, root floor | convergence and validated-mode CSVs |
+| `pha_model_kernels` | sampled horizon-field range and resolved UV inset | analytic MAP kernels; phase-surface range |
+| `representative_background` | normalized profiles, UV-layer inset, pointwise and envelope flux error | MAP critical background |
+| `thermodynamic_validation` | redundant step encoding and percent displacement panel | unchanged thermodynamic validation CSV |
 
 The exact semantic encodings, axes, fit windows, interpolation roles, captions,
 and dependencies are machine-readable in `analysis/figure_manifest.json`.
@@ -85,6 +88,7 @@ details are in `results/python/figure_rebuild_scientific_change_log.md`.
 ```text
 python analysis/audit_longitudinal_mode_identity.py
 python analysis/plot_legacy_2018_curves.py
+python analysis/plot_appendix_diagnostics.py
 python analysis/render_all_figures.py --gallery --check
 powershell -ExecutionPolicy Bypass -File paper/build_pdf.ps1
 pdftoppm -png -r 110 paper/main.pdf tmp/pdfs/manuscript-rebuild/page
@@ -100,7 +104,7 @@ are intentionally absent.
 ## QA
 
 - Figure contracts: `12 passed`.
-- Manuscript: 29 A4 pages, 456,954 bytes, PDF 1.5.
+- Manuscript: 29 A4 pages, 459,675 bytes, PDF 1.5.
 - All manuscript fonts are embedded (recursive Type-0/descendant-font check).
 - Every page was rendered with Poppler and inspected in three contact sheets.
 - All manifested figures were inspected at normal size, thumbnail size, and
@@ -119,12 +123,11 @@ comparison.
 
 - Tectonic reports a missing host Fontconfig default file, but uses embedded
   document fonts and completes successfully.
-- TeX reports two underfull horizontal boxes and one underfull vertical box;
-  visual inspection shows no defect. There are no overfull boxes.
+- TeX reports two underfull horizontal boxes; visual inspection shows no
+  defect. There are no underfull vertical or overfull boxes.
 - `jheppub` warns that author e-mail metadata are missing, as intentionally
   documented in the manuscript.
 - `hyperref` reports that the legacy `pagecolor` option is unavailable; links
   and PDF metadata render correctly.
 - The source archive remains gated on author-controlled identity and release
   metadata. No push or merge was performed.
-
